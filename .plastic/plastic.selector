@@ -1,0 +1,4 @@
+repository "FoodShop@lechinguyen369@cloud"
+  path "/"
+    br "/main"
+    co "/main"
