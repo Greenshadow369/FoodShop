@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class IngredientSO
+[CreateAssetMenu(fileName = "IngredientSO", menuName = "Scriptable Object/IngredientSO", order = 0)]
+public class IngredientSO : ScriptableObject 
 {
-    [SerializeField] private string name;
+    [SerializeField] Sprite ingredientSprite;
+    [SerializeField] private string ingredientName;
 }
