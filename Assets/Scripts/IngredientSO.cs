@@ -8,4 +8,20 @@ public class IngredientSO : ScriptableObject
 {
     [SerializeField] Sprite ingredientSprite;
     [SerializeField] private string ingredientName;
+    [SerializeField] private float ingredientThickness;
+
+    public Sprite GetIngredientSprite()
+    {
+        return ingredientSprite;
+    }
+
+    public string GetIngredientName()
+    {
+        return ingredientName;
+    }
+
+    public float GetIngredientThickness()
+    {
+        return ingredientThickness;
+    } 
 }

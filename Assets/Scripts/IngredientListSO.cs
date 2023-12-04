@@ -5,5 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "IngredientListSO", menuName = "Scriptable Object/IngredientListSO", order = 1)]
 public class IngredientListSO : ScriptableObject 
 {
-    [SerializeField] List<IngredientSO> ingredientList;
+    [SerializeField] private List<IngredientSO> ingredientList;
+    
 }

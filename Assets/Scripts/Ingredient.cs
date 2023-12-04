@@ -1,18 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private IngredientSO ingredientSO;
+    private string ingredientName;
+    private float ingredientThickness;
+
+    public void SetIngredient(IngredientSO ingredientSO)
     {
-        
+        Debug.Log("button");
+        this.ingredientSO = ingredientSO;
+        UpdateIngredient();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void UpdateIngredient()
     {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = ingredientSO.GetIngredientSprite();
         
+        ingredientName = ingredientSO.GetIngredientName();
+        ingredientThickness = ingredientSO.GetIngredientThickness();
     }
 }
