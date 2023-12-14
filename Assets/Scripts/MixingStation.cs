@@ -7,11 +7,11 @@ public class MixingStation : MonoBehaviour
 {
     [SerializeField] private IngredientListSO ingredientList;
     [SerializeField] private Transform ingredientPrefab;
-    
-    // Start is called before the first frame update
+    private Transform currentPos;
+
     void Start()
     {
-        
+        currentPos = transform;
     }
 
     // Update is called once per frame
@@ -20,11 +20,12 @@ public class MixingStation : MonoBehaviour
         
     }
 
-    
-
     public Transform CreateIngredient(IngredientSO ingredientSO)
     {
-        Transform ingredient = Instantiate(ingredientPrefab, transform);
+        Transform ingredient = Instantiate(ingredientPrefab, currentPos.position, Quaternion.identity);
+        //Move position up according to thickness
+        currentPos.position = new Vector2(currentPos.position.x, currentPos.position.y + ingredientSO.GetIngredientThickness());
+        
         ingredient.GetComponent<Ingredient>().SetIngredient(ingredientSO);
         return ingredient;
     }
