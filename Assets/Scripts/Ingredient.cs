@@ -11,7 +11,6 @@ public class Ingredient : MonoBehaviour
 
     public void SetIngredient(IngredientSO ingredientSO)
     {
-        Debug.Log("button");
         this.ingredientSO = ingredientSO;
         UpdateIngredient();
     }
