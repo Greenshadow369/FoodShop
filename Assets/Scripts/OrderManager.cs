@@ -11,6 +11,10 @@ public class OrderManager : MonoBehaviour
     
     public void AddNewOrder()
     {
-        Transform ingredient = Instantiate(orderPrefab, orderGroup.position, Quaternion.identity, orderGroup);
+        Transform orderTransform = Instantiate(orderPrefab, orderGroup.position, Quaternion.identity, orderGroup);
+        Order order = orderTransform.GetComponent<Order>();
+        Debug.Log(possibleOrderList[0] != null);
+        currentOrderList.Add(possibleOrderList[0]);
+        order.SetOrder(currentOrderList[0]);
     }
 }

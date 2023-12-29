@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OrderUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Image order;
+    [SerializeField] private Image ingredient;
+
+    public void SetOrderSprite(Sprite sprite)
     {
-        
+        order.sprite = sprite;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetIngredientSprite(Sprite sprite)
     {
-        
+        ingredient.sprite = sprite;
     }
 }
