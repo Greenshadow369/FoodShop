@@ -44,6 +44,7 @@ public class MixingStation : MonoBehaviour
     {
         DiscardIngredient();
         ResetPosition();
+        ResetSortOrder();
     }
 
     private void DiscardIngredient()

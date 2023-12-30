@@ -34,6 +34,6 @@ public class Order : MonoBehaviour
         Sprite ingredientSprite = orderIngredientList[0].GetIngredientSprite();
         
         orderUI.SetOrderSprite(orderSprite);
-        orderUI.SetIngredientSprite(orderSprite);
+        orderUI.SetIngredientSprite(ingredientSprite);
     }
 }
