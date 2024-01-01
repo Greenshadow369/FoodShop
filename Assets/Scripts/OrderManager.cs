@@ -20,9 +20,14 @@ public class OrderManager : MonoBehaviour
         Transform orderTransform = Instantiate(orderPrefab, orderGroup.position, Quaternion.identity, orderGroup);
         Order order = orderTransform.GetComponent<Order>();
         
+        //Get a random order
+       OrderSO orderSO = possibleOrderList[Random.Range(0, possibleOrderList.Count)];
+
         //Store the new order in a list
-        currentOrderList.Add(possibleOrderList[0]);
+        currentOrderList.Add(orderSO);
+        
+
         //Pass and set new order info
-        order.SetOrder(currentOrderList[0]);
+        order.SetOrder(orderSO);
     }
 }

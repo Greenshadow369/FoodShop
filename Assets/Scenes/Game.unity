@@ -706,6 +706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possibleOrderList:
   - {fileID: 11400000, guid: 439b48dcc762b584fa2d622c557d9b4c, type: 2}
+  - {fileID: 11400000, guid: d79b009098d897842bd8cbaf4093fb35, type: 2}
   orderPrefab: {fileID: 94517477112465397, guid: e014c481c8f0c934099dae4d29dd95ef, type: 3}
   orderGroup: {fileID: 2103353740}
 --- !u!224 &1338455919
