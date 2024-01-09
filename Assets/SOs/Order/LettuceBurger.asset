@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderIngredientList:
   - {fileID: 11400000, guid: 4f86017f722d30c4086ae0cdfe9d9e48, type: 2}
-  orderSprite: {fileID: 21300000, guid: 80704009609a40f40a7e51f70e6eaf93, type: 3}
+  orderSprite: {fileID: -210045434, guid: d1e03b1e021894a4a8a54c0c1f96cfa3, type: 3}
