@@ -31,9 +31,14 @@ public class Order : MonoBehaviour
     {
         Sprite orderSprite = order.GetOrderSprite();
         List<IngredientSO> orderIngredientList = order.GetOrderIngredientList();
-        Sprite ingredientSprite = orderIngredientList[0].GetIngredientSprite();
-        
+
+        //Set result sprite for order
         orderUI.SetOrderSprite(orderSprite);
-        orderUI.SetIngredientSprite(ingredientSprite);
+        //Set ingredient sprites fopr order
+        foreach(IngredientSO ingredientSO in orderIngredientList)
+        {
+            orderUI.CreateIngredientSprite(ingredientSO.GetIngredientSprite());
+        } 
+        
     }
 }

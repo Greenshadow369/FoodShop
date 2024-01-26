@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ebd92a125383494e9f6d9d1a83b5359, type: 3}
-  m_Name: LettuceBurger
+  m_Name: LettuceTomatoBurger
   m_EditorClassIdentifier: 
   orderIngredientList:
   - {fileID: 11400000, guid: 4f86017f722d30c4086ae0cdfe9d9e48, type: 2}
-  orderSprite: {fileID: 21300000, guid: 80704009609a40f40a7e51f70e6eaf93, type: 3}
+  - {fileID: 11400000, guid: 1615f6532eb9d734d8941578c0266b11, type: 2}
+  orderSprite: {fileID: 21300000, guid: 6f6b37993fac72d42b945df27256a741, type: 3}
