@@ -108,10 +108,10 @@ TextureImporter:
       name: Cooked_Beef_Patty_(O)_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 1
-        width: 36
-        height: 36
+        x: 7
+        y: 11
+        width: 34
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

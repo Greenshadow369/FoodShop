@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: facfe9e78b6931b4a8249d742ab3c841, type: 3}
   m_Name: Tomato
   m_EditorClassIdentifier: 
-  ingredientSprite: {fileID: 21300000, guid: f49bdef07a485d74aad3155ef2dafd82, type: 3}
+  ingredientSprite: {fileID: -1422288069, guid: e5554e1c3c54ede4f8627be5c0e5a484, type: 3}
   ingredientName: Tomato
   ingredientThickness: 0.05
