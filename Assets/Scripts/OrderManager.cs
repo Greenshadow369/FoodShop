@@ -8,14 +8,10 @@ public class OrderManager : MonoBehaviour
     [SerializeField] private Transform orderPrefab;
     [SerializeField] private Transform orderGroup;
     private List<OrderSO> currentOrderList;
-    private MixingStation mixingStation;
 
     private void Awake()
     {
-        if(GameObject.FindGameObjectWithTag("Mixing Station").TryGetComponent<MixingStation>(out MixingStation mixingStation_))
-        {
-            mixingStation = mixingStation_;
-        }
+        
     }
 
     private void Start()
@@ -45,7 +41,7 @@ public class OrderManager : MonoBehaviour
         Order order = orderTransform.GetComponent<Order>();
         
         //Get a random order
-       OrderSO orderSO = possibleOrderList[Random.Range(0, possibleOrderList.Count)];
+        OrderSO orderSO = possibleOrderList[Random.Range(0, possibleOrderList.Count)];
 
         //Store the new order in a list
         currentOrderList.Add(orderSO);
@@ -55,23 +51,15 @@ public class OrderManager : MonoBehaviour
         order.SetOrder(orderSO);
     }
 
-    public void SubmitCurrentDish()
+    public void ResolveSubmittedOrder()
     {
-        if(TryVerifyOrder())
-        {
-            //Gain cash
+        
+        //Gain cash
 
-            //Empty plate
+        //Empty plate
 
-            //Discard current order
+        //Discard current order
 
-            //Empty plate
-            mixingStation.EmptyPlate();
-        }
-    }
-
-    private bool TryVerifyOrder()
-    {
-        return true;
+            
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ingredient
   - Mixing Station
+  - Order Manager
   layers:
   - Default
   - TransparentFX

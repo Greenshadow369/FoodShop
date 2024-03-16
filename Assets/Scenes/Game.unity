@@ -491,19 +491,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 937985342}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1338455918}
-        m_TargetAssemblyTypeName: OrderManager, Assembly-CSharp
-        m_MethodName: AddNewOrder
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &937985342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,7 +707,7 @@ GameObject:
   - component: {fileID: 1338455918}
   m_Layer: 0
   m_Name: OrderManager
-  m_TagString: Untagged
+  m_TagString: Order Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -981,19 +969,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1481653274}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1338455918}
-        m_TargetAssemblyTypeName: OrderManager, Assembly-CSharp
-        m_MethodName: SubmitCurrentDish
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1481653274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1114,19 +1090,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1743050755}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1333896511}
-        m_TargetAssemblyTypeName: MixingStation, Assembly-CSharp
-        m_MethodName: EmptyPlate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1743050755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,6 +1260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   discardButton: {fileID: 1743050754}
+  orderButton: {fileID: 937985341}
+  submitButton: {fileID: 1481653273}
 --- !u!1 &2103353739
 GameObject:
   m_ObjectHideFlags: 0
