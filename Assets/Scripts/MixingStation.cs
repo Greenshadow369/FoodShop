@@ -7,7 +7,7 @@ public class MixingStation : MonoBehaviour
 {
     [SerializeField] private IngredientListSO ingredientList;
     [SerializeField] private Transform ingredientPrefab;
-    [SerializeField] private Transform plate;
+    [SerializeField] private Transform plateGroup;
     private Vector2 startingPos;
     private Vector2 currentPos;
     private int currentSortOrder;
@@ -20,12 +20,22 @@ public class MixingStation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            foreach(Transform trans in plateGroup)
+            {
+                if(trans.TryGetComponent<Ingredient>(out Ingredient ingre))
+                {
+                    IngredientSO ing = ingre.GetIngredientSO();
+                    Debug.Log(ing);
+                }
+            }
+        }
     }
 
     public Transform CreateIngredient(IngredientSO ingredientSO)
     {
-        Transform ingredient = Instantiate(ingredientPrefab, plate.position, Quaternion.identity, plate);
+        Transform ingredient = Instantiate(ingredientPrefab, plateGroup.position, Quaternion.identity, plateGroup);
         ingredient.position = currentPos;
 
         //Move position up according to thickness
@@ -49,7 +59,7 @@ public class MixingStation : MonoBehaviour
 
     private void DiscardIngredient()
     {
-        foreach (Transform child in plate)
+        foreach (Transform child in plateGroup)
         {
             if(child.tag == "Ingredient")
             {

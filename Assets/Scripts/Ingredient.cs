@@ -23,4 +23,9 @@ public class Ingredient : MonoBehaviour
         ingredientName = ingredientSO.GetIngredientName();
         ingredientThickness = ingredientSO.GetIngredientThickness();
     }
+
+    public IngredientSO GetIngredientSO()
+    {
+        return ingredientSO;
+    }
 }
