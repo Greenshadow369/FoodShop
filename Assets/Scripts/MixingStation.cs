@@ -46,7 +46,7 @@ public class MixingStation : MonoBehaviour
         currentSortOrder++;
         spriteRenderer.sortingOrder = currentSortOrder;
 
-        ingredient.GetComponent<Ingredient>().SetIngredient(ingredientSO);
+        ingredient.GetComponent<Ingredient>().SetIngredientSO(ingredientSO);
         return ingredient;
     }
 
@@ -77,5 +77,18 @@ public class MixingStation : MonoBehaviour
     private void ResetSortOrder()
     {
         currentSortOrder = 0;
+    }
+
+    public List<Ingredient> GetDish()
+    {
+        List<Ingredient> ingredients = new List<Ingredient>();
+        foreach(Transform trans in plateGroup)
+        {
+            if(trans.TryGetComponent<Ingredient>(out Ingredient ingre))
+            {
+                ingredients.Add(ingre);
+            }
+        }
+        return ingredients;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Order : MonoBehaviour
 {
     private OrderUI orderUI;
-    private OrderSO order;
+    private OrderSO orderSO;
 
     private void Awake()
     {
@@ -16,10 +16,15 @@ public class Order : MonoBehaviour
         
     }
 
-    public void SetOrder(OrderSO orderSO)
+    public void SetOrderSO(OrderSO orderSO)
     {
-        order = orderSO;
+        this.orderSO = orderSO;
         UpdateOrder();
+    }
+
+    public OrderSO GetOrderSO()
+    {
+        return orderSO;
     }
 
     private void UpdateOrder()
@@ -29,8 +34,8 @@ public class Order : MonoBehaviour
 
     private void UpdateOrderUI()
     {
-        Sprite orderSprite = order.GetOrderSprite();
-        List<IngredientSO> orderIngredientList = order.GetOrderIngredientList();
+        Sprite orderSprite = orderSO.GetOrderSprite();
+        List<IngredientSO> orderIngredientList = orderSO.GetOrderIngredientList();
 
         //Set result sprite for order
         orderUI.SetOrderSprite(orderSprite);

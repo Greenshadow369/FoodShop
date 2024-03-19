@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -54,6 +55,9 @@ public class ButtonManager : MonoBehaviour
     {
         if(TryVerifyOrder())
         {
+            //Resolve order
+            orderManager.ResolveSubmittedOrder();
+
             //Empty plate
             mixingStation.EmptyPlate();
         }
@@ -61,6 +65,51 @@ public class ButtonManager : MonoBehaviour
 
     private bool TryVerifyOrder()
     {
+        //Check if there is an order
+        if(!orderManager.IsThereOrder())
+        {
+            return false;
+        }
+
+        //Get current dish
+        List<Ingredient> dishIngredientList = new List<Ingredient>(mixingStation.GetDish());
+        List<IngredientSO> dishIngredientSOList = new List<IngredientSO>();
+        foreach(Ingredient ingre in dishIngredientList)
+        {
+            dishIngredientSOList.Add(ingre.GetIngredientSO());
+        }
+
+        //Get current selected order
+
+        //Order order = orderManager.GetSelectedOrder();
+        Order order = orderManager.GetFirstOrder();
+        OrderSO orderSO = order.GetOrderSO();
+
+        //OrderSO orderSO = Instantiate<OrderSO>(orderManager.GetFirstOrderSO());
+        
+        List<IngredientSO> orderIngredientSOList = new List<IngredientSO>();
+        foreach(IngredientSO ingreSO in orderSO.GetOrderIngredientList())
+        {
+            orderIngredientSOList.Add(ingreSO);
+        }
+        dishIngredientSOList.Reverse();
+
+        //Compare order and dish size
+        if(dishIngredientSOList.Count != orderIngredientSOList.Count)
+        {
+            return false;
+        }
+        
+        //Compare order and dish ingredients
+        for(int i = 0; i < orderIngredientSOList.Count; i++)
+        {
+            if(orderIngredientSOList[i].GetIngredientName() != dishIngredientSOList[i].GetIngredientName())
+            {
+                return false;
+            }
+        }
+        
+        //Submitted dish is good
         return true;
     }
 }

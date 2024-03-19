@@ -9,7 +9,7 @@ public class Ingredient : MonoBehaviour
     private string ingredientName;
     private float ingredientThickness;
 
-    public void SetIngredient(IngredientSO ingredientSO)
+    public void SetIngredientSO(IngredientSO ingredientSO)
     {
         this.ingredientSO = ingredientSO;
         UpdateIngredient();
