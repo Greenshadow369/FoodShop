@@ -5,14 +5,42 @@ using UnityEngine.UI;
 
 public class OrderUI : MonoBehaviour
 {
-    [SerializeField] private Image order;
+    [SerializeField] private Image orderResultImage;
+    [SerializeField] private Button orderButton;
     [SerializeField] private Transform requirementPrefab;
     [SerializeField] private Transform requirementPos;
+
+    private OrderManager orderManager;
+    private Order order;
     //[SerializeField] private Image ingredient;
+
+    private void Awake()
+    {
+        if(GameObject.FindGameObjectWithTag("Order Manager").TryGetComponent<OrderManager>(out OrderManager orderManager_))
+        {
+            orderManager = orderManager_;
+        }
+
+        order = GetComponent<Order>();
+    }
+
+    private void Start()
+    {
+        orderButton.onClick.AddListener(() => {
+            if(orderManager.GetSelectedOrder() == order)
+            {
+                orderManager.SetSelectedOrder(null);
+            }
+            else
+            {
+                orderManager.SetSelectedOrder(order);
+            }
+        });
+    }
 
     public void SetOrderSprite(Sprite sprite)
     {
-        order.sprite = sprite;
+        orderResultImage.sprite = sprite;
     }
 
     public void CreateIngredientSprite(Sprite sprite)

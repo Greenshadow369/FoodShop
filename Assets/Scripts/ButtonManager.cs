@@ -73,6 +73,7 @@ public class ButtonManager : MonoBehaviour
 
         //Get current dish
         List<Ingredient> dishIngredientList = new List<Ingredient>(mixingStation.GetDish());
+        //Turn dish into ingredientSO list
         List<IngredientSO> dishIngredientSOList = new List<IngredientSO>();
         foreach(Ingredient ingre in dishIngredientList)
         {
@@ -80,13 +81,11 @@ public class ButtonManager : MonoBehaviour
         }
 
         //Get current selected order
-
         //Order order = orderManager.GetSelectedOrder();
         Order order = orderManager.GetFirstOrder();
-        OrderSO orderSO = order.GetOrderSO();
-
-        //OrderSO orderSO = Instantiate<OrderSO>(orderManager.GetFirstOrderSO());
+        OrderSO orderSO = order.GetOrderSO();   //OrderSO orderSO = Instantiate<OrderSO>(orderManager.GetFirstOrderSO());
         
+        //Turn order into ingredientSO list
         List<IngredientSO> orderIngredientSOList = new List<IngredientSO>();
         foreach(IngredientSO ingreSO in orderSO.GetOrderIngredientList())
         {

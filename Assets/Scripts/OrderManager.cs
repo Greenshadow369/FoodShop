@@ -28,14 +28,14 @@ public class OrderManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.P))
         {
-            foreach(Order order in currentOrderList)
+            Order order = orderSelectionSystem.GetSelectedOrder();
+            if(order == null)
             {
-                OrderSO orderSO = order.GetOrderSO();
-                List<IngredientSO> li = orderSO.GetOrderIngredientList();
-                foreach(IngredientSO ingredient in li)
-                {
-                    Debug.Log(ingredient);
-                }
+                return;
+            }
+            foreach(IngredientSO ingredientSO in order.GetOrderSO().GetOrderIngredientList())
+            {
+                Debug.Log(ingredientSO.GetIngredientName());
             }
         }
     }
@@ -62,8 +62,6 @@ public class OrderManager : MonoBehaviour
         
         //Gain cash
 
-        //Empty plate
-
         //Discard current order
         Order discardedOrder = currentOrderList[0];
         currentOrderList.RemoveAt(0);
@@ -73,6 +71,11 @@ public class OrderManager : MonoBehaviour
     public Order GetSelectedOrder()
     {
         return orderSelectionSystem.GetSelectedOrder();
+    }
+
+    public void SetSelectedOrder(Order order)
+    {
+        orderSelectionSystem.SetSelectedOrder(order);
     }
 
     public Order GetFirstOrder()

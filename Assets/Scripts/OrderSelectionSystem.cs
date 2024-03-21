@@ -57,10 +57,10 @@ public class OrderSelectionSystem : MonoBehaviour
     //     }
     // }
 
-    private void SetSelectedOrder(Order order)
+    public void SetSelectedOrder(Order order)
     {
         selectedOrder = order;
-        Debug.Log(order);
+
         //SetSelectedAction(unit.GetAction<SpinAction>());
         //OnSelectedOrderChanged?.Invoke(this, EventArgs.Empty);
     }
