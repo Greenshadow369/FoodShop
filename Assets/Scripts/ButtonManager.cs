@@ -56,7 +56,7 @@ public class ButtonManager : MonoBehaviour
         if(TryVerifyOrder())
         {
             //Resolve order
-            orderManager.ResolveSubmittedOrder();
+            orderManager.ResolveSubmittedOrder(orderManager.GetSelectedOrder());
 
             //Empty plate
             mixingStation.EmptyPlate();
@@ -81,8 +81,14 @@ public class ButtonManager : MonoBehaviour
         }
 
         //Get current selected order
-        //Order order = orderManager.GetSelectedOrder();
-        Order order = orderManager.GetFirstOrder();
+        Order order = orderManager.GetSelectedOrder();
+        if(order == null)
+        {
+            //No order selected
+            return false;
+        }
+
+        //Order order = orderManager.GetFirstOrder();
         OrderSO orderSO = order.GetOrderSO();   //OrderSO orderSO = Instantiate<OrderSO>(orderManager.GetFirstOrderSO());
         
         //Turn order into ingredientSO list

@@ -57,14 +57,15 @@ public class OrderManager : MonoBehaviour
         order.SetOrderSO(orderSO);
     }
 
-    public void ResolveSubmittedOrder()
+    public void ResolveSubmittedOrder(Order order)
     {
         
         //Gain cash
 
         //Discard current order
-        Order discardedOrder = currentOrderList[0];
-        currentOrderList.RemoveAt(0);
+        Order discardedOrder = order;
+        currentOrderList.Remove(order);
+        
         Destroy(discardedOrder.gameObject);
     }
 
