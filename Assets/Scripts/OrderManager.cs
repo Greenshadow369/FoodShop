@@ -10,12 +10,18 @@ public class OrderManager : MonoBehaviour
     [SerializeField] private Transform orderGroup;
     private OrderSelectionSystem orderSelectionSystem;
     private List<Order> currentOrderList;
+    private MixingStation mixingStation;
 
     private void Awake()
     {
         if(TryGetComponent<OrderSelectionSystem>(out OrderSelectionSystem orderSe))
         {
             orderSelectionSystem = orderSe;
+        }
+
+        if(GameObject.FindGameObjectWithTag("Mixing Station").TryGetComponent<MixingStation>(out MixingStation mixingStation_))
+        {
+            mixingStation = mixingStation_;
         }
     }
 
@@ -57,6 +63,73 @@ public class OrderManager : MonoBehaviour
         order.SetOrderSO(orderSO);
     }
 
+    public void SubmitCurrentDish()
+    {
+        if(TryVerifyOrder())
+        {
+            //Resolve order
+            ResolveSubmittedOrder(GetSelectedOrder());
+
+            //Empty plate
+            mixingStation.EmptyPlate();
+        }
+    }
+
+    private bool TryVerifyOrder()
+    {
+        //Check if there is an order
+        if(!IsThereOrder())
+        {
+            return false;
+        }
+
+        //Get current dish
+        List<Ingredient> dishIngredientList = new List<Ingredient>(mixingStation.GetDish());
+        //Turn dish into ingredientSO list
+        List<IngredientSO> dishIngredientSOList = new List<IngredientSO>();
+        foreach(Ingredient ingre in dishIngredientList)
+        {
+            dishIngredientSOList.Add(ingre.GetIngredientSO());
+        }
+
+        //Get current selected order
+        Order order = GetSelectedOrder();
+        if(order == null)
+        {
+            //No order selected
+            return false;
+        }
+
+        //Order order = orderManager.GetFirstOrder();
+        OrderSO orderSO = order.GetOrderSO();   //OrderSO orderSO = Instantiate<OrderSO>(orderManager.GetFirstOrderSO());
+        
+        //Turn order into ingredientSO list
+        List<IngredientSO> orderIngredientSOList = new List<IngredientSO>();
+        foreach(IngredientSO ingreSO in orderSO.GetOrderIngredientList())
+        {
+            orderIngredientSOList.Add(ingreSO);
+        }
+        dishIngredientSOList.Reverse();
+
+        //Compare order and dish size
+        if(dishIngredientSOList.Count != orderIngredientSOList.Count)
+        {
+            return false;
+        }
+        
+        //Compare order and dish ingredients
+        for(int i = 0; i < orderIngredientSOList.Count; i++)
+        {
+            if(orderIngredientSOList[i].GetIngredientName() != dishIngredientSOList[i].GetIngredientName())
+            {
+                return false;
+            }
+        }
+        
+        //Submitted dish is good
+        return true;
+    }
+
     public void ResolveSubmittedOrder(Order order)
     {
         
@@ -65,7 +138,7 @@ public class OrderManager : MonoBehaviour
         //Discard current order
         Order discardedOrder = order;
         currentOrderList.Remove(order);
-        
+
         Destroy(discardedOrder.gameObject);
     }
 

@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 public class OrderSelectionSystem : MonoBehaviour
 {
     [SerializeField] private Order selectedOrder;
-    [SerializeField] private LayerMask orderLayerMask;
 
     private void Start()
     {
@@ -16,6 +15,16 @@ public class OrderSelectionSystem : MonoBehaviour
     private void Update()
     {
         //HandleOrderSelection();
+    }
+
+    public void SetSelectedOrder(Order order)
+    {
+        selectedOrder = order;
+    }
+
+    public Order GetSelectedOrder()
+    {
+        return selectedOrder;
     }
 
     // private void HandleOrderSelection()
@@ -56,17 +65,4 @@ public class OrderSelectionSystem : MonoBehaviour
             
     //     }
     // }
-
-    public void SetSelectedOrder(Order order)
-    {
-        selectedOrder = order;
-
-        //SetSelectedAction(unit.GetAction<SpinAction>());
-        //OnSelectedOrderChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public Order GetSelectedOrder()
-    {
-        return selectedOrder;
-    }
 }

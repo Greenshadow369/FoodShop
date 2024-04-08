@@ -657,6 +657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333896510}
   - component: {fileID: 1333896511}
+  - component: {fileID: 1333896512}
   m_Layer: 0
   m_Name: Mixing Station
   m_TagString: Mixing Station
@@ -695,6 +696,34 @@ MonoBehaviour:
   ingredientList: {fileID: 11400000, guid: 9113ff39b6e3f454d95fe93bcc451912, type: 2}
   ingredientPrefab: {fileID: 208704149224715025, guid: 9b721581d78b8784eb81fc89e62556ec, type: 3}
   plateGroup: {fileID: 762517548}
+--- !u!114 &1333896512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333896509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4095dda3cf64c7647a16c1ac07c17988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ba708f986af5c4d49917bbe29586756a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1333896511}
+        m_TargetAssemblyTypeName: MixingStation, Assembly-CSharp
+        m_MethodName: EmptyPlate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1338455916
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +735,8 @@ GameObject:
   - component: {fileID: 1338455919}
   - component: {fileID: 1338455918}
   - component: {fileID: 1338455920}
+  - component: {fileID: 1338455921}
+  - component: {fileID: 1338455922}
   m_Layer: 0
   m_Name: OrderManager
   m_TagString: Order Manager
@@ -765,9 +796,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedOrder: {fileID: 0}
-  orderLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
+--- !u!114 &1338455921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338455916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4095dda3cf64c7647a16c1ac07c17988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 1398e348dee51164194eaff62fcd9b1c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1338455918}
+        m_TargetAssemblyTypeName: OrderManager, Assembly-CSharp
+        m_MethodName: AddNewOrder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1338455922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338455916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4095dda3cf64c7647a16c1ac07c17988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: f806b008f9bc3d44d932e77dc7abc5b4, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1338455918}
+        m_TargetAssemblyTypeName: OrderManager, Assembly-CSharp
+        m_MethodName: SubmitCurrentDish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1340273402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1279,6 +1363,51 @@ MonoBehaviour:
   discardButton: {fileID: 1743050754}
   orderButton: {fileID: 937985341}
   submitButton: {fileID: 1481653273}
+  OrderButtonEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1398e348dee51164194eaff62fcd9b1c, type: 2}
+        m_TargetAssemblyTypeName: GameEventSO, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  DiscardButtonEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: ba708f986af5c4d49917bbe29586756a, type: 2}
+        m_TargetAssemblyTypeName: GameEventSO, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  SubmitButtonEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: f806b008f9bc3d44d932e77dc7abc5b4, type: 2}
+        m_TargetAssemblyTypeName: GameEventSO, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2103353739
 GameObject:
   m_ObjectHideFlags: 0
