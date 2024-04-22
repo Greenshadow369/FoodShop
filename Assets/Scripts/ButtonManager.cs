@@ -9,17 +9,17 @@ public class ButtonManager : MonoBehaviour
 {
     //[SerializeField] private List<Button> ingredientButtonList;
     [SerializeField] private Button discardButton;
-    [SerializeField] private Button orderButton;
+    [SerializeField] private Button newOrderButton;
     [SerializeField] private Button submitButton;
 
-    public UnityEvent OrderButtonEvent;
+    public UnityEvent NewOrderButtonEvent;
     public UnityEvent DiscardButtonEvent;
     public UnityEvent SubmitButtonEvent;
 
     private void Awake()
     {
-        orderButton.onClick.AddListener(() => {
-            OrderButtonEvent.Invoke();
+        newOrderButton.onClick.AddListener(() => {
+            NewOrderButtonEvent.Invoke();
             //orderManager.AddNewOrder();
         });
 

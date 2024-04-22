@@ -9,6 +9,7 @@ public class OrderUI : MonoBehaviour
     [SerializeField] private Button orderButton;
     [SerializeField] private Transform requirementPrefab;
     [SerializeField] private Transform requirementPos;
+    [SerializeField] private Transform orderSelectedVisual;
 
     private OrderManager orderManager;
     private Order order;
@@ -27,14 +28,7 @@ public class OrderUI : MonoBehaviour
     private void Start()
     {
         orderButton.onClick.AddListener(() => {
-            if(orderManager.GetSelectedOrder() == order)
-            {
-                orderManager.SetSelectedOrder(null);
-            }
-            else
-            {
-                orderManager.SetSelectedOrder(order);
-            }
+            orderManager.SetSelectedOrder(order);
         });
     }
 

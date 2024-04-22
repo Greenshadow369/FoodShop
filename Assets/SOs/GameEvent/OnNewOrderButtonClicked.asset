@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b592e703df5b364a94e8e24bd0a2908, type: 3}
-  m_Name: OnOrderButtonClicked
+  m_Name: OnNewOrderButtonClicked
   m_EditorClassIdentifier: 

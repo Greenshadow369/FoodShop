@@ -147,6 +147,7 @@ MonoBehaviour:
   orderButton: {fileID: 7793953703243102965}
   requirementPrefab: {fileID: 5754554102007810739, guid: 5334e670f4dcb4e468993e2abea5be86, type: 3}
   requirementPos: {fileID: 8070712349020202161}
+  orderSelectedVisual: {fileID: 269616197786331443}
 --- !u!114 &7793953703243102965
 MonoBehaviour:
   m_ObjectHideFlags: 0
