@@ -44,4 +44,19 @@ public class OrderUI : MonoBehaviour
         
         requirementImage.sprite = sprite;
     }
+
+    public void UpdateOrderSelectedVisual()
+    {
+        Debug.Log("updating");
+        if(orderManager.GetSelectedOrder() == order)
+        {
+            Debug.Log("active");
+            orderSelectedVisual.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("inactive");
+            orderSelectedVisual.gameObject.SetActive(false);
+        }
+    }
 }

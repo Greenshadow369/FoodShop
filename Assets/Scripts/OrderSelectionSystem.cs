@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class OrderSelectionSystem : MonoBehaviour
 {
+    public UnityEvent OrderButtonEvent;
     [SerializeField] private Order selectedOrder;
 
     private void Start()
@@ -20,6 +22,7 @@ public class OrderSelectionSystem : MonoBehaviour
     public void SetSelectedOrder(Order order)
     {
         selectedOrder = order;
+        OrderButtonEvent.Invoke();
     }
 
     public Order GetSelectedOrder()
