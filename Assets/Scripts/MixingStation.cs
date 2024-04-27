@@ -14,6 +14,7 @@ public class MixingStation : MonoBehaviour
 
     void Start()
     {
+        startingPos = new Vector2(plateGroup.position.x, plateGroup.position.y);
         currentPos = new Vector2(startingPos.x, startingPos.y);
     }
 
