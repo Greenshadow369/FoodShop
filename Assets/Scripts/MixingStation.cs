@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MixingStation : MonoBehaviour
 {
-    [SerializeField] private IngredientListSO ingredientList;
+    [SerializeField] private IngredientListSO ingredientListSO;
     [SerializeField] private Transform ingredientPrefab;
     [SerializeField] private Transform plateGroup;
     private Vector2 startingPos;
@@ -78,6 +78,11 @@ public class MixingStation : MonoBehaviour
     private void ResetSortOrder()
     {
         currentSortOrder = 0;
+    }
+
+    public IngredientListSO GetIngredientListSO()
+    {
+        return ingredientListSO;
     }
 
     public List<Ingredient> GetDish()

@@ -47,15 +47,12 @@ public class OrderUI : MonoBehaviour
 
     public void UpdateOrderSelectedVisual()
     {
-        Debug.Log("updating");
         if(orderManager.GetSelectedOrder() == order)
         {
-            Debug.Log("active");
             orderSelectedVisual.gameObject.SetActive(true);
         }
         else
         {
-            Debug.Log("inactive");
             orderSelectedVisual.gameObject.SetActive(false);
         }
     }

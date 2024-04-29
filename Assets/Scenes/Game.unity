@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed061c73ec50f504590fcecab46b9a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientList: {fileID: 11400000, guid: 9113ff39b6e3f454d95fe93bcc451912, type: 2}
+  ingredientListSO: {fileID: 0}
   ingredientPrefab: {fileID: 208704149224715025, guid: 9b721581d78b8784eb81fc89e62556ec, type: 3}
   plateGroup: {fileID: 762517548}
 --- !u!114 &1333896512
@@ -761,6 +761,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 439b48dcc762b584fa2d622c557d9b4c, type: 2}
   - {fileID: 11400000, guid: d79b009098d897842bd8cbaf4093fb35, type: 2}
   - {fileID: 11400000, guid: e85faa60c00026a46a6b808acb7f6038, type: 2}
+  ingredientListSO: {fileID: 11400000, guid: 9113ff39b6e3f454d95fe93bcc451912, type: 2}
   orderPrefab: {fileID: 94517477112465397, guid: e014c481c8f0c934099dae4d29dd95ef, type: 3}
   orderGroup: {fileID: 2103353740}
 --- !u!224 &1338455919

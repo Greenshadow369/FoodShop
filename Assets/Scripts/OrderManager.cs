@@ -6,6 +6,7 @@ using UnityEngine;
 public class OrderManager : MonoBehaviour
 {
     [SerializeField] private List<OrderSO> possibleOrderList;
+    [SerializeField] private IngredientListSO ingredientListSO;
     [SerializeField] private Transform orderPrefab;
     [SerializeField] private Transform orderGroup;
     private OrderSelectionSystem orderSelectionSystem;
@@ -53,14 +54,23 @@ public class OrderManager : MonoBehaviour
         Order order = orderTransform.GetComponent<Order>();
         
         //Get a random order
-        OrderSO orderSO = possibleOrderList[Random.Range(0, possibleOrderList.Count)];
+        //OrderSO orderSO = possibleOrderList[Random.Range(0, possibleOrderList.Count)];
+        List<IngredientSO> availableIngredientSOList = new List<IngredientSO>(ingredientListSO.GetIngredientSOList());
+        IngredientSO randomIngre = availableIngredientSOList[Random.Range(0, availableIngredientSOList.Count)];
 
         //Store the new order in a list
         currentOrderList.Add(order);
         
 
         //Pass and set new order info
-        order.SetOrderSO(orderSO);
+        // order.SetOrderSO(orderSO);
+        order.SetRequiredIngredientSO(randomIngre);
+
+        // Ingredient ingredient = new Ingredient();
+        // List<IngredientSO> inList = new List<IngredientSO>();
+        // inList = mixingStation.GetIngredientListSO().GetIngredientSOList();
+        // ingredient.SetIngredientSO(Instantiate<IngredientSO>(inList[0]));
+        // OrderSO orderSO1 = ScriptableObject.CreateInstance(OrderSO);
     }
 
     public void SubmitCurrentDish()
@@ -100,12 +110,9 @@ public class OrderManager : MonoBehaviour
             return false;
         }
 
-        //Order order = orderManager.GetFirstOrder();
-        OrderSO orderSO = order.GetOrderSO();   //OrderSO orderSO = Instantiate<OrderSO>(orderManager.GetFirstOrderSO());
-        
         //Turn order into ingredientSO list
         List<IngredientSO> orderIngredientSOList = new List<IngredientSO>();
-        foreach(IngredientSO ingreSO in orderSO.GetOrderIngredientList())
+        foreach(IngredientSO ingreSO in order.GetMainDishIngredientList())
         {
             orderIngredientSOList.Add(ingreSO);
         }

@@ -7,4 +7,8 @@ public class IngredientListSO : ScriptableObject
 {
     [SerializeField] private List<IngredientSO> ingredientList;
     
+    public List<IngredientSO> GetIngredientSOList()
+    {
+        return ingredientList;
+    }
 }

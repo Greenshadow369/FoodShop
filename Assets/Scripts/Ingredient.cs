@@ -6,6 +6,8 @@ using UnityEngine;
 public class Ingredient : MonoBehaviour
 {
     private IngredientSO ingredientSO;
+
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private string ingredientName;
     private float ingredientThickness;
 
@@ -17,7 +19,6 @@ public class Ingredient : MonoBehaviour
 
     private void UpdateIngredient()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = ingredientSO.GetIngredientSprite();
         
         ingredientName = ingredientSO.GetIngredientName();
