@@ -23,5 +23,5 @@ public class IngredientSO : ScriptableObject
     public float GetIngredientThickness()
     {
         return ingredientThickness;
-    } 
+    }
 }

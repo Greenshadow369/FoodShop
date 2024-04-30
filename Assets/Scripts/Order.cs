@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Order : MonoBehaviour
 {
     private OrderUI orderUI;
-    private OrderSO orderSO;
 
+    [Header("Order Info")]
     [SerializeField] private Image orderImage;
     private List<IngredientSO> mainDishIngredientList;
 
@@ -21,12 +21,6 @@ public class Order : MonoBehaviour
         
     }
 
-    // public void SetOrderSO(OrderSO orderSO)
-    // {
-    //     this.orderSO = orderSO;
-    //     UpdateOrder();
-    // }
-
     public void SetRequiredIngredientSO(IngredientSO ingredientSO)
     {
         mainDishIngredientList.Add(ingredientSO);
@@ -38,14 +32,8 @@ public class Order : MonoBehaviour
         return mainDishIngredientList;
     }
 
-    public OrderSO GetOrderSO()
-    {
-        return orderSO;
-    }
-
     private void UpdateOrder()
     {
-        //mainDishIngredientList = orderSO.GetOrderIngredientList();
         orderImage.sprite = mainDishIngredientList[0].GetIngredientSprite();
         UpdateOrderUI();
     }

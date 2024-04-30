@@ -11,6 +11,7 @@ public class OrderManager : MonoBehaviour
     [SerializeField] private Transform orderGroup;
     private OrderSelectionSystem orderSelectionSystem;
     private List<Order> currentOrderList;
+    private List<IngredientSO> availableIngredientSOList;
     private MixingStation mixingStation;
 
     private void Awake()
@@ -24,6 +25,9 @@ public class OrderManager : MonoBehaviour
         {
             mixingStation = mixingStation_;
         }
+
+        //Currently all ingredient in the ListSO is available in game
+        availableIngredientSOList = new List<IngredientSO>(ingredientListSO.GetIngredientSOList());
     }
 
     private void Start()
@@ -40,7 +44,7 @@ public class OrderManager : MonoBehaviour
             {
                 return;
             }
-            foreach(IngredientSO ingredientSO in order.GetOrderSO().GetOrderIngredientList())
+            foreach(IngredientSO ingredientSO in order.GetMainDishIngredientList())
             {
                 Debug.Log(ingredientSO.GetIngredientName());
             }
@@ -53,24 +57,15 @@ public class OrderManager : MonoBehaviour
         Transform orderTransform = Instantiate(orderPrefab, orderGroup.position, Quaternion.identity, orderGroup);
         Order order = orderTransform.GetComponent<Order>();
         
-        //Get a random order
+        //Get a random ingredient
         //OrderSO orderSO = possibleOrderList[Random.Range(0, possibleOrderList.Count)];
-        List<IngredientSO> availableIngredientSOList = new List<IngredientSO>(ingredientListSO.GetIngredientSOList());
         IngredientSO randomIngre = availableIngredientSOList[Random.Range(0, availableIngredientSOList.Count)];
 
         //Store the new order in a list
         currentOrderList.Add(order);
-        
 
         //Pass and set new order info
-        // order.SetOrderSO(orderSO);
         order.SetRequiredIngredientSO(randomIngre);
-
-        // Ingredient ingredient = new Ingredient();
-        // List<IngredientSO> inList = new List<IngredientSO>();
-        // inList = mixingStation.GetIngredientListSO().GetIngredientSOList();
-        // ingredient.SetIngredientSO(Instantiate<IngredientSO>(inList[0]));
-        // OrderSO orderSO1 = ScriptableObject.CreateInstance(OrderSO);
     }
 
     public void SubmitCurrentDish()
