@@ -34,6 +34,7 @@ public class Order : MonoBehaviour
         //Clear all current ingredients in the order
         mainDishIngredientList.Clear();
 
+        //Add new ingredientSOs to list
         foreach(IngredientSO ingredientSO in ingredientSOlist)
         {
             mainDishIngredientList.Add(ingredientSO);
@@ -49,21 +50,18 @@ public class Order : MonoBehaviour
 
     private void UpdateOrder()
     {
-        orderImage.sprite = mainDishIngredientList[0].GetIngredientSprite();
         UpdateOrderUI();
     }
 
     private void UpdateOrderUI()
     {
-        Sprite orderSprite = orderImage.sprite;
-
         //Set result sprite for order
-        orderUI.SetOrderSprite(orderSprite);
-        //Set ingredient sprites fopr order
+        orderUI.CreateResultIngredientSprite(mainDishIngredientList);
+
+        //Set ingredient sprites for order
         foreach(IngredientSO ingredientSO in mainDishIngredientList)
         {
             orderUI.CreateIngredientSprite(ingredientSO.GetIngredientSprite());
-        } 
-        
+        }
     }
 }

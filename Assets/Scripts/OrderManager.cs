@@ -121,7 +121,7 @@ public class OrderManager : MonoBehaviour
         {
             orderIngredientSOList.Add(ingreSO);
         }
-        dishIngredientSOList.Reverse();
+        //dishIngredientSOList.Reverse();
 
         //Compare order and dish size
         if(dishIngredientSOList.Count != orderIngredientSOList.Count)

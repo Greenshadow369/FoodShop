@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class OrderUI : MonoBehaviour
 {
-    [SerializeField] private Image orderResultImage;
     [SerializeField] private Button orderButton;
     [SerializeField] private Transform requirementPrefab;
     [SerializeField] private Transform requirementPos;
+    [SerializeField] private Transform resultPos;
     [SerializeField] private Transform orderSelectedVisual;
 
     private OrderManager orderManager;
@@ -32,17 +32,30 @@ public class OrderUI : MonoBehaviour
         });
     }
 
-    public void SetOrderSprite(Sprite sprite)
-    {
-        orderResultImage.sprite = sprite;
-    }
-
     public void CreateIngredientSprite(Sprite sprite)
     {
         Transform requirement = Instantiate(requirementPrefab, requirementPos);
         Image requirementImage = requirement.GetComponent<Image>();
         
         requirementImage.sprite = sprite;
+    }
+
+    public void CreateResultIngredientSprite(List<IngredientSO> resultList)
+    {
+        int z = 0;
+        foreach(IngredientSO ingredientSO in resultList)
+        {
+            //Generate and set ingredient
+            Transform requirement = Instantiate(requirementPrefab, resultPos);
+            Image requirementImage = requirement.GetComponent<Image>();
+            requirementImage.sprite = ingredientSO.GetIngredientSprite();
+
+            //Sort sprite layer ordering
+            z--;
+            Canvas canva = requirement.GetComponent<Canvas>();
+            canva.overrideSorting = true;
+            canva.sortingOrder = z++;
+        }
     }
 
     public void UpdateOrderSelectedVisual()
