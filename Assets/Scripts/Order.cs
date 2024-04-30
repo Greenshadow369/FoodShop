@@ -21,9 +21,24 @@ public class Order : MonoBehaviour
         
     }
 
-    public void SetRequiredIngredientSO(IngredientSO ingredientSO)
+    //Use for adding individual ingredientSO
+    public void AddRequiredIngredientSO(IngredientSO ingredientSO)
     {
         mainDishIngredientList.Add(ingredientSO);
+        UpdateOrder();
+    }
+
+    //Use for setting a new list of ingredientSO
+    public void SetRequiredIngredientSO(List<IngredientSO> ingredientSOlist)
+    {
+        //Clear all current ingredients in the order
+        mainDishIngredientList.Clear();
+
+        foreach(IngredientSO ingredientSO in ingredientSOlist)
+        {
+            mainDishIngredientList.Add(ingredientSO);
+        }
+        
         UpdateOrder();
     }
 

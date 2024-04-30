@@ -57,15 +57,25 @@ public class OrderManager : MonoBehaviour
         Transform orderTransform = Instantiate(orderPrefab, orderGroup.position, Quaternion.identity, orderGroup);
         Order order = orderTransform.GetComponent<Order>();
         
-        //Get a random ingredient
         //OrderSO orderSO = possibleOrderList[Random.Range(0, possibleOrderList.Count)];
-        IngredientSO randomIngre = availableIngredientSOList[Random.Range(0, availableIngredientSOList.Count)];
+        List<IngredientSO> mainOrderRandomList = new List<IngredientSO>();
+
+        //Random number of ingredients for order
+        int ingredientNum = Random.Range(1, 4);
+        
+        for(int i = 0; i < ingredientNum; i++)
+        {
+            //Get a random ingredient
+            IngredientSO randomIngre = availableIngredientSOList[Random.Range(0, availableIngredientSOList.Count)];
+            //Add that random ingredient
+            mainOrderRandomList.Add(randomIngre);
+        }
 
         //Store the new order in a list
         currentOrderList.Add(order);
 
         //Pass and set new order info
-        order.SetRequiredIngredientSO(randomIngre);
+        order.SetRequiredIngredientSO(mainOrderRandomList);
     }
 
     public void SubmitCurrentDish()
