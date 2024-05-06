@@ -56,12 +56,9 @@ public class Order : MonoBehaviour
     private void UpdateOrderUI()
     {
         //Set result sprite for order
-        orderUI.CreateResultIngredientSprite(mainDishIngredientList);
+        orderUI.CreateResultSprite(mainDishIngredientList);
 
-        //Set ingredient sprites for order
-        foreach(IngredientSO ingredientSO in mainDishIngredientList)
-        {
-            orderUI.CreateIngredientSprite(ingredientSO.GetIngredientSprite());
-        }
+        //Set reuired ingredient sprites for order
+        orderUI.CreateRequirementSprite(mainDishIngredientList);
     }
 }

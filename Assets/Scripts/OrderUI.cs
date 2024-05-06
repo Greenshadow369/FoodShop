@@ -32,29 +32,39 @@ public class OrderUI : MonoBehaviour
         });
     }
 
-    public void CreateIngredientSprite(Sprite sprite)
-    {
-        Transform requirement = Instantiate(requirementPrefab, requirementPos);
-        Image requirementImage = requirement.GetComponent<Image>();
-        
-        requirementImage.sprite = sprite;
-    }
-
-    public void CreateResultIngredientSprite(List<IngredientSO> resultList)
+    public void CreateRequirementSprite(List<IngredientSO> requirementList)
     {
         int z = 0;
-        foreach(IngredientSO ingredientSO in resultList)
+        foreach(IngredientSO ingredientSO in requirementList)
         {
             //Generate and set ingredient
-            Transform requirement = Instantiate(requirementPrefab, resultPos);
+            Transform requirement = Instantiate(requirementPrefab, requirementPos);
             Image requirementImage = requirement.GetComponent<Image>();
             requirementImage.sprite = ingredientSO.GetIngredientSprite();
 
             //Sort sprite layer ordering
             z--;
-            Canvas canva = requirement.GetComponent<Canvas>();
-            canva.overrideSorting = true;
-            canva.sortingOrder = z++;
+            Canvas requirementCanvas = requirement.GetComponent<Canvas>();
+            requirementCanvas.overrideSorting = true;
+            requirementCanvas.sortingOrder = z++;
+        }
+    }
+
+    public void CreateResultSprite(List<IngredientSO> resultList)
+    {
+        int z = 0;
+        foreach(IngredientSO ingredientSO in resultList)
+        {
+            //Generate and set ingredient
+            Transform result = Instantiate(requirementPrefab, resultPos);
+            Image resultImage = result.GetComponent<Image>();
+            resultImage.sprite = ingredientSO.GetIngredientSprite();
+
+            //Sort sprite layer ordering
+            z--;
+            Canvas resultCanvas = result.GetComponent<Canvas>();
+            resultCanvas.overrideSorting = true;
+            resultCanvas.sortingOrder = z++;
         }
     }
 
