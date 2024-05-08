@@ -9,6 +9,8 @@ public class Order : MonoBehaviour
 
     [Header("Order Info")]
     [SerializeField] private Image orderImage;
+    [SerializeField] List<IngredientSO> defaultIngredientBottomList;
+    [SerializeField] List<IngredientSO> defaultIngredientTopList;
     private List<IngredientSO> mainDishIngredientList;
 
     private void Awake()
@@ -46,6 +48,16 @@ public class Order : MonoBehaviour
     public List<IngredientSO> GetMainDishIngredientList()
     {
         return mainDishIngredientList;
+    }
+
+    public List<IngredientSO> GetDefaultIngredientBottomList()
+    {
+        return defaultIngredientBottomList;
+    }
+
+    public List<IngredientSO> GetDefaultIngredientTopList()
+    {
+        return defaultIngredientTopList;
     }
 
     private void UpdateOrder()

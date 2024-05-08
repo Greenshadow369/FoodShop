@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: facfe9e78b6931b4a8249d742ab3c841, type: 3}
+  m_Name: BurgerBunTop
+  m_EditorClassIdentifier: 
+  ingredientSprite: {fileID: -2012576389, guid: 3beaa7e388f5aa14eb0ef32dd5fc411b, type: 3}
+  ingredientName: BurgerBunTop
+  ingredientThickness: 0
