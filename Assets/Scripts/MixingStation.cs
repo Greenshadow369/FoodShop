@@ -8,13 +8,21 @@ public class MixingStation : MonoBehaviour
     [SerializeField] private IngredientListSO ingredientListSO;
     [SerializeField] private Transform ingredientPrefab;
     [SerializeField] private Transform plateGroup;
+    [SerializeField] private List<IngredientSO> startingIngredientList;
     private Vector2 startingPos;
     private Vector2 currentPos;
     private int currentSortOrder;
 
     void Start()
     {
+        //Starting position is where the plate is plus starting ingredient thickness
         startingPos = new Vector2(plateGroup.position.x, plateGroup.position.y);
+        foreach(IngredientSO ingre in startingIngredientList)
+        {
+            startingPos = new Vector2(startingPos.x, startingPos.y + ingre.GetIngredientThickness());
+        }
+        Debug.Log(startingPos);
+
         currentPos = new Vector2(startingPos.x, startingPos.y);
     }
 

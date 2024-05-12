@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientSprite: {fileID: -1422288069, guid: e5554e1c3c54ede4f8627be5c0e5a484, type: 3}
   ingredientName: Tomato
-  ingredientThickness: 0.05
+  ingredientThickness: 0.1
