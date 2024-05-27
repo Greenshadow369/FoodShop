@@ -44,11 +44,12 @@ public class MixingStation : MonoBehaviour
 
     public Transform CreateIngredient(IngredientSO ingredientSO)
     {
+        //Create new ingredient
         Transform ingredient = Instantiate(ingredientPrefab, plateGroup.position, Quaternion.identity, plateGroup);
-        ingredient.position = currentPos;
-
-        //Move position up according to thickness
+        
+        //Move position up according to thickness and set ingredient there
         currentPos = new Vector2(currentPos.x, currentPos.y + ingredientSO.GetIngredientThickness());
+        ingredient.position = currentPos;
 
         //Sort in order
         SpriteRenderer spriteRenderer = ingredient.GetComponent<SpriteRenderer>();
