@@ -18,9 +18,9 @@ public class Order : MonoBehaviour
         mainDishIngredientList = new List<IngredientSO>();
         orderUI = GetComponent<OrderUI>();
     }
-    private void Start()
+    private void Update()
     {
-        
+        //transform.localScale.Scale(new Vector3(2,2,2));
     }
 
     //Use for adding individual ingredientSO
