@@ -8,7 +8,6 @@ public class Order : MonoBehaviour
     private OrderUI orderUI;
 
     [Header("Order Info")]
-    [SerializeField] private Image orderImage;
     [SerializeField] List<IngredientSO> defaultIngredientBottomList;
     [SerializeField] List<IngredientSO> defaultIngredientTopList;
     private List<IngredientSO> mainDishIngredientList;

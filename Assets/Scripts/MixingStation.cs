@@ -21,7 +21,6 @@ public class MixingStation : MonoBehaviour
         {
             startingPos = new Vector2(startingPos.x, startingPos.y + ingre.GetIngredientThickness());
         }
-        Debug.Log(startingPos);
 
         currentPos = new Vector2(startingPos.x, startingPos.y);
     }

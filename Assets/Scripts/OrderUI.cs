@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class OrderUI : MonoBehaviour
 {
+    [Header("Order Ticket")]
     [SerializeField] private Button orderButton;
+    [SerializeField] private Transform orderTicketHoveredVisual;
+    [SerializeField] private Transform orderSelectedVisual;
+
+    [Header("Order Ticket Contents")]
     [SerializeField] private Transform requirementPrefab;
     [SerializeField] private Transform requirementPos;
     [SerializeField] private Transform resultPos;
-    [SerializeField] private Transform orderSelectedVisual;
 
     private OrderManager orderManager;
     private Order order;
-    //[SerializeField] private Image ingredient;
 
     private void Awake()
     {
@@ -95,5 +99,15 @@ public class OrderUI : MonoBehaviour
         {
             orderSelectedVisual.gameObject.SetActive(false);
         }
+    }
+
+    public void TicketHoveredVisualOn()
+    {
+        orderTicketHoveredVisual.gameObject.SetActive(true);
+    }
+
+    public void TicketHoveredVisualOff()
+    {
+        orderTicketHoveredVisual.gameObject.SetActive(false);
     }
 }
