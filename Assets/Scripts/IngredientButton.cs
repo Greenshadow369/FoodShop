@@ -13,10 +13,13 @@ public class IngredientButton : MonoBehaviour
         mixingStation = FindObjectOfType<MixingStation>();
     }
 
-    private void Start() {
-        button.onClick.AddListener(() => {
-            mixingStation.CreateIngredient(ingredientSO);
-        });
+    // private void Start() {
+    //     button.onClick.AddListener(() => {
+    //         mixingStation.CreateIngredient(ingredientSO);
+    //     });
+    // }
+
+    private void OnMouseDown() {
+        mixingStation.CreateIngredient(ingredientSO);
     }
-    
 }
