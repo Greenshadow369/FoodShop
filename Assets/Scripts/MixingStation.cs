@@ -9,9 +9,11 @@ public class MixingStation : MonoBehaviour
     [SerializeField] private Transform ingredientPrefab;
     [SerializeField] private Transform plateGroup;
     [SerializeField] private List<IngredientSO> startingIngredientList;
+    [SerializeField] private IngredientSO finalizeIngredient;
     private Vector2 startingPos;
     private Vector2 currentPos;
     private int currentSortOrder;
+    private bool isDishFinished = false;
 
     void Start()
     {
@@ -41,6 +43,17 @@ public class MixingStation : MonoBehaviour
         }
     }
 
+    public void IngredientButtonClicked(IngredientSO ingredientSO)
+    {
+        if(isDishFinished)
+        {
+            //Dish is already finished
+            return;
+        }
+
+        CreateIngredient(ingredientSO);
+    }
+
     public Transform CreateIngredient(IngredientSO ingredientSO)
     {
         //Create new ingredient
@@ -56,6 +69,13 @@ public class MixingStation : MonoBehaviour
         spriteRenderer.sortingOrder = currentSortOrder;
 
         ingredient.GetComponent<Ingredient>().SetIngredientSO(ingredientSO);
+
+        //If this is the finalize ingredient then dish is finished
+        if(finalizeIngredient.GetIngredientName() == ingredientSO.GetIngredientName())
+        {
+            isDishFinished = true;
+        }
+
         return ingredient;
     }
 
@@ -64,6 +84,7 @@ public class MixingStation : MonoBehaviour
         DiscardIngredient();
         ResetPosition();
         ResetSortOrder();
+        isDishFinished = false;
     }
 
     private void DiscardIngredient()
@@ -100,9 +121,21 @@ public class MixingStation : MonoBehaviour
         {
             if(trans.TryGetComponent<Ingredient>(out Ingredient ingre))
             {
+                //Ignore ingredient if it is the finalize ingredient
+                if(ingre.GetIngredientName() == finalizeIngredient.GetIngredientName())
+                {
+                    continue;
+                }
+                
+                //Add this ingredient to the list
                 ingredients.Add(ingre);
             }
         }
         return ingredients;
+    }
+
+    public bool IsDishFinished()
+    {
+        return isDishFinished;
     }
 }

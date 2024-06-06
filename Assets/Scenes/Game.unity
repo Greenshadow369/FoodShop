@@ -201,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 447689259}
   - component: {fileID: 447689262}
-  - component: {fileID: 447689261}
+  - component: {fileID: 447689263}
   - component: {fileID: 447689260}
   m_Layer: 0
   m_Name: Patty Station
@@ -239,20 +239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientSO: {fileID: 11400000, guid: 9ac83bda553368047888115b72283990, type: 2}
-  button: {fileID: 0}
---- !u!65 &447689261
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447689258}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.78, y: 0.24, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &447689262
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -305,6 +291,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &447689263
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447689258}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.78, y: 0.24}
+    newSize: {x: 0.81, y: 0.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.78, y: 0.24}
+  m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +536,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1172808425}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &762517549
 Animator:
@@ -557,7 +569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 876805958}
   - component: {fileID: 876805961}
-  - component: {fileID: 876805960}
+  - component: {fileID: 876805962}
   - component: {fileID: 876805959}
   m_Layer: 0
   m_Name: Tomato Station
@@ -594,20 +606,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientSO: {fileID: 11400000, guid: 1615f6532eb9d734d8941578c0266b11, type: 2}
-  button: {fileID: 0}
---- !u!65 &876805960
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876805957}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.81, y: 0.36, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &876805961
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -660,6 +658,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &876805962
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876805957}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.81, y: 0.36}
+    newSize: {x: 0.81, y: 0.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.81, y: 0.36}
+  m_EdgeRadius: 0
 --- !u!1 &937985339
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,7 +1003,6 @@ Transform:
   m_Children:
   - {fileID: 1067940927}
   - {fileID: 1291529649}
-  - {fileID: 2047392571}
   - {fileID: 762517548}
   m_Father: {fileID: 1333896510}
   m_RootOrder: 0
@@ -1262,6 +1285,7 @@ MonoBehaviour:
   plateGroup: {fileID: 762517548}
   startingIngredientList:
   - {fileID: 11400000, guid: 5827c62dfe6cf9b42885676cb7d31899, type: 2}
+  finalizeIngredient: {fileID: 11400000, guid: 98de5f6123baf5a42ad614bbcb15e9fa, type: 2}
 --- !u!114 &1333896512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,7 +1468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1349868268}
   - component: {fileID: 1349868271}
-  - component: {fileID: 1349868270}
+  - component: {fileID: 1349868272}
   - component: {fileID: 1349868269}
   m_Layer: 0
   m_Name: Cheese Station
@@ -1481,20 +1505,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientSO: {fileID: 11400000, guid: 9381eb24800f49d4ba99f25ed6307b0b, type: 2}
-  button: {fileID: 0}
---- !u!65 &1349868270
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1349868267}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.56, y: 0.55, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1349868271
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1547,6 +1557,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1349868272
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349868267}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.56, y: 0.55}
+    newSize: {x: 0.81, y: 0.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.56, y: 0.55}
+  m_EdgeRadius: 0
 --- !u!1 &1437723443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,6 +1814,7 @@ Transform:
   - {fileID: 1856253775}
   - {fileID: 2061634348}
   - {fileID: 447689259}
+  - {fileID: 2047392571}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2088,7 +2125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1856253775}
   - component: {fileID: 1856253778}
-  - component: {fileID: 1856253777}
+  - component: {fileID: 1856253779}
   - component: {fileID: 1856253776}
   m_Layer: 0
   m_Name: Onion Station
@@ -2125,20 +2162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientSO: {fileID: 11400000, guid: 2b538ee859e8f3642994820d9d2267c1, type: 2}
-  button: {fileID: 0}
---- !u!65 &1856253777
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856253774}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.52, y: 0.25, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1856253778
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2191,6 +2214,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1856253779
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856253774}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.52, y: 0.25}
+    newSize: {x: 0.81, y: 0.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.52, y: 0.25}
+  m_EdgeRadius: 0
 --- !u!1 &1941902647
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,6 +2326,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2047392571}
   - component: {fileID: 2047392572}
+  - component: {fileID: 2047392574}
+  - component: {fileID: 2047392573}
   m_Layer: 0
   m_Name: Top Bun
   m_TagString: Untagged
@@ -2291,13 +2342,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047392570}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.5, y: -2.5, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1172808425}
-  m_RootOrder: 2
+  m_Father: {fileID: 1520292614}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2047392572
 SpriteRenderer:
@@ -2351,6 +2402,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2047392573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047392570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628aa5a4a699dec4aab6ee573e3996a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientSO: {fileID: 11400000, guid: 98de5f6123baf5a42ad614bbcb15e9fa, type: 2}
+--- !u!61 &2047392574
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047392570}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.34, y: 0.15}
+    newSize: {x: 0.32, y: 0.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.34, y: 0.15}
+  m_EdgeRadius: 0
 --- !u!1 &2061634347
 GameObject:
   m_ObjectHideFlags: 0
@@ -2361,7 +2451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2061634348}
   - component: {fileID: 2061634351}
-  - component: {fileID: 2061634350}
+  - component: {fileID: 2061634352}
   - component: {fileID: 2061634349}
   m_Layer: 0
   m_Name: Lettuce Station
@@ -2398,20 +2488,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientSO: {fileID: 11400000, guid: 4f86017f722d30c4086ae0cdfe9d9e48, type: 2}
-  button: {fileID: 0}
---- !u!65 &2061634350
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061634347}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.58, y: 0.47, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &2061634351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2464,6 +2540,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2061634352
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061634347}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.58, y: 0.47}
+    newSize: {x: 0.81, y: 0.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.58, y: 0.47}
+  m_EdgeRadius: 0
 --- !u!1 &2103353739
 GameObject:
   m_ObjectHideFlags: 0

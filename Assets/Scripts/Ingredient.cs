@@ -36,10 +36,10 @@ public class Ingredient : MonoBehaviour
     //     return spriteRenderer.sprite;
     // }
 
-    // public string GetIngredientName()
-    // {
-    //     return ingredientName;
-    // }
+    public string GetIngredientName()
+    {
+        return ingredientName;
+    }
 
     // public float GetIngredientThickness()
     // {
