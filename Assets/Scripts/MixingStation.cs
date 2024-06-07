@@ -8,21 +8,18 @@ public class MixingStation : MonoBehaviour
     [SerializeField] private IngredientListSO ingredientListSO;
     [SerializeField] private Transform ingredientPrefab;
     [SerializeField] private Transform plateGroup;
-    [SerializeField] private List<IngredientSO> startingIngredientList;
+    [SerializeField] private IngredientSO starterIngredient;
     [SerializeField] private IngredientSO finalizeIngredient;
     private Vector2 startingPos;
     private Vector2 currentPos;
     private int currentSortOrder;
+    private bool isDishStarted = false;
     private bool isDishFinished = false;
 
     void Start()
     {
-        //Starting position is where the plate is plus starting ingredient thickness
+        //Starting position is where the plate is
         startingPos = new Vector2(plateGroup.position.x, plateGroup.position.y);
-        foreach(IngredientSO ingre in startingIngredientList)
-        {
-            startingPos = new Vector2(startingPos.x, startingPos.y + ingre.GetIngredientThickness());
-        }
 
         currentPos = new Vector2(startingPos.x, startingPos.y);
     }
@@ -45,6 +42,12 @@ public class MixingStation : MonoBehaviour
 
     public void IngredientButtonClicked(IngredientSO ingredientSO)
     {
+        //If this is the starter ingredient then dish is started
+        if(starterIngredient.GetIngredientName() != ingredientSO.GetIngredientName() ^ isDishStarted)
+        {
+            return;
+        }
+
         if(isDishFinished)
         {
             //Dish is already finished
@@ -60,8 +63,9 @@ public class MixingStation : MonoBehaviour
         Transform ingredient = Instantiate(ingredientPrefab, plateGroup.position, Quaternion.identity, plateGroup);
         
         //Move position up according to thickness and set ingredient there
-        currentPos = new Vector2(currentPos.x, currentPos.y + ingredientSO.GetIngredientThickness());
         ingredient.position = currentPos;
+        currentPos = new Vector2(currentPos.x, currentPos.y + ingredientSO.GetIngredientThickness());
+        
 
         //Sort in order
         SpriteRenderer spriteRenderer = ingredient.GetComponent<SpriteRenderer>();
@@ -69,6 +73,9 @@ public class MixingStation : MonoBehaviour
         spriteRenderer.sortingOrder = currentSortOrder;
 
         ingredient.GetComponent<Ingredient>().SetIngredientSO(ingredientSO);
+
+        //Dish is started (whether it is starter ingredient or subsequent ingredients)
+        isDishStarted = true;
 
         //If this is the finalize ingredient then dish is finished
         if(finalizeIngredient.GetIngredientName() == ingredientSO.GetIngredientName())
@@ -84,6 +91,7 @@ public class MixingStation : MonoBehaviour
         DiscardIngredient();
         ResetPosition();
         ResetSortOrder();
+        isDishStarted = false;
         isDishFinished = false;
     }
 
@@ -126,6 +134,12 @@ public class MixingStation : MonoBehaviour
                 {
                     continue;
                 }
+
+                //Ignore ingredient if it is the starter ingredient
+                if(ingre.GetIngredientName() == finalizeIngredient.GetIngredientName())
+                {
+                    continue;
+                }
                 
                 //Add this ingredient to the list
                 ingredients.Add(ingre);
@@ -137,5 +151,10 @@ public class MixingStation : MonoBehaviour
     public bool IsDishFinished()
     {
         return isDishFinished;
+    }
+
+    public bool IsDishStarted()
+    {
+        return isDishStarted;
     }
 }

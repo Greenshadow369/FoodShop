@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientSprite: {fileID: -1921228255, guid: 3beaa7e388f5aa14eb0ef32dd5fc411b, type: 3}
   ingredientName: BurgerBunBottom
-  ingredientThickness: 0.1
+  ingredientThickness: 0.2

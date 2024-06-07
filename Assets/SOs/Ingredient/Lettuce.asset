@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientSprite: {fileID: -1227177936, guid: 83eb90546a8f9834f9289b94d7d6b77a, type: 3}
   ingredientName: Lettuce
-  ingredientThickness: 0.1
+  ingredientThickness: 0.15

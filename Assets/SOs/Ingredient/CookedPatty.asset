@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientSprite: {fileID: -210045434, guid: d1e03b1e021894a4a8a54c0c1f96cfa3, type: 3}
   ingredientName: Cooked Meat Patty
-  ingredientThickness: 0.15
+  ingredientThickness: 0.2
