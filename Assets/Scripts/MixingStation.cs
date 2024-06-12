@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,11 +11,15 @@ public class MixingStation : MonoBehaviour
     [SerializeField] private Transform plateGroup;
     [SerializeField] private IngredientSO starterIngredient;
     [SerializeField] private IngredientSO finalizeIngredient;
+    [SerializeField] private DishStateSO dishStateSO;
+    [SerializeField] private TextMeshProUGUI text;
+
     private Vector2 startingPos;
     private Vector2 currentPos;
     private int currentSortOrder;
     private bool isDishStarted = false;
     private bool isDishFinished = false;
+    
 
     void Start()
     {
@@ -38,17 +43,19 @@ public class MixingStation : MonoBehaviour
                 }
             }
         }
+
+        text.text = dishStateSO.GetDishState();
     }
 
     public void IngredientButtonClicked(IngredientSO ingredientSO)
     {
         //If this is the starter ingredient then dish is started
-        if(starterIngredient.GetIngredientName() != ingredientSO.GetIngredientName() ^ isDishStarted)
+        if(starterIngredient.GetIngredientName() != ingredientSO.GetIngredientName() ^ dishStateSO.IsDishStarted())
         {
             return;
         }
 
-        if(isDishFinished)
+        if(dishStateSO.IsDishFinished())
         {
             //Dish is already finished
             return;
@@ -74,13 +81,16 @@ public class MixingStation : MonoBehaviour
 
         ingredient.GetComponent<Ingredient>().SetIngredientSO(ingredientSO);
 
-        //Dish is started (whether it is starter ingredient or subsequent ingredients)
-        isDishStarted = true;
+        //If this is the starter ingredient then dish is started
+        if(starterIngredient.GetIngredientName() == ingredientSO.GetIngredientName())
+        {
+            dishStateSO.NextState();
+        }
 
         //If this is the finalize ingredient then dish is finished
         if(finalizeIngredient.GetIngredientName() == ingredientSO.GetIngredientName())
         {
-            isDishFinished = true;
+            dishStateSO.NextState();
         }
 
         return ingredient;
@@ -91,8 +101,7 @@ public class MixingStation : MonoBehaviour
         DiscardIngredient();
         ResetPosition();
         ResetSortOrder();
-        isDishStarted = false;
-        isDishFinished = false;
+        dishStateSO.ResetDishState();
     }
 
     private void DiscardIngredient()
@@ -136,7 +145,7 @@ public class MixingStation : MonoBehaviour
                 }
 
                 //Ignore ingredient if it is the starter ingredient
-                if(ingre.GetIngredientName() == finalizeIngredient.GetIngredientName())
+                if(ingre.GetIngredientName() == starterIngredient.GetIngredientName())
                 {
                     continue;
                 }
