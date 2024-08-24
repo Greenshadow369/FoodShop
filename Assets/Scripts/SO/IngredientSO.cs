@@ -10,6 +10,15 @@ public class IngredientSO : ScriptableObject
     [SerializeField] private string ingredientName;
     [SerializeField] private float ingredientThickness;
 
+    [System.Serializable]
+    public class IngredientRecipe
+    {
+       public FoodStationSO foodStationSO;
+       public IngredientSO ingredientSO;
+    }
+
+    [SerializeField] private List<IngredientRecipe> IngredientRecipeList;
+
     public Sprite GetIngredientSprite()
     {
         return ingredientSprite;

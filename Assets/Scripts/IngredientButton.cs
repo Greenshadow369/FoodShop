@@ -10,7 +10,10 @@ public class IngredientButton : MonoBehaviour
     private MixingStation mixingStation;
 
     private void Awake() {
-        mixingStation = FindObjectOfType<MixingStation>();
+        if(GameObject.FindGameObjectWithTag("Mixing Station").TryGetComponent<MixingStation>(out MixingStation mixingStation_))
+        {
+            mixingStation = mixingStation_;
+        }
     }
 
     private void OnMouseDown() {

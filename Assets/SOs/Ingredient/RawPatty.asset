@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: facfe9e78b6931b4a8249d742ab3c841, type: 3}
-  m_Name: CookedPatty
+  m_Name: RawPatty
   m_EditorClassIdentifier: 
-  ingredientSprite: {fileID: -210045434, guid: d1e03b1e021894a4a8a54c0c1f96cfa3, type: 3}
-  ingredientName: Cooked Meat Patty
+  ingredientSprite: {fileID: -1411123779, guid: 1e343a7c4a3afab4fb77826698a5fc4e, type: 3}
+  ingredientName: Raw Meat Patty
   ingredientThickness: 0.2
-  IngredientRecipeList: []
+  IngredientRecipeList:
+  - foodStationSO: {fileID: 11400000, guid: af2dc71fec7520941acd87548ba0149e, type: 2}
+    ingredientSO: {fileID: 11400000, guid: 9ac83bda553368047888115b72283990, type: 2}
