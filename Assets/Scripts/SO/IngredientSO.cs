@@ -17,7 +17,7 @@ public class IngredientSO : ScriptableObject
        public IngredientSO ingredientSO;
     }
 
-    [SerializeField] private List<IngredientRecipe> IngredientRecipeList;
+    [SerializeField] private List<IngredientRecipe> ingredientRecipeList;
 
     public Sprite GetIngredientSprite()
     {
@@ -32,5 +32,10 @@ public class IngredientSO : ScriptableObject
     public float GetIngredientThickness()
     {
         return ingredientThickness;
+    }
+    
+    public List<IngredientRecipe> GetIngredientRecipeList()
+    {
+        return ingredientRecipeList;
     }
 }

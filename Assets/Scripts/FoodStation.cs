@@ -6,7 +6,16 @@ using UnityEngine;
 //FoodStationSO will provide detailed functions such grilling, pouring drink or slicing 
 public class FoodStation : MonoBehaviour
 {
-    private List<IngredientListSO> currentIngredientList;
+    //private List<IngredientListSO> currentIngredientList;
     [SerializeField] private FoodStationSO foodStationSO;
     
+    public FoodStationSO GetFoodStationSO()
+    {
+        return foodStationSO;
+    }
+
+    public void PassIngredient(Ingredient ingredient)
+    {
+        ingredient.gameObject.transform.position = transform.position;
+    }
 }
