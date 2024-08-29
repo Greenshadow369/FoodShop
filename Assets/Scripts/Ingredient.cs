@@ -13,47 +13,21 @@ public class Ingredient : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     private string ingredientName;
     private float ingredientThickness;
-    private List<IngredientSO.IngredientRecipe> ingredientRecipeList;
+    private List<IngredientSO.IngredientRecipe> ingredientRecipeList= new List<IngredientSO.IngredientRecipe>();
     
     private void Start()
     {
-        ingredientRecipeList = new List<IngredientSO.IngredientRecipe>();
+        //SetIngredientSO(ing);
     }
 
-    private void Update()
+    private void OnMouseDown()
     {
-        if(TryHandleIngredientSelection())
-        {
-            return;
-        }
-    }
-
-    private bool TryHandleIngredientSelection()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D rayHit = Physics2D.GetRayIntersection(ray, ingredientLayerMask);
-            if(rayHit.collider != null)
-            {
-                Debug.Log(rayHit.transform);
-                if(rayHit.transform.TryGetComponent<Ingredient>(out Ingredient ingredient))
-                {
-                    
-                    ingredient.IngredientClicked();
-
-                    return true;
-                }
-            }
-        }
-        return false;
+        IngredientClicked();
     }
 
     private void IngredientClicked()
     {
-        //multiple ingredient get clicked when on plate(error?)
-        Debug.Log("ingredient clicked");
-
+        Debug.Log(ingredientName);
         TriggerIngredient();
     }
 
@@ -62,7 +36,7 @@ public class Ingredient : MonoBehaviour
         if(ingredientRecipeList.Count > 0)
         {
             FoodStationSO targetFoodStationSO = ingredientRecipeList[0].foodStationSO;
-            IngredientSO targerIngredientSO = ingredientRecipeList[0].ingredientSO;
+            IngredientSO targetIngredientSO = ingredientRecipeList[0].ingredientSO;
             List<FoodStation> foodStationList =  FindObjectsByType<FoodStation>(FindObjectsSortMode.None).ToList<FoodStation>();
             
             foreach(FoodStation foodSt in foodStationList)
@@ -71,11 +45,9 @@ public class Ingredient : MonoBehaviour
                 {
                     Debug.Log("moved");
                     foodSt.PassIngredient(this);
-                    SetIngredientSO(targerIngredientSO);
+                    SetIngredientSO(targetIngredientSO);
                 }
             }
-
-            ingredientRecipeList.RemoveAt(0);
         }
     }
 
@@ -92,6 +64,7 @@ public class Ingredient : MonoBehaviour
         ingredientName = ingredientSO.GetIngredientName();
         ingredientThickness = ingredientSO.GetIngredientThickness();
         ingredientRecipeList = ingredientSO.GetIngredientRecipeList();
+        Debug.Log(ingredientRecipeList != null);
     }
 
     public IngredientSO GetIngredientSO()

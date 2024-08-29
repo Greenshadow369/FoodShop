@@ -102,6 +102,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   spriteRenderer: {fileID: 8415244645009151139}
+  ing: {fileID: 11400000, guid: 2b538ee859e8f3642994820d9d2267c1, type: 2}
 --- !u!61 &9074868602346752370
 BoxCollider2D:
   m_ObjectHideFlags: 0
