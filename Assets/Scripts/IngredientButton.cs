@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class IngredientButton : MonoBehaviour
 {
     [SerializeField] IngredientSO ingredientSO;
+    [SerializeField] Transform ingredientPrefab;
+
 
     private MixingStation mixingStation;
 
@@ -18,5 +20,11 @@ public class IngredientButton : MonoBehaviour
 
     private void OnMouseDown() {
         mixingStation.IngredientButtonClicked(ingredientSO);
+    }
+
+    private void IngredientButtonClicked()
+    {
+        //Create new ingredient
+        //Transform ingredient = Instantiate(ingredientPrefab, ingredientSpawnPoint.position, Quaternion.identity, ingredientSpawnPoint);
     }
 }

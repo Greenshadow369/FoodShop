@@ -44,7 +44,7 @@ public class Ingredient : MonoBehaviour
                 if(foodSt.GetFoodStationSO() == targetFoodStationSO)
                 {
                     Debug.Log("moved");
-                    foodSt.PassIngredient(this);
+                    foodSt.ReceiveIngredient(this);
                     SetIngredientSO(targetIngredientSO);
                 }
             }

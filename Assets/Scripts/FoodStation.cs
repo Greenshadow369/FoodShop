@@ -8,13 +8,14 @@ public class FoodStation : MonoBehaviour
 {
     //private List<IngredientListSO> currentIngredientList;
     [SerializeField] private FoodStationSO foodStationSO;
+    [SerializeField] Transform ingredientSpawnPoint;
     
     public FoodStationSO GetFoodStationSO()
     {
         return foodStationSO;
     }
 
-    public void PassIngredient(Ingredient ingredient)
+    public void ReceiveIngredient(Ingredient ingredient)
     {
         ingredient.gameObject.transform.position = transform.position;
     }
