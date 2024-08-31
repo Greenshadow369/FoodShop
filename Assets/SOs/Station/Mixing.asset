@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f5cecb0ed293994bb6acfb03a4339de, type: 3}
-  m_Name: Plate
+  m_Name: Mixing
   m_EditorClassIdentifier: 

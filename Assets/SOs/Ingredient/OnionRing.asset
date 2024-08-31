@@ -15,3 +15,6 @@ MonoBehaviour:
   ingredientSprite: {fileID: -1082783486, guid: 0393b6c9a5778ac4c890cda81417951f, type: 3}
   ingredientName: Onion Ring
   ingredientThickness: 0.1
+  ingredientRecipeList:
+  - foodStationSO: {fileID: 11400000, guid: 4fc16450300198a4ca8703d56b92d436, type: 2}
+    ingredientSO: {fileID: 0}

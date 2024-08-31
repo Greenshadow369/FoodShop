@@ -31,18 +31,27 @@ public class Ingredient : MonoBehaviour
         TriggerIngredient();
     }
 
-    private void TriggerIngredient()
+    public void TriggerIngredient()
     {
         if(ingredientRecipeList.Count > 0)
         {
             FoodStationSO targetFoodStationSO = ingredientRecipeList[0].foodStationSO;
             IngredientSO targetIngredientSO = ingredientRecipeList[0].ingredientSO;
+            //If there is no designated ingredient, it will stay the same
+            if(targetIngredientSO == null)
+            {
+                targetIngredientSO = ingredientSO;
+            }
             List<FoodStation> foodStationList =  FindObjectsByType<FoodStation>(FindObjectsSortMode.None).ToList<FoodStation>();
             
             foreach(FoodStation foodSt in foodStationList)
             {
                 if(foodSt.GetFoodStationSO() == targetFoodStationSO)
                 {
+                    if(foodSt.IsActionValid(this.GetIngredientSO()))
+                    {
+                        break;
+                    }
                     Debug.Log("moved");
                     foodSt.ReceiveIngredient(this);
                     SetIngredientSO(targetIngredientSO);
@@ -64,7 +73,6 @@ public class Ingredient : MonoBehaviour
         ingredientName = ingredientSO.GetIngredientName();
         ingredientThickness = ingredientSO.GetIngredientThickness();
         ingredientRecipeList = ingredientSO.GetIngredientRecipeList();
-        Debug.Log(ingredientRecipeList != null);
     }
 
     public IngredientSO GetIngredientSO()
@@ -82,10 +90,10 @@ public class Ingredient : MonoBehaviour
         return ingredientName;
     }
 
-    // public float GetIngredientThickness()
-    // {
-    //     return ingredientThickness;
-    // }
+    public float GetIngredientThickness()
+    {
+        return ingredientThickness;
+    }
 
 
 }

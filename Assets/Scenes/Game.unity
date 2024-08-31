@@ -131,9 +131,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1520292614}
     m_Modifications:
     - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: ingredientSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 5827c62dfe6cf9b42885676cb7d31899, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: foodStationSO
       value: 
       objectReference: {fileID: 11400000, guid: fd135e2b89aac24449c03901f6de0801, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -182,6 +190,10 @@ PrefabInstance:
       propertyPath: ingredientSO
       value: 
       objectReference: {fileID: 11400000, guid: 5827c62dfe6cf9b42885676cb7d31899, type: 2}
+    - target: {fileID: 2025726781839917777, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_Name
       value: Food Station (6)
@@ -305,9 +317,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1520292614}
     m_Modifications:
     - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: ingredientSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 9381eb24800f49d4ba99f25ed6307b0b, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: foodStationSO
       value: 
       objectReference: {fileID: 11400000, guid: 1331d1e5acfd5a94694e461af3db566a, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -356,6 +376,10 @@ PrefabInstance:
       propertyPath: ingredientSO
       value: 
       objectReference: {fileID: 11400000, guid: 9381eb24800f49d4ba99f25ed6307b0b, type: 2}
+    - target: {fileID: 2025726781839917777, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_Name
       value: Food Station (1)
@@ -395,9 +419,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1520292614}
     m_Modifications:
     - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: ingredientSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b538ee859e8f3642994820d9d2267c1, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: foodStationSO
       value: 
       objectReference: {fileID: 11400000, guid: a8d9a00682e30e0428ebf03a1a6e8512, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -446,6 +478,10 @@ PrefabInstance:
       propertyPath: ingredientSO
       value: 
       objectReference: {fileID: 11400000, guid: 2b538ee859e8f3642994820d9d2267c1, type: 2}
+    - target: {fileID: 2025726781839917777, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_Name
       value: Food Station (2)
@@ -561,6 +597,115 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &543227427
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1520292614}
+    m_Modifications:
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: foodStationSO
+      value: 
+      objectReference: {fileID: 11400000, guid: af2dc71fec7520941acd87548ba0149e, type: 2}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917777, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: ingredientSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ac83bda553368047888115b72283990, type: 2}
+    - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_Name
+      value: Food Station (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917791, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4d913295fdc21ae41846827fd8264303, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
 --- !u!1 &555695610
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,9 +1111,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1520292614}
     m_Modifications:
     - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: ingredientSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 026943dc43a0fff47a42688e632e14c8, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: foodStationSO
       value: 
       objectReference: {fileID: 11400000, guid: efe4cfa37c8587648b635ec1eb86176c, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1017,6 +1170,10 @@ PrefabInstance:
       propertyPath: ingredientSO
       value: 
       objectReference: {fileID: 11400000, guid: 026943dc43a0fff47a42688e632e14c8, type: 2}
+    - target: {fileID: 2025726781839917777, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_Name
       value: Food Station (4)
@@ -1497,6 +1654,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172926943}
   m_CullTransparentMesh: 1
+--- !u!4 &1301465327 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+  m_PrefabInstance: {fileID: 543227427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1333896509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,6 +1670,7 @@ GameObject:
   - component: {fileID: 1333896510}
   - component: {fileID: 1333896511}
   - component: {fileID: 1333896512}
+  - component: {fileID: 1333896513}
   m_Layer: 0
   m_Name: Mixing Station
   m_TagString: Mixing Station
@@ -1579,6 +1742,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1333896513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333896509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad4e4225e41575645bd0204fafd2936d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodStationSO: {fileID: 11400000, guid: 4fc16450300198a4ca8703d56b92d436, type: 2}
+  ingredientSpawnPoint: {fileID: 762517548}
+  ingredientPrefab: {fileID: 208704149224715025, guid: 9b721581d78b8784eb81fc89e62556ec, type: 3}
+  isIngredientSpawner: 0
+  ingredientSO: {fileID: 0}
+  dishStateSO: {fileID: 11400000, guid: 1578baa11c7c4be4c8b0e579cf511ec9, type: 2}
 --- !u!1 &1338455916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,6 +2137,7 @@ Transform:
   - {fileID: 963144467}
   - {fileID: 1545118279}
   - {fileID: 98330184}
+  - {fileID: 1301465327}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1967,9 +2149,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1520292614}
     m_Modifications:
     - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: ingredientSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 98de5f6123baf5a42ad614bbcb15e9fa, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: foodStationSO
       value: 
       objectReference: {fileID: 11400000, guid: e6184d8f32335e4438d3d1e30a8e3297, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2018,6 +2208,10 @@ PrefabInstance:
       propertyPath: ingredientSO
       value: 
       objectReference: {fileID: 11400000, guid: 98de5f6123baf5a42ad614bbcb15e9fa, type: 2}
+    - target: {fileID: 2025726781839917777, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_Name
       value: Food Station (5)
@@ -2280,7 +2474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1821621766
 Transform:
   m_ObjectHideFlags: 0
@@ -2310,6 +2504,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodStationSO: {fileID: 11400000, guid: af2dc71fec7520941acd87548ba0149e, type: 2}
   ingredientSpawnPoint: {fileID: 0}
+  ingredientPrefab: {fileID: 0}
+  isIngredientSpawner: 0
+  ingredientSO: {fileID: 0}
+  dishStateSO: {fileID: 0}
 --- !u!61 &1821621768
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2572,9 +2770,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1520292614}
     m_Modifications:
     - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: ingredientSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f86017f722d30c4086ae0cdfe9d9e48, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: foodStationSO
       value: 
       objectReference: {fileID: 11400000, guid: 68af24884c273644a9497d6b85c314a8, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2623,6 +2829,10 @@ PrefabInstance:
       propertyPath: ingredientSO
       value: 
       objectReference: {fileID: 11400000, guid: 4f86017f722d30c4086ae0cdfe9d9e48, type: 2}
+    - target: {fileID: 2025726781839917777, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_Name
       value: Food Station (3)
@@ -2724,6 +2934,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1520292614}
     m_Modifications:
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: ingredientSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 1615f6532eb9d734d8941578c0266b11, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: foodStationSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 51e6927073374d547b06dde425ddd1d6, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2767,6 +2989,10 @@ PrefabInstance:
     - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917777, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isIngredientSpawner
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_Name

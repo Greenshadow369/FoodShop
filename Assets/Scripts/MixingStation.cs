@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -38,7 +39,7 @@ public class MixingStation : MonoBehaviour
             {
                 if(trans.TryGetComponent<Ingredient>(out Ingredient ingre))
                 {
-                    IngredientSO ing = ingre.GetIngredientSO();
+                    String ing = ingre.GetIngredientName();
                     Debug.Log(ing);
                 }
             }
@@ -47,40 +48,77 @@ public class MixingStation : MonoBehaviour
         text.text = dishStateSO.GetDishState();
     }
 
-    public void IngredientButtonClicked(IngredientSO ingredientSO)
-    {
-        //If this is the starter ingredient then dish is started
-        if(starterIngredient.GetIngredientName() != ingredientSO.GetIngredientName() ^ dishStateSO.IsDishStarted())
-        {
-            return;
-        }
+    // public void IngredientButtonClicked(IngredientSO ingredientSO)
+    // {
+    //     //Check the current state of the dish
+    //     if(starterIngredient.GetIngredientName() != ingredientSO.GetIngredientName() ^ dishStateSO.IsDishStarted())
+    //     {
+    //         return;
+    //     }
 
-        if(dishStateSO.IsDishFinished())
-        {
-            //Dish is already finished
-            return;
-        }
+    //     if(dishStateSO.IsDishFinished())
+    //     {
+    //         //Dish is already finished
+    //         return;
+    //     }
 
-        CreateIngredient(ingredientSO);
-    }
+    //     CreateIngredient(ingredientSO);
+    // }
 
-    public Transform CreateIngredient(IngredientSO ingredientSO)
-    {
-        //Create new ingredient
-        Transform ingredient = Instantiate(ingredientPrefab, plateGroup.position, Quaternion.identity, plateGroup);
+    // public Transform CreateIngredient(IngredientSO ingredientSO)
+    // {
+    //     //Create new ingredient
+    //     Transform ingredient = Instantiate(ingredientPrefab, plateGroup.position, Quaternion.identity, plateGroup);
         
+    //     //Move position up according to thickness and set ingredient there
+    //     ingredient.position = currentPos;
+    //     currentPos = new Vector2(currentPos.x, currentPos.y + ingredientSO.GetIngredientThickness());
+        
+
+    //     //Sort in order
+    //     SpriteRenderer spriteRenderer = ingredient.GetComponent<SpriteRenderer>();
+    //     currentSortOrder++;
+    //     spriteRenderer.sortingOrder = currentSortOrder;
+
+    //     ingredient.GetComponent<Ingredient>().SetIngredientSO(ingredientSO);
+
+    //     UpdateDishState(ingredientSO);
+
+    //     return ingredient;
+    // }
+
+    public void PlaceIngredient(Ingredient ingre)
+    {
+        // //Check the current state of the dish
+        // if(starterIngredient.GetIngredientName() != ingre.GetIngredientName() ^ dishStateSO.IsDishStarted())
+        // {
+        //     return;
+        // }
+
+        // if(dishStateSO.IsDishFinished())
+        // {
+        //     //Dish is already finished
+        //     return;
+        // }
+
+        Transform ingredientTransform = ingre.gameObject.transform;
         //Move position up according to thickness and set ingredient there
-        ingredient.position = currentPos;
-        currentPos = new Vector2(currentPos.x, currentPos.y + ingredientSO.GetIngredientThickness());
+        ingredientTransform.position = currentPos;
+        currentPos = new Vector2(currentPos.x, currentPos.y + ingre.GetIngredientThickness());
         
 
         //Sort in order
-        SpriteRenderer spriteRenderer = ingredient.GetComponent<SpriteRenderer>();
+        SpriteRenderer spriteRenderer = ingre.GetComponent<SpriteRenderer>();
         currentSortOrder++;
         spriteRenderer.sortingOrder = currentSortOrder;
 
-        ingredient.GetComponent<Ingredient>().SetIngredientSO(ingredientSO);
+        IngredientSO ingreSO = ingre.GetComponent<Ingredient>().GetIngredientSO();
 
+        UpdateDishState(ingreSO);
+    }
+
+    private void UpdateDishState(IngredientSO ingredientSO)
+    {
         //If this is the starter ingredient then dish is started
         if(starterIngredient.GetIngredientName() == ingredientSO.GetIngredientName())
         {
@@ -92,8 +130,6 @@ public class MixingStation : MonoBehaviour
         {
             dishStateSO.NextState();
         }
-
-        return ingredient;
     }
 
     public void EmptyPlate()
@@ -129,6 +165,11 @@ public class MixingStation : MonoBehaviour
     public IngredientListSO GetIngredientListSO()
     {
         return ingredientListSO;
+    }
+
+    public IngredientSO GetStarterIngredientSO()
+    {
+        return starterIngredient;
     }
 
     public List<Ingredient> GetDish()
