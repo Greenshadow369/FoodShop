@@ -46,7 +46,7 @@ public class FoodStation : MonoBehaviour
 
     private void IngredientButtonClicked()
     {
-        if(IsActionValid(ingredientSO))
+        if(!IsActionValid(ingredientSO))
         {
             return;
         }

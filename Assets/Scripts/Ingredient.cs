@@ -48,7 +48,7 @@ public class Ingredient : MonoBehaviour
             {
                 if(foodSt.GetFoodStationSO() == targetFoodStationSO)
                 {
-                    if(foodSt.IsActionValid(this.GetIngredientSO()))
+                    if(!foodSt.IsActionValid(this.GetIngredientSO()))
                     {
                         break;
                     }
