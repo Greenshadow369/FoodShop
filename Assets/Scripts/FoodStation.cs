@@ -10,13 +10,16 @@ public class FoodStation : MonoBehaviour
     [Header("Food Station")]
     [SerializeField] private FoodStationSO foodStationSO;
     [SerializeField] Transform ingredientSpawnPoint;
-    
     [SerializeField] Transform ingredientPrefab;
+
     [Header("Can this station create ingredient?")]
     [SerializeField] bool isIngredientSpawner;
     [SerializeField] IngredientSO ingredientSO;
 
     [SerializeField] private DishStateSO dishStateSO;
+
+    [Header("Last Station")]
+    [SerializeField] private FoodStationSO mixingStationSO;
 
     private MixingStation mixingStation;
 
@@ -26,6 +29,7 @@ public class FoodStation : MonoBehaviour
         {
             mixingStation = mixingStation_;
         }
+
     }
 
     void Update()
@@ -86,19 +90,24 @@ public class FoodStation : MonoBehaviour
     {
         bool isValid = true;
 
-        Debug.Log("mix: " + mixingStation.GetStarterIngredientSO().GetIngredientName());
-        Debug.Log("SO: " + ingreSO.GetIngredientName());
-        //Check the current state of the dish
-        if(mixingStation.GetStarterIngredientSO().GetIngredientName() != ingreSO.GetIngredientName() ^ dishStateSO.IsDishStarted())
+        Debug.Log("state " + (mixingStation.GetStarterIngredientSO().GetIngredientName() != ingreSO.GetIngredientName() ^ dishStateSO.IsDishStarted()));
+        Debug.Log("match " + (ingreSO.GetIngredientRecipeList()[0].foodStationSO == mixingStationSO));
+        //Ingredient can be freely created and passed if it not going to mixing station
+        if(ingreSO.GetIngredientRecipeList()[0].foodStationSO == mixingStationSO)
         {
-            isValid = false;
-        }
+            //Check the current state of the dish
+            if(mixingStation.GetStarterIngredientSO().GetIngredientName() != ingreSO.GetIngredientName() ^ dishStateSO.IsDishStarted())
+            {
+                isValid = false;
+            }
 
-        if(dishStateSO.IsDishFinished())
-        {
-            //Dish is already finished
-            isValid = false;
+            if(dishStateSO.IsDishFinished())
+            {
+                //Dish is already finished
+                isValid = false;
+            }
         }
+        
 
         return isValid;
     }

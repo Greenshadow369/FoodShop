@@ -18,5 +18,3 @@ MonoBehaviour:
   ingredientRecipeList:
   - foodStationSO: {fileID: 11400000, guid: af2dc71fec7520941acd87548ba0149e, type: 2}
     ingredientSO: {fileID: 11400000, guid: 9ac83bda553368047888115b72283990, type: 2}
-  - foodStationSO: {fileID: 11400000, guid: 4fc16450300198a4ca8703d56b92d436, type: 2}
-    ingredientSO: {fileID: 0}
