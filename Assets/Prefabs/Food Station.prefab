@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2025726781839917788}
   - component: {fileID: 2025726781839917777}
   - component: {fileID: -1632527436788617991}
+  - component: {fileID: 7178473672652823292}
   m_Layer: 0
   m_Name: Food Station
   m_TagString: Untagged
@@ -145,6 +146,19 @@ MonoBehaviour:
   ingredientSO: {fileID: 0}
   dishStateSO: {fileID: 11400000, guid: 1578baa11c7c4be4c8b0e579cf511ec9, type: 2}
   mixingStationSO: {fileID: 11400000, guid: 4fc16450300198a4ca8703d56b92d436, type: 2}
+  isAvailableStartedOnly: 0
+--- !u!114 &7178473672652823292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025726781839917779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3659e9a354ccb104184f3dd3093de774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2416990120506479496
 GameObject:
   m_ObjectHideFlags: 0

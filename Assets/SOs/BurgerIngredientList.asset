@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da3fa9f0db25585409ff7c8ebdbe015b, type: 3}
-  m_Name: IngredientList
+  m_Name: BurgerIngredientList
   m_EditorClassIdentifier: 
   ingredientList:
   - {fileID: 11400000, guid: 4f86017f722d30c4086ae0cdfe9d9e48, type: 2}
   - {fileID: 11400000, guid: 1615f6532eb9d734d8941578c0266b11, type: 2}
   - {fileID: 11400000, guid: 9381eb24800f49d4ba99f25ed6307b0b, type: 2}
-  - {fileID: 11400000, guid: 026943dc43a0fff47a42688e632e14c8, type: 2}
+  - {fileID: 11400000, guid: 9ac83bda553368047888115b72283990, type: 2}
   - {fileID: 11400000, guid: 2b538ee859e8f3642994820d9d2267c1, type: 2}

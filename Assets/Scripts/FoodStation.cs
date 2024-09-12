@@ -21,7 +21,12 @@ public class FoodStation : MonoBehaviour
     [Header("Last Station")]
     [SerializeField] private FoodStationSO mixingStationSO;
 
+    [Header("Available only when dish started?(Burger Bun Top)")]
+    [SerializeField] private bool isAvailableStartedOnly;
+
     private MixingStation mixingStation;
+    private BoxCollider2D col2D;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -30,6 +35,9 @@ public class FoodStation : MonoBehaviour
             mixingStation = mixingStation_;
         }
 
+        col2D = GetComponent<Collider2D>() as BoxCollider2D;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     void Update()
@@ -37,6 +45,18 @@ public class FoodStation : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.N))
         {
             Debug.Log(dishStateSO.IsDishStarted());
+        }
+
+        if(isAvailableStartedOnly)
+        {
+            if(dishStateSO.IsDishStarted())
+            {
+                UpdateUI(true);
+            }
+            else
+            {
+                UpdateUI(false);
+            }
         }
     }
 
@@ -90,8 +110,6 @@ public class FoodStation : MonoBehaviour
     {
         bool isValid = true;
 
-        Debug.Log("state " + (mixingStation.GetStarterIngredientSO().GetIngredientName() != ingreSO.GetIngredientName() ^ dishStateSO.IsDishStarted()));
-        Debug.Log("match " + (ingreSO.GetIngredientRecipeList()[0].foodStationSO == mixingStationSO));
         //Ingredient can be freely created and passed if it not going to mixing station
         if(ingreSO.GetIngredientRecipeList()[0].foodStationSO == mixingStationSO)
         {
@@ -110,5 +128,11 @@ public class FoodStation : MonoBehaviour
         
 
         return isValid;
+    }
+
+    private void UpdateUI(bool isUIOn)
+    {
+        col2D.enabled = isUIOn;
+        spriteRenderer.enabled = isUIOn;
     }
 }

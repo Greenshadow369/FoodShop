@@ -6,8 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DishStateSO", menuName = "Scriptable Object/DishStateSO")]
 public class DishStateSO : ScriptableObject
 {
-    [NonSerialized] private State dishState;
-    private enum State
+    private State dishState;
+    public enum State
     {
         Empty = 0,
         Started = 1,
@@ -46,7 +46,7 @@ public class DishStateSO : ScriptableObject
         return dishState == State.Finished;
     }
     
-    public String GetDishState()
+    public string GetDishState()
     {
         return dishState.ToString();
     }

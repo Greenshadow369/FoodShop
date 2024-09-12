@@ -1761,6 +1761,7 @@ MonoBehaviour:
   ingredientSO: {fileID: 0}
   dishStateSO: {fileID: 11400000, guid: 1578baa11c7c4be4c8b0e579cf511ec9, type: 2}
   mixingStationSO: {fileID: 11400000, guid: 4fc16450300198a4ca8703d56b92d436, type: 2}
+  isAvailableStartedOnly: 0
 --- !u!1 &1338455916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2157,6 +2158,10 @@ PrefabInstance:
       propertyPath: isIngredientSpawner
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: isAvailableStartedOnly
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2506,6 +2511,7 @@ MonoBehaviour:
   ingredientSO: {fileID: 0}
   dishStateSO: {fileID: 0}
   mixingStationSO: {fileID: 0}
+  isAvailableStartedOnly: 0
 --- !u!61 &1821621768
 BoxCollider2D:
   m_ObjectHideFlags: 0
