@@ -13,7 +13,6 @@ public class MixingStation : MonoBehaviour
     [SerializeField] private IngredientSO starterIngredient;
     [SerializeField] private IngredientSO finalizeIngredient;
     [SerializeField] private DishStateSO dishStateSO;
-    [SerializeField] private TextMeshProUGUI text;
 
     private Vector2 startingPos;
     private Vector2 currentPos;
@@ -44,8 +43,6 @@ public class MixingStation : MonoBehaviour
                 }
             }
         }
-
-        text.text = dishStateSO.GetDishState();
     }
 
     // public void IngredientButtonClicked(IngredientSO ingredientSO)

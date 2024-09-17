@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,6 +10,10 @@ public class OrderManager : MonoBehaviour
     [SerializeField] private IngredientListSO ingredientListSO;
     [SerializeField] private Transform orderPrefab;
     [SerializeField] private Transform orderGroup;
+    
+    [Header("For testing only")]
+    [SerializeField] private DishStateSO dishStateSO;
+    [SerializeField] private TextMeshProUGUI text;
     private OrderSelectionSystem orderSelectionSystem;
     private List<Order> currentOrderList;
     private List<IngredientSO> availableIngredientSOList;
@@ -37,6 +42,7 @@ public class OrderManager : MonoBehaviour
 
     private void Update()
     {
+        text.text = dishStateSO.GetDishState();
         if(Input.GetKeyDown(KeyCode.P))
         {
             

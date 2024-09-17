@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4557961349229681530
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: foodStationSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 4fc16450300198a4ca8703d56b92d436, type: 2}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917777, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: ingredientSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ac83bda553368047888115b72283990, type: 2}
+    - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_Name
+      value: Mixing Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_TagString
+      value: Mixing Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_Size.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_Size.y
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025726781839917791, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1464140816, guid: 126e6d47d8c157349b7050143466aa78, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+--- !u!1 &2548459547603491241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+  m_PrefabInstance: {fileID: 4557961349229681530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &918538213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2548459547603491241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed061c73ec50f504590fcecab46b9a89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientListSO: {fileID: 11400000, guid: 9113ff39b6e3f454d95fe93bcc451912, type: 2}
+  ingredientPrefab: {fileID: 208704149224715025, guid: 9b721581d78b8784eb81fc89e62556ec, type: 3}
+  plateGroup: {fileID: 5612412970922851312}
+  starterIngredient: {fileID: 11400000, guid: 5827c62dfe6cf9b42885676cb7d31899, type: 2}
+  finalizeIngredient: {fileID: 11400000, guid: 98de5f6123baf5a42ad614bbcb15e9fa, type: 2}
+  dishStateSO: {fileID: 11400000, guid: 1578baa11c7c4be4c8b0e579cf511ec9, type: 2}
+--- !u!114 &918538215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2548459547603491241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4095dda3cf64c7647a16c1ac07c17988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ba708f986af5c4d49917bbe29586756a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 918538213}
+        m_TargetAssemblyTypeName: MixingStation, Assembly-CSharp
+        m_MethodName: EmptyPlate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &5612412970922851312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8260281690592452746, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+  m_PrefabInstance: {fileID: 4557961349229681530}
+  m_PrefabAsset: {fileID: 0}
