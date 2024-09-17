@@ -39,15 +39,7 @@ public class OrderManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.P))
         {
-            Order order = orderSelectionSystem.GetSelectedOrder();
-            if(order == null)
-            {
-                return;
-            }
-            foreach(IngredientSO ingredientSO in order.GetMainDishIngredientList())
-            {
-                Debug.Log(ingredientSO.GetIngredientName());
-            }
+            
         }
     }
     

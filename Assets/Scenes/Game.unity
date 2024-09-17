@@ -1707,7 +1707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed061c73ec50f504590fcecab46b9a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientListSO: {fileID: 0}
+  ingredientListSO: {fileID: 11400000, guid: 9113ff39b6e3f454d95fe93bcc451912, type: 2}
   ingredientPrefab: {fileID: 208704149224715025, guid: 9b721581d78b8784eb81fc89e62556ec, type: 3}
   plateGroup: {fileID: 762517548}
   starterIngredient: {fileID: 11400000, guid: 5827c62dfe6cf9b42885676cb7d31899, type: 2}

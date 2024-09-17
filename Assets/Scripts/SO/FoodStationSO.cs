@@ -5,15 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "FoodStationSO", menuName = "Scriptable Object/FoodStationSO")]
 public class FoodStationSO : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private int maxIngredientHold = 0;
 
-    // Update is called once per frame
-    void Update()
+    public int GetMaxIngredientHoldNum()
     {
-        
+        return maxIngredientHold;
     }
 }

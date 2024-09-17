@@ -27,6 +27,7 @@ public class FoodStation : MonoBehaviour
     private MixingStation mixingStation;
     private BoxCollider2D col2D;
     private SpriteRenderer spriteRenderer;
+    private int maxIngredientHold;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class FoodStation : MonoBehaviour
         col2D = GetComponent<Collider2D>() as BoxCollider2D;
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        UpdateStation();
     }
 
     void Update()
@@ -134,5 +136,10 @@ public class FoodStation : MonoBehaviour
     {
         col2D.enabled = isUIOn;
         spriteRenderer.enabled = isUIOn;
+    }
+
+    private void UpdateStation()
+    {
+        
     }
 }
