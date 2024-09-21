@@ -14,11 +14,6 @@ public class Ingredient : MonoBehaviour
     private string ingredientName;
     private float ingredientThickness;
     private List<IngredientSO.IngredientRecipe> ingredientRecipeList= new List<IngredientSO.IngredientRecipe>();
-    
-    private void Start()
-    {
-        //SetIngredientSO(ing);
-    }
 
     private void OnMouseDown()
     {
@@ -54,7 +49,7 @@ public class Ingredient : MonoBehaviour
                         break;
                     }
 
-                    Debug.Log("moved");
+                    //Recieve and set ingredient
                     foodSt.ReceiveIngredient(this);
                     SetIngredientSO(targetIngredientSO);
                 }

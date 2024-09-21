@@ -6,11 +6,10 @@ using UnityEngine;
 
 public class OrderManager : MonoBehaviour
 {
-    //[SerializeField] private List<OrderSO> possibleOrderList;
     [SerializeField] private IngredientListSO ingredientListSO;
     [SerializeField] private Transform orderPrefab;
     [SerializeField] private Transform orderGroup;
-    
+
     [Header("For testing only")]
     [SerializeField] private DishStateSO dishStateSO;
     [SerializeField] private TextMeshProUGUI text;

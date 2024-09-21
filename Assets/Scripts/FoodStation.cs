@@ -50,6 +50,7 @@ public class FoodStation : MonoBehaviour
             Debug.Log(dishStateSO.IsDishStarted());
         }
 
+        //This station will be hidden outside "started" state if "isAvailableStartedOnly" is true
         if(isAvailableStartedOnly)
         {
             if(dishStateSO.IsDishStarted())

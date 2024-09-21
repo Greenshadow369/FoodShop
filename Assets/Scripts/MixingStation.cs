@@ -45,60 +45,10 @@ public class MixingStation : MonoBehaviour
         }
     }
 
-    // public void IngredientButtonClicked(IngredientSO ingredientSO)
-    // {
-    //     //Check the current state of the dish
-    //     if(starterIngredient.GetIngredientName() != ingredientSO.GetIngredientName() ^ dishStateSO.IsDishStarted())
-    //     {
-    //         return;
-    //     }
-
-    //     if(dishStateSO.IsDishFinished())
-    //     {
-    //         //Dish is already finished
-    //         return;
-    //     }
-
-    //     CreateIngredient(ingredientSO);
-    // }
-
-    // public Transform CreateIngredient(IngredientSO ingredientSO)
-    // {
-    //     //Create new ingredient
-    //     Transform ingredient = Instantiate(ingredientPrefab, plateGroup.position, Quaternion.identity, plateGroup);
-        
-    //     //Move position up according to thickness and set ingredient there
-    //     ingredient.position = currentPos;
-    //     currentPos = new Vector2(currentPos.x, currentPos.y + ingredientSO.GetIngredientThickness());
-        
-
-    //     //Sort in order
-    //     SpriteRenderer spriteRenderer = ingredient.GetComponent<SpriteRenderer>();
-    //     currentSortOrder++;
-    //     spriteRenderer.sortingOrder = currentSortOrder;
-
-    //     ingredient.GetComponent<Ingredient>().SetIngredientSO(ingredientSO);
-
-    //     UpdateDishState(ingredientSO);
-
-    //     return ingredient;
-    // }
-
     public void PlaceIngredient(Ingredient ingre)
     {
-        // //Check the current state of the dish
-        // if(starterIngredient.GetIngredientName() != ingre.GetIngredientName() ^ dishStateSO.IsDishStarted())
-        // {
-        //     return;
-        // }
-
-        // if(dishStateSO.IsDishFinished())
-        // {
-        //     //Dish is already finished
-        //     return;
-        // }
-
         Transform ingredientTransform = ingre.gameObject.transform;
+        
         //Move position up according to thickness and set ingredient there
         ingredientTransform.position = currentPos;
         currentPos = new Vector2(currentPos.x, currentPos.y + ingre.GetIngredientThickness());

@@ -6,19 +6,8 @@ using UnityEngine.EventSystems;
 
 public class OrderSelectionSystem : MonoBehaviour
 {
-    public UnityEvent OrderButtonEvent;
     [SerializeField] private Order selectedOrder;
-
-    private void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-        //HandleOrderSelection();
-    }
-
+    public UnityEvent OrderButtonEvent;
     public void SetSelectedOrder(Order order)
     {
         selectedOrder = order;

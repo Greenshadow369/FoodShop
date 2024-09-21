@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Order : MonoBehaviour
 {
-    private OrderUI orderUI;
-
     [Header("Order Info")]
     [SerializeField] List<IngredientSO> defaultIngredientBottomList;
     [SerializeField] List<IngredientSO> defaultIngredientTopList;
+
+    private OrderUI orderUI;
     private List<IngredientSO> mainDishIngredientList;
 
     private void Awake()
