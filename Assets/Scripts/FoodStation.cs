@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 //FoodStation will provide basic functions such as storing and operating
@@ -111,9 +112,10 @@ public class FoodStation : MonoBehaviour
     public bool IsActionValid(IngredientSO ingreSO)
     {
         bool isValid = true;
+        FoodStationSO targetFoodStationSO = ingreSO.GetIngredientRecipeList()[0].foodStationSO;
 
         //Ingredient can be freely created and passed if it not going to mixing station
-        if(ingreSO.GetIngredientRecipeList()[0].foodStationSO == mixingStationSO)
+        if(targetFoodStationSO == mixingStationSO)
         {
             //Check the current state of the dish
             if(mixingStation.GetStarterIngredientSO().GetIngredientName() != ingreSO.GetIngredientName() ^ dishStateSO.IsDishStarted())
@@ -127,8 +129,21 @@ public class FoodStation : MonoBehaviour
                 isValid = false;
             }
         }
-        
 
+        List<FoodStation> foodStationList =  FindObjectsByType<FoodStation>(FindObjectsSortMode.None).ToList<FoodStation>();
+            
+        foreach(FoodStation foodSt in foodStationList)
+        {
+            if(foodSt.GetFoodStationSO() == targetFoodStationSO)
+            {
+                if(foodSt.IsStationFull())
+                {
+                    //Station is full
+                    isValid = false;
+                }
+            }
+        }
+        
         return isValid;
     }
 
@@ -140,6 +155,22 @@ public class FoodStation : MonoBehaviour
 
     private void UpdateStation()
     {
-        
+        maxIngredientHold = foodStationSO.GetMaxIngredientHoldNum();
+    }
+
+    private int GetCurrentIngredientNum()
+    {
+        return ingredientSpawnPoint.childCount;
+    }
+
+    public bool IsStationFull()
+    {
+        int currentNum = GetCurrentIngredientNum();
+        if(currentNum >=  maxIngredientHold)
+        {
+            //Ingredient slots are full
+            return true;
+        }
+        return false;
     }
 }

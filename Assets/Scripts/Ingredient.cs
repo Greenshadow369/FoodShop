@@ -50,8 +50,10 @@ public class Ingredient : MonoBehaviour
                 {
                     if(!foodSt.IsActionValid(this.GetIngredientSO()))
                     {
+                        //Action invalid
                         break;
                     }
+
                     Debug.Log("moved");
                     foodSt.ReceiveIngredient(this);
                     SetIngredientSO(targetIngredientSO);
