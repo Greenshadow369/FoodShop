@@ -13,6 +13,11 @@ public class OrderManager : MonoBehaviour
     [Header("For testing only")]
     [SerializeField] private DishStateSO dishStateSO;
     [SerializeField] private TextMeshProUGUI text;
+    
+    [Header("Fixed ingredients")]
+    [SerializeField] private IngredientSO starterIngredient;
+    [SerializeField] private IngredientSO finalizeIngredient;
+
     private OrderSelectionSystem orderSelectionSystem;
     private List<Order> currentOrderList;
     private List<IngredientSO> availableIngredientSOList;
@@ -57,7 +62,10 @@ public class OrderManager : MonoBehaviour
         //OrderSO orderSO = possibleOrderList[Random.Range(0, possibleOrderList.Count)];
         List<IngredientSO> mainOrderRandomList = new List<IngredientSO>();
 
-        //Random number of ingredients for order
+        //Starter: Adding required fixed starter ingredient
+        mainOrderRandomList.Add(starterIngredient);
+
+        //Filler: Random number of ingredients
         int ingredientNum = Random.Range(1, 4);
         
         for(int i = 0; i < ingredientNum; i++)
@@ -67,6 +75,9 @@ public class OrderManager : MonoBehaviour
             //Add that random ingredient
             mainOrderRandomList.Add(randomIngre);
         }
+
+        //Finalize: Adding required fixed finalize ingredient
+        mainOrderRandomList.Add(finalizeIngredient);
 
         //Store the new order in a list
         currentOrderList.Add(order);
@@ -82,8 +93,8 @@ public class OrderManager : MonoBehaviour
             //Resolve order
             ResolveSubmittedOrder(GetSelectedOrder());
 
-            //Empty plate
-            mixingStation.EmptyPlate();
+            //Reset plate
+            mixingStation.ResetDish();
         }
     }
 
@@ -102,6 +113,7 @@ public class OrderManager : MonoBehaviour
         foreach(Ingredient ingre in dishIngredientList)
         {
             dishIngredientSOList.Add(ingre.GetIngredientSO());
+            Debug.Log(ingre.GetIngredientName());
         }
 
         //Get current selected order

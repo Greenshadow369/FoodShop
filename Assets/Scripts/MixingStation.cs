@@ -79,7 +79,15 @@ public class MixingStation : MonoBehaviour
         }
     }
 
-    public void EmptyPlate()
+    public void DiscardDish()
+    {
+
+        
+        ResetDish();
+    }
+
+    //Reset dish to original state
+    public void ResetDish()
     {
         DiscardIngredient();
         ResetPosition();
@@ -121,23 +129,12 @@ public class MixingStation : MonoBehaviour
 
     public List<Ingredient> GetDish()
     {
+        //Getting all transform at this station and return ingredients in them as a list
         List<Ingredient> ingredients = new List<Ingredient>();
         foreach(Transform trans in plateGroup)
         {
             if(trans.TryGetComponent<Ingredient>(out Ingredient ingre))
             {
-                //Ignore ingredient if it is the finalize ingredient
-                if(ingre.GetIngredientName() == finalizeIngredient.GetIngredientName())
-                {
-                    continue;
-                }
-
-                //Ignore ingredient if it is the starter ingredient
-                if(ingre.GetIngredientName() == starterIngredient.GetIngredientName())
-                {
-                    continue;
-                }
-                
                 //Add this ingredient to the list
                 ingredients.Add(ingre);
             }

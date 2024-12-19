@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 9ac83bda553368047888115b72283990, type: 2}
     - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_Name
-      value: Mixing Station
+      value: Mixing Station Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_TagString
@@ -154,7 +154,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 918538213}
         m_TargetAssemblyTypeName: MixingStation, Assembly-CSharp
-        m_MethodName: EmptyPlate
+        m_MethodName: DiscardDish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
