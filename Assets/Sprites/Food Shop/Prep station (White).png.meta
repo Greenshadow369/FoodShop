@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 126e6d47d8c157349b7050143466aa78
+guid: e7a26f01f8470614ea2988b7efbd7c9a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -78,6 +78,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -105,76 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Utility 1.1_0
+      name: Prep station (White)_0
       rect:
         serializedVersion: 2
-        x: 107
-        y: 323
+        x: 11
+        y: 34
         width: 74
         height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5253d49dd16a6a049b686ab51e9450a9
-      internalID: 1464140816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Utility 1.1_1
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 294
-        width: 34
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57e06772576d76747a0b8b02a8214300
-      internalID: 1697666173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Utility 1.1_2
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 294
-        width: 34
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc0b2117e5f571448bd34bd9942ec271
-      internalID: 1512850756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Utility 1.1_3
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 304
-        width: 118
-        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c41f254070925f41863cc3b0f6392fc
-      internalID: -439281976
+      spriteID: 4fb3a0d8d02a4a647a4a93fb9543377f
+      internalID: -887593581
       vertices: []
       indices: 
       edges: []
@@ -199,10 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Utility 1.1_0: 1464140816
-      Utility 1.1_1: 1697666173
-      Utility 1.1_2: 1512850756
-      Utility 1.1_3: -439281976
+      Prep station (White)_0: -887593581
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

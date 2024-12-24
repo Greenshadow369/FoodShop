@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 00737addbe0cd0647b01a5e5c4c41661
+guid: 039a757f0b462cc4abf29e373da51ae5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Burger bun (O) 1.1_0
+      name: Grill_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 23
-        width: 34
-        height: 15
+        x: 37
+        y: 73
+        width: 118
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,29 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c74d40de773bb5c458e523f0eb996421
-      internalID: -352746996
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Burger bun (O) 1.1_1
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 4
-        width: 34
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79737db57b48a09428ac0658c2f853ed
-      internalID: 1370321338
+      spriteID: a5863df1cfbb01b4f8e97ad9436bcf30
+      internalID: 1656820977
       vertices: []
       indices: 
       edges: []
@@ -169,8 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Burger bun (O) 1.1_0: -352746996
-      Burger bun (O) 1.1_1: 1370321338
+      Grill_0: 1656820977
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

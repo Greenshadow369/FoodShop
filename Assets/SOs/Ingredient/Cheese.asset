@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientSprite: {fileID: 2090249517, guid: 320888160911eca4984a6958f2974431, type: 3}
   ingredientName: Cheese
-  ingredientThickness: 0.1
+  ingredientThickness: 0.15
   ingredientRecipeList:
   - foodStationSO: {fileID: 11400000, guid: 4fc16450300198a4ca8703d56b92d436, type: 2}
     ingredientSO: {fileID: 0}

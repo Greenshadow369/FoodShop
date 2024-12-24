@@ -62,13 +62,13 @@ public class OrderUI : MonoBehaviour
     public void CreateResultSprite(List<IngredientSO> resultList)
     {
         //Bottom ingredients
-        CreateResultSpriteHelper(order.GetDefaultIngredientBottomList());
+        //CreateResultSpriteHelper(order.GetDefaultIngredientBottomList());
 
         //Middle ingredients
         CreateResultSpriteHelper(resultList);
 
         //Top ingredients
-        CreateResultSpriteHelper(order.GetDefaultIngredientTopList());
+        //CreateResultSpriteHelper(order.GetDefaultIngredientTopList());
     }
 
     private void CreateResultSpriteHelper(List<IngredientSO> ingreList)
