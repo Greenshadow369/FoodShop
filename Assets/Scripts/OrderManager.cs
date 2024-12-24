@@ -84,6 +84,9 @@ public class OrderManager : MonoBehaviour
 
         //Pass and set new order info
         order.SetRequiredIngredientSO(mainOrderRandomList);
+
+        // Play sound when adding orders
+        FindAnyObjectByType<AudioManager>().Play("OrderAdded");
     }
 
     public void SubmitCurrentDish()
@@ -92,6 +95,9 @@ public class OrderManager : MonoBehaviour
         {
             //Resolve order
             ResolveSubmittedOrder(GetSelectedOrder());
+
+            // Play sound when selected
+            FindAnyObjectByType<AudioManager>().Play("SubmitDish");
 
             //Reset plate
             mixingStation.ResetDish();
@@ -170,6 +176,9 @@ public class OrderManager : MonoBehaviour
 
     public void SetSelectedOrder(Order order)
     {
+        //Play sound when this order selected
+        FindAnyObjectByType<AudioManager>().Play("ClickOnTicket");
+
         orderSelectionSystem.SetSelectedOrder(order);
     }
 

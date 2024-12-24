@@ -86,6 +86,8 @@ public class FoodStation : MonoBehaviour
         ingredient.SetIngredientSO(ingredientSO);
         //Trigger ingredient
         ingredient.TriggerIngredient();
+        //Play sound for this ingredient
+        FindAnyObjectByType<AudioManager>().Play("ClickOnItem");
     }
 
     public FoodStationSO GetFoodStationSO()

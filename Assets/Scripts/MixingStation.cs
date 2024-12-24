@@ -81,7 +81,8 @@ public class MixingStation : MonoBehaviour
 
     public void DiscardDish()
     {
-
+        // Play sound when discarding dish
+        FindAnyObjectByType<AudioManager>().Play("DiscardDish");
         
         ResetDish();
     }

@@ -1286,7 +1286,7 @@ GameObject:
   - component: {fileID: 1266934859}
   - component: {fileID: 1266934858}
   m_Layer: 0
-  m_Name: SoundManager
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1304,9 +1304,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41e69bf74e364d4cb0d294f3991c17e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundList:
-  - {fileID: 8300000, guid: ec5655bc880366f40a6081b72f6607c4, type: 3}
-  - {fileID: 8300000, guid: 9757380a296788b4fa970cfeafbcbaf2, type: 3}
+  sounds:
+  - soundName: MainTheme
+    clip: {fileID: 8300000, guid: f841fdeced32df94a90c054166d1a67f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - soundName: ClickOnItem
+    clip: {fileID: 8300000, guid: fa9a7644dad73044583099a1ffa9163d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: ClickOnTicket
+    clip: {fileID: 8300000, guid: 1693dbb1e680d3340b0101a894a58ef6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: OrderAdded
+    clip: {fileID: 8300000, guid: 1a5c2b19618153948a3a7f1475ec122d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: DiscardDish
+    clip: {fileID: 8300000, guid: 37043f8ffbcbb7e409a841ee2e625664, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: SubmitDish
+    clip: {fileID: 8300000, guid: 609da64b549f7f64692e4b5c68740f1b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1266934859
 Transform:
   m_ObjectHideFlags: 0
