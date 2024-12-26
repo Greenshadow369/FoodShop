@@ -49,7 +49,7 @@ public class MixingStation : MonoBehaviour
     {
         Transform ingredientTransform = ingre.gameObject.transform;
         
-        //Move position up according to thickness and set ingredient there
+        //Set ingredient and move current position up according to thickness
         ingredientTransform.position = currentPos;
         currentPos = new Vector2(currentPos.x, currentPos.y + ingre.GetIngredientThickness());
         

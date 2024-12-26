@@ -1223,7 +1223,7 @@ MonoBehaviour:
   sounds:
   - soundName: MainTheme
     clip: {fileID: 8300000, guid: f841fdeced32df94a90c054166d1a67f, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 1
     source: {fileID: 0}
