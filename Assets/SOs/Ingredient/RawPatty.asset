@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientSprite: {fileID: -1411123779, guid: 1e343a7c4a3afab4fb77826698a5fc4e, type: 3}
   ingredientName: Raw Meat Patty
-  ingredientThickness: 0.2
+  ingredientThickness: 0.15
   ingredientRecipeList:
   - foodStationSO: {fileID: 11400000, guid: af2dc71fec7520941acd87548ba0149e, type: 2}
     ingredientSO: {fileID: 11400000, guid: 9ac83bda553368047888115b72283990, type: 2}

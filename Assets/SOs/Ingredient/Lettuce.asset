@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: facfe9e78b6931b4a8249d742ab3c841, type: 3}
   m_Name: Lettuce
   m_EditorClassIdentifier: 
-  ingredientSprite: {fileID: -1227177936, guid: 83eb90546a8f9834f9289b94d7d6b77a, type: 3}
+  ingredientSprite: {fileID: -174214151, guid: d3753bdbdc882564f8583ab78f13910b, type: 3}
   ingredientName: Lettuce
   ingredientThickness: 0.15
   ingredientRecipeList:

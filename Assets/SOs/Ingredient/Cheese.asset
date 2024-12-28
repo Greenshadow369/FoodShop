@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: facfe9e78b6931b4a8249d742ab3c841, type: 3}
   m_Name: Cheese
   m_EditorClassIdentifier: 
-  ingredientSprite: {fileID: 2090249517, guid: 320888160911eca4984a6958f2974431, type: 3}
+  ingredientSprite: {fileID: -1325514422, guid: d3efb42d5b4a1364389754b499888dc7, type: 3}
   ingredientName: Cheese
   ingredientThickness: 0.15
   ingredientRecipeList:
