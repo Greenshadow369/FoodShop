@@ -10,7 +10,6 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] float sceneLoadDelay = 2f;
     [SerializeField] float sceneTransitionDelay = 2f;
-    //[SerializeField] Animator sceneTransition;
 
     private AudioManager audioManager;
 
@@ -59,8 +58,6 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(sceneTransitionDelay);
         }
 
-        //sceneTransition.SetTrigger("Ending");
-
         yield return new WaitForSeconds(delay);
 
         /*This solution is found online, which add an event handler that 
@@ -74,27 +71,26 @@ public class LevelManager : MonoBehaviour
         };
     }
 
-    /*IEnumerator WaitAndLoad(string sceneName, bool isTransitionDelayed, float delay, Action changeMusicClip)
+    IEnumerator WaitAndLoad(string sceneName, bool isTransitionDelayed, float delay, Action changeMusicClip)
     {
          if(isTransitionDelayed)
         {
             yield return new WaitForSeconds(sceneTransitionDelay);
         }
 
-        sceneTransition.SetTrigger("Ending");
 
-        yield return new WaitForSeconds(delay); */
+        yield return new WaitForSeconds(delay);
 
         /*This solution is found online, which add an event handler that 
         run after scene fully loaded (including objects)*/
-        /* var op = SceneManager.LoadSceneAsync(sceneName);
+        var op = SceneManager.LoadSceneAsync(sceneName);
         op.completed += (x) => {
             if(sceneName == "Game")
             {
-                cardManager.UseCards();
+                //cardManager.UseCards();
             }
         };
         
         changeMusicClip();
-    }*/
+    }
 }

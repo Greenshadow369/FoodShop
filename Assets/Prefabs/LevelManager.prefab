@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2169410615316323547}
   - component: {fileID: 978725446227921747}
   - component: {fileID: 1971396985}
+  - component: {fileID: 2635121530805969967}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -45,9 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17379d56a931bf54a93e197430028dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneLoadDelay: 2
-  sceneTransitionDelay: 2
-  sceneTransition: {fileID: 0}
+  sceneLoadDelay: 0
+  sceneTransitionDelay: 0
 --- !u!114 &1971396985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +60,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4095dda3cf64c7647a16c1ac07c17988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: e610137a35a4bb24da4c63a1d12c6c73, type: 2}
+  Event: {fileID: 11400000, guid: 2f9f85834e23d054abcb82810c87d103, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 978725446227921747}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2635121530805969967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169410615316323540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4095dda3cf64c7647a16c1ac07c17988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 95889843f45d61f438e323684e904439, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
