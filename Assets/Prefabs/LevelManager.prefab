@@ -48,6 +48,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneLoadDelay: 0
   sceneTransitionDelay: 0
+  OnTimedGameLoaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: cff597f199676f145b87958b8df178f6, type: 2}
+        m_TargetAssemblyTypeName: GameEventSO, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRelaxedGameLoaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 84c687de59831174d8fd312d57c4d764, type: 2}
+        m_TargetAssemblyTypeName: GameEventSO, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1971396985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +96,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 978725446227921747}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadGame
+        m_MethodName: LoadTimedGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -94,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 978725446227921747}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadGame
+        m_MethodName: LoadRelaxedGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

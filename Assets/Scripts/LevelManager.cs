@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
@@ -11,7 +12,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] float sceneLoadDelay = 2f;
     [SerializeField] float sceneTransitionDelay = 2f;
 
+    public UnityEvent OnTimedGameLoaded;
+    public UnityEvent OnRelaxedGameLoaded;
     private AudioManager audioManager;
+    private bool isRelaxedModeNext;
 
     private void Awake()
     {
@@ -24,9 +28,21 @@ public class LevelManager : MonoBehaviour
         instance = this;
     }
 
-    public void LoadGame()
+    private void LoadGame()
     {
         StartCoroutine(WaitAndLoad("Game", false, sceneLoadDelay));
+    }
+
+    public void LoadTimedGame()
+    {
+        isRelaxedModeNext = false;
+        LoadGame();
+    }
+
+    public void LoadRelaxedGame()
+    {
+        isRelaxedModeNext = true;
+        LoadGame();
     }
 
     public void LoadMainMenu()
@@ -66,7 +82,14 @@ public class LevelManager : MonoBehaviour
         op.completed += (x) => {
             if(sceneName == "Game")
             {
-                
+                if(isRelaxedModeNext)
+                {
+                    OnRelaxedGameLoaded.Invoke();
+                }
+                else
+                {
+                    OnTimedGameLoaded.Invoke();
+                }
             }
         };
     }
