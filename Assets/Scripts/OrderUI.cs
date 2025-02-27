@@ -52,7 +52,6 @@ public class OrderUI : MonoBehaviour
             requirementImage.sprite = ingredientSO.GetIngredientSprite();
 
             //Sort sprite layer ordering
-            z--;
             Canvas requirementCanvas = requirement.GetComponent<Canvas>();
             requirementCanvas.overrideSorting = true;
             requirementCanvas.sortingOrder = z++;
@@ -82,7 +81,6 @@ public class OrderUI : MonoBehaviour
             resultImage.sprite = ingredientSO.GetIngredientSprite();
 
             //Sort sprite layer ordering
-            z--;
             Canvas resultCanvas = result.GetComponent<Canvas>();
             resultCanvas.overrideSorting = true;
             resultCanvas.sortingOrder = z++;
