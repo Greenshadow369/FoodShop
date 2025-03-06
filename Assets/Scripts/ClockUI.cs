@@ -14,28 +14,45 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ClockUI : MonoBehaviour {
 
     [SerializeField] private float realSecondPerDay = 90f;
-
     [SerializeField] private Transform clockHourHandTransform;
     [SerializeField] private Transform clockMinuteHandTransform;
     [SerializeField] private Transform clockSecondHandTransform;
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI realTimeText;
     [SerializeField] private float timeLimit;
+    [SerializeField] private GameObject clockUI;
+
+    public UnityEvent OnLevelTimeEnd;
 
     private float day;
     private float totalTime;
+    private bool gameEnded = false;
 
     private void Update() {
-        //Stop clock when clock run over time limit
-        if(totalTime > timeLimit)
+        if(gameEnded)
         {
             return;
         }
+
+
+        //Stop clock when clock run over time limit
+        if(totalTime > timeLimit)
+        {
+            //Level time end
+            OnLevelTimeEnd.Invoke();
+
+            //End game
+            gameEnded = true;
+            return;
+        }
+
+        
 
         totalTime += Time.deltaTime;
 
@@ -66,11 +83,11 @@ public class ClockUI : MonoBehaviour {
 
     public void EnableClock()
     {
-        transform.gameObject.SetActive(true);
+        clockUI.SetActive(true);
     }
 
     public void DisableClock()
     {
-        transform.gameObject.SetActive(false);
+        clockUI.SetActive(false);
     }
 }

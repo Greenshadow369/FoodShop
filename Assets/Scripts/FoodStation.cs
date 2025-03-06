@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 //FoodStation will provide basic functions such as storing and operating
 //FoodStationSO will provide detailed functions such grilling, pouring drink or slicing 
@@ -47,7 +48,11 @@ public class FoodStation : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.N))
         {
-            Debug.Log(dishStateSO.IsDishStarted());
+            if(EventSystem.current.IsPointerOverGameObject())
+            {
+                Debug.Log("Over object!");
+                return;
+            }
         }
 
         //This station will be hidden outside "started" state if "isAvailableStartedOnly" is true
@@ -64,7 +69,8 @@ public class FoodStation : MonoBehaviour
         }
     }
 
-    private void OnMouseDown() {
+    private void OnMouseDown()
+    {
         //Spawner can be clicked on to create ingredient
         if(isIngredientSpawner)
         {

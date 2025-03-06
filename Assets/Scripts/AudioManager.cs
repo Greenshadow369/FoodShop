@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("There are more than one TurnSystem! " + transform + " - " + instance);
+            Debug.LogError("There are more than one AudioManager! " + transform + " - " + instance);
             Destroy(gameObject);
             // This is to make sure no more code is called before
             // the object is destroyed
