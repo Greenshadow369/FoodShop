@@ -9,18 +9,12 @@ public class Ingredient : MonoBehaviour
     private IngredientSO ingredientSO;
 
     [Header("Ingredient Info")]
-    [SerializeField] private LayerMask ingredientLayerMask;
     [SerializeField] private SpriteRenderer spriteRenderer;
     private string ingredientName;
     private float ingredientThickness;
     private List<IngredientSO.IngredientRecipe> ingredientRecipeList= new List<IngredientSO.IngredientRecipe>();
 
-    private void OnMouseDown()
-    {
-        IngredientClicked();
-    }
-
-    private void IngredientClicked()
+    public void IngredientClicked()
     {
         Debug.Log(ingredientName);
         TriggerIngredient();

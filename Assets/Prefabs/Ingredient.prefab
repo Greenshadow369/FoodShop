@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -514543173
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2012576389, guid: 3beaa7e388f5aa14eb0ef32dd5fc411b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_Size: {x: 0.34, y: 0.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &-5851862493362232883
@@ -98,11 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4ceec2159252a489fb4c9f6c6d8ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
   spriteRenderer: {fileID: 8415244645009151139}
-  ing: {fileID: 11400000, guid: 2b538ee859e8f3642994820d9d2267c1, type: 2}
 --- !u!61 &9074868602346752370
 BoxCollider2D:
   m_ObjectHideFlags: 0

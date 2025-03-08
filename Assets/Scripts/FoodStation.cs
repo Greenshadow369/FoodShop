@@ -69,7 +69,7 @@ public class FoodStation : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void FoodStationClicked()
     {
         //Spawner can be clicked on to create ingredient
         if(isIngredientSpawner)

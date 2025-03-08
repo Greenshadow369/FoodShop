@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2025726781839917788}
   - component: {fileID: -1632527436788617991}
   - component: {fileID: 7178473672652823292}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food Station
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8260281690592452746}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ingredient Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
