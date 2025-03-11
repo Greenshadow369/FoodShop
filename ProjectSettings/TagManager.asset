@@ -47,6 +47,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ingredient
+    uniqueID: 3780424123
+    locked: 0
   - name: Window
     uniqueID: 2876340765
     locked: 0
