@@ -35,6 +35,11 @@ public class ClockUI : MonoBehaviour {
     private bool gameEnded = false;
 
     private void Update() {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            timeLimit = 0;
+        }
+
         if(gameEnded)
         {
             return;

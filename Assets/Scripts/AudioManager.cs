@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("There are more than one AudioManager! " + transform + " - " + instance);
+            Debug.LogWarning("There are more than one AudioManager! " + transform + " - " + instance);
             Destroy(gameObject);
             // This is to make sure no more code is called before
             // the object is destroyed

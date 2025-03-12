@@ -48,11 +48,7 @@ public class FoodStation : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.N))
         {
-            if(EventSystem.current.IsPointerOverGameObject())
-            {
-                Debug.Log("Over object!");
-                return;
-            }
+            
         }
 
         //This station will be hidden outside "started" state if "isAvailableStartedOnly" is true
@@ -93,7 +89,7 @@ public class FoodStation : MonoBehaviour
         //Trigger ingredient
         ingredient.TriggerIngredient();
         //Play sound for this ingredient
-        FindAnyObjectByType<AudioManager>().Play("ClickOnItem");
+        AudioManager.instance.Play("ClickOnItem");
     }
 
     public FoodStationSO GetFoodStationSO()

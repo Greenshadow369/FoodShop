@@ -2247,13 +2247,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de2eeb848c17dcb4e8bb62aded40f6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  realSecondPerDay: 5
+  realSecondPerDay: 90
   clockHourHandTransform: {fileID: 0}
   clockMinuteHandTransform: {fileID: 0}
   clockSecondHandTransform: {fileID: 1794682765}
   timeText: {fileID: 1207521442}
   realTimeText: {fileID: 2113636600}
-  timeLimit: 5
+  timeLimit: 90
   clockUI: {fileID: 124486369}
   OnLevelTimeEnd:
     m_PersistentCalls:
