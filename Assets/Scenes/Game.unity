@@ -2110,6 +2110,10 @@ MonoBehaviour:
   text: {fileID: 1446200007}
   starterIngredient: {fileID: 11400000, guid: 5827c62dfe6cf9b42885676cb7d31899, type: 2}
   finalizeIngredient: {fileID: 11400000, guid: 98de5f6123baf5a42ad614bbcb15e9fa, type: 2}
+  floatReference:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: d3af25ab8864584488401434d1fab636, type: 2}
 --- !u!224 &1338455919
 RectTransform:
   m_ObjectHideFlags: 0

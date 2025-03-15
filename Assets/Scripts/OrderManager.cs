@@ -18,6 +18,9 @@ public class OrderManager : MonoBehaviour
     [SerializeField] private IngredientSO starterIngredient;
     [SerializeField] private IngredientSO finalizeIngredient;
 
+    [Header("Statistics")]
+    public FloatReference floatReference;
+
     private OrderSelectionSystem orderSelectionSystem;
     private List<Order> currentOrderList;
     private List<IngredientSO> availableIngredientSOList;
