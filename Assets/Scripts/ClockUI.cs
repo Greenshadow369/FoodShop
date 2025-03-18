@@ -25,14 +25,21 @@ public class ClockUI : MonoBehaviour {
     [SerializeField] private Transform clockSecondHandTransform;
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI realTimeText;
-    [SerializeField] private float timeLimit;
+    
     [SerializeField] private GameObject clockUI;
+    [SerializeField] private FloatReference levelTime;
 
     public UnityEvent OnLevelTimeEnd;
 
     private float day;
     private float totalTime;
     private bool gameEnded = false;
+    private float timeLimit;
+
+    private void Awake()
+    {
+        timeLimit = levelTime.Value;
+    }
 
     private void Update() {
         if(Input.GetKeyDown(KeyCode.E))

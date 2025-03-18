@@ -19,7 +19,7 @@ public class OrderManager : MonoBehaviour
     [SerializeField] private IngredientSO finalizeIngredient;
 
     [Header("Statistics")]
-    public FloatReference floatReference;
+    [SerializeField] FloatReference orderServed;
 
     private OrderSelectionSystem orderSelectionSystem;
     private List<Order> currentOrderList;
@@ -52,7 +52,7 @@ public class OrderManager : MonoBehaviour
         text.text = dishStateSO.GetDishState();
         if(Input.GetKeyDown(KeyCode.P))
         {
-            
+            Debug.Log(orderServed.Value);
         }
     }
     
@@ -168,6 +168,9 @@ public class OrderManager : MonoBehaviour
         //Discard current order
         Order discardedOrder = order;
         currentOrderList.Remove(order);
+
+        //Record
+        orderServed.Variable.ApplyChange(1);
 
         Destroy(discardedOrder.gameObject);
     }

@@ -1943,7 +1943,7 @@ GameObject:
   - component: {fileID: 1289752144}
   - component: {fileID: 1289752143}
   m_Layer: 0
-  m_Name: Text (TMP) (1)
+  m_Name: Order Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2110,7 +2110,7 @@ MonoBehaviour:
   text: {fileID: 1446200007}
   starterIngredient: {fileID: 11400000, guid: 5827c62dfe6cf9b42885676cb7d31899, type: 2}
   finalizeIngredient: {fileID: 11400000, guid: 98de5f6123baf5a42ad614bbcb15e9fa, type: 2}
-  floatReference:
+  orderServed:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: d3af25ab8864584488401434d1fab636, type: 2}
@@ -2257,8 +2257,11 @@ MonoBehaviour:
   clockSecondHandTransform: {fileID: 1794682765}
   timeText: {fileID: 1207521442}
   realTimeText: {fileID: 2113636600}
-  timeLimit: 90
   clockUI: {fileID: 124486369}
+  levelTime:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 24d2beb9e24daec4db4eb8c31366a7ad, type: 2}
   OnLevelTimeEnd:
     m_PersistentCalls:
       m_Calls:
@@ -2988,7 +2991,7 @@ GameObject:
   - component: {fileID: 1557999398}
   - component: {fileID: 1557999397}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Time Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3353,6 +3356,16 @@ MonoBehaviour:
   backButton: {fileID: 640538526}
   replayButton: {fileID: 1717779289}
   resultCanvas: {fileID: 1719657711}
+  timeText: {fileID: 1557999397}
+  orderText: {fileID: 1289752143}
+  orderServed:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: d3af25ab8864584488401434d1fab636, type: 2}
+  levelTime:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 24d2beb9e24daec4db4eb8c31366a7ad, type: 2}
   ResultBackButtonEvent:
     m_PersistentCalls:
       m_Calls:

@@ -80,6 +80,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  floatSO:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 33e683eaaf7624148af16001a6681948, type: 2}
 --- !u!114 &1971396985
 MonoBehaviour:
   m_ObjectHideFlags: 0
