@@ -1,24 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using DG.Tweening;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TextUpdateTest : MonoBehaviour
 {
-    public FloatReference floatSO;
-    public TextMeshProUGUI UIText;
+    [SerializeField] Transform resultCanvas;
+    [SerializeField] RectTransform canvasRect;
+    [SerializeField] float displacement;
+    private Vector2 startingPosition;
+
+    private void Start()
+    {
+        canvasRect.DOAnchorPosY(1000, 3);
+    }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K))
+        if(displacement > 0)
         {
-            Debug.Log(floatSO.Value);
+            //displacement = displacement - Time.deltaTime * 0.01f;
+            //transform.position = new Vector2(startingPosition.x - Time.deltaTime, startingPosition.y - Time.deltaTime);
         }
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-
-            floatSO.Variable.ApplyChange(1);
-        }
-        UIText.text = floatSO.Value.ToString();
+        
     }
 }

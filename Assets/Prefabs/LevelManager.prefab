@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2635121530805969967}
   - component: {fileID: 1525130794174838565}
   - component: {fileID: 1432035127857374831}
+  - component: {fileID: 6655433877891306895}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -80,10 +81,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  floatSO:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 33e683eaaf7624148af16001a6681948, type: 2}
 --- !u!114 &1971396985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +184,34 @@ MonoBehaviour:
       - m_Target: {fileID: 978725446227921747}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: LoadTimedGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6655433877891306895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169410615316323540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4095dda3cf64c7647a16c1ac07c17988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 2be740e0342a79d449771e448b97f696, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 978725446227921747}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
