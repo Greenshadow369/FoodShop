@@ -3356,6 +3356,7 @@ MonoBehaviour:
   backButton: {fileID: 640538526}
   replayButton: {fileID: 1717779289}
   resultCanvas: {fileID: 1719657711}
+  windowRect: {fileID: 664557048}
   timeText: {fileID: 1557999397}
   orderText: {fileID: 1289752143}
   orderServed:

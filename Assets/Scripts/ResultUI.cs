@@ -4,12 +4,21 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class ResultUI : MonoBehaviour
 {
+    [Header("Canvas")]
+    [SerializeField] private Canvas resultCanvas;
+
+    [Header("Window")]
+    [SerializeField] private RectTransform windowRect;
+
+    [Header("Button")]
     [SerializeField] private Button backButton;
     [SerializeField] private Button replayButton;
-    [SerializeField] private Canvas resultCanvas;
+    
+    [Header("Text")]
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI orderText;
     [SerializeField] private FloatReference orderServed;
@@ -32,7 +41,8 @@ public class ResultUI : MonoBehaviour
     public void EnableUI()
     {
         resultCanvas.enabled = true;
-        
+        //Animate UI
+        windowRect.DOAnchorPosY(1500, 3).From().SetEase(Ease.InOutSine);
         //Update text for UI
         UpdateText();
         //Reset order served value to 0
