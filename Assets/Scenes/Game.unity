@@ -2114,6 +2114,11 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: d3af25ab8864584488401434d1fab636, type: 2}
+  orderSpawnChance: {x: 7, y: 9}
+  timePerOpportunity: {x: 2.307212, y: 6.128989}
+  numMaxOrder: 8
+  Notes: Orders will spawn based on random [Order Spawn Chance] interval out of 10
+    chance for every random time in [Time Per Opportunity] interval
 --- !u!224 &1338455919
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3353,10 +3358,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f50546e4dbacb43bfa5e33f3886bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backButton: {fileID: 640538526}
-  replayButton: {fileID: 1717779289}
   resultCanvas: {fileID: 1719657711}
   windowRect: {fileID: 664557048}
+  backButton: {fileID: 640538526}
+  replayButton: {fileID: 1717779289}
   timeText: {fileID: 1557999397}
   orderText: {fileID: 1289752143}
   orderServed:
