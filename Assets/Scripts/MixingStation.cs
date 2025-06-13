@@ -32,7 +32,7 @@ public class MixingStation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.M))
+        /*if(Input.GetKeyDown(KeyCode.M))
         {
             foreach(Transform trans in plateGroup)
             {
@@ -42,7 +42,7 @@ public class MixingStation : MonoBehaviour
                     Debug.Log(ing);
                 }
             }
-        }
+        }*/
     }
 
     public void PlaceIngredient(Ingredient ingre)

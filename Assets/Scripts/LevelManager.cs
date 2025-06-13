@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] float sceneLoadDelay = 2f;
     [SerializeField] float sceneTransitionDelay = 2f;
+    [SerializeField] Animator sceneTransition;
 
     public UnityEvent OnTimedGameLoaded;
     public UnityEvent OnRelaxedGameLoaded;
@@ -74,6 +75,8 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(sceneTransitionDelay);
         }
 
+        sceneTransition.SetTrigger("StartTransition");
+
         yield return new WaitForSeconds(delay);
 
         /*This solution is found online, which add an event handler that 
@@ -101,6 +104,7 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(sceneTransitionDelay);
         }
 
+        sceneTransition.SetTrigger("StartTransition");
 
         yield return new WaitForSeconds(delay);
 
