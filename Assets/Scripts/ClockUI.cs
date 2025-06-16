@@ -95,11 +95,17 @@ public class ClockUI : MonoBehaviour {
 
     public void EnableClock()
     {
+        //Run the clock
+        this.enabled = true;
+        //Show the clock
         clockUI.SetActive(true);
     }
 
     public void DisableClock()
     {
+        //Stop the clock
+        this.enabled = false;
+        //Hide the clock
         clockUI.SetActive(false);
     }
 }
