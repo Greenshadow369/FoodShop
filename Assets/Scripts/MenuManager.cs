@@ -5,6 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
+//Serialize any menu panel
+[System.Serializable]
+public class MenuPanel
+{
+    public GameObject panel;
+    [HideInInspector] public CanvasGroup canvasGroup;
+    [HideInInspector] public Tween tween;
+}
+
 public class MenuManager : MonoBehaviour
 {
     /*
@@ -14,103 +23,85 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button relaxButton;
     (save in case of moving button events from the button itself to here) */
 
-    [SerializeField] GameObject gameMenu;
-    [SerializeField] GameObject modeMenu;
-    private Tween gameMenuTween;
-    private CanvasGroup gameMenuCanvasGroup;
-    private CanvasGroup modeMenuCanvasGroup;
+    [SerializeField] private MenuPanel gameMenu;
+    [SerializeField] private MenuPanel modeMenu;
 
     private void Awake()
     {
-        modeMenuCanvasGroup = modeMenu.GetComponent<CanvasGroup>();
-        if (modeMenuCanvasGroup == null)
-        {
-            // safety: auto add one if forgot to add one in the inspector
-            modeMenuCanvasGroup = modeMenu.AddComponent<CanvasGroup>();
-        }
-
-        gameMenuCanvasGroup = gameMenu.GetComponent<CanvasGroup>();
-        if (gameMenuCanvasGroup == null)
-        {
-            // safety: auto add one if forgot to add one in the inspector
-            gameMenuCanvasGroup = gameMenu.AddComponent<CanvasGroup>();
-        }
-
-        //Set up animation for reuse
-        gameMenuTween = gameMenu.GetComponent<RectTransform>().DOAnchorPosX(2000, 1)
-                                 .From()
-                                 .SetEase(Ease.OutQuad)
-                                 .SetAutoKill(false)
-                                 .Pause();
-        gameMenuTween.Restart();
-
-        gameMenuTween.OnPlay(() =>
-            {
-                gameMenuCanvasGroup.blocksRaycasts = false;
-            }
-        );
-
-        gameMenuTween.OnRewind(() =>
-            {
-                gameMenu.SetActive(false);
-                gameMenuCanvasGroup.blocksRaycasts = true;
-            }
-        );
-            
-        gameMenuTween.OnComplete(()=>
-            {
-                gameMenuCanvasGroup.blocksRaycasts = true;
-            }
-        );
+        //Setup menus (active state, animation)
+        InitMenu(gameMenu, 2000, true);
+        InitMenu(modeMenu, -2000, false);
     }
 
-    private void ChangeGameMenuActiveState(GameObject target)
+    private void InitMenu(MenuPanel menu, float fromX, bool startActive)
     {
-        if (target.activeSelf)
+        // Ensure CanvasGroup
+        menu.canvasGroup = menu.panel.GetComponent<CanvasGroup>();
+        if (menu.canvasGroup == null)
+            menu.canvasGroup = menu.panel.AddComponent<CanvasGroup>();
+
+        // Determine if needing to temporarily activate the panel for tween initialization
+        bool needsTemporaryActivation = !menu.panel.activeSelf || !startActive;
+        if (needsTemporaryActivation)
+            menu.panel.SetActive(true);
+
+        // Create tween once (paused, reusable)
+        RectTransform rt = menu.panel.GetComponent<RectTransform>();
+        menu.tween = rt.DOAnchorPosX(fromX, 1)
+                    .From()
+                    .SetEase(Ease.OutQuad)
+                    .SetAutoKill(false)
+                    .Pause();
+
+        //Disable interaction during animation
+        menu.tween.OnPlay(() => menu.canvasGroup.blocksRaycasts = false);
+
+        //Disable interaction during rewind animation
+        menu.tween.OnRewind(() =>
         {
-            //Animate game menu transition out
-            //target.GetComponent<RectTransform>().DOAnchorPosX(-2000, 1).From().SetEase(Ease.OutQuad).OnComplete(()
-            //    => target.SetActive(false));
+            menu.panel.SetActive(false);
+            menu.canvasGroup.blocksRaycasts = false;
+        });
 
-            gameMenuTween.PlayBackwards();
+        //Enable interaction after animation
+        menu.tween.OnComplete(() => menu.canvasGroup.blocksRaycasts = true);
 
+        // Play initial animation only if menu should start active
+        if (startActive)
+        {
+            menu.tween.Restart();
+        }
+
+        // Restore panel to inactive if it should start inactive
+        if (!startActive)
+        {
+            menu.panel.SetActive(false);
+            menu.canvasGroup.blocksRaycasts = false;
+        }
+    }
+
+    private void ToggleMenu(MenuPanel menu)
+    {
+        if (menu.panel.activeSelf)
+        {
+            // Animate out
+            menu.tween.PlayBackwards();
         }
         else
         {
-
-            target.SetActive(true);
-            gameMenuTween.Restart();
-            
-            //Animate game menu transition in
-            //target.GetComponent<RectTransform>().DOAnchorPosX(2000, 1).From().SetEase(Ease.OutQuad);
+            // Animate in
+            menu.panel.SetActive(true);
+            menu.tween.Restart();
         }
     }
 
-    private void ChangeModeMenuActiveState(GameObject target)
-    {
-        if (target.activeSelf)
-        {
-            //Animate game menu transition out
-            //target.GetComponent<RectTransform>().DOAnchorPosX(-2000, 1).From().SetEase(Ease.OutQuad).OnComplete(()
-            //    => target.SetActive(false));
-            target.SetActive(false);
-
-        }
-        else
-        {
-            target.SetActive(true);
-            //Animate mode menu transition in
-            //target.GetComponent<RectTransform>().DOAnchorPosX(-2000, 1).From().SetEase(Ease.OutQuad);
-        }
+    // Public buttons call these:
+    public void ToggleGameMenu()
+    { 
+        ToggleMenu(gameMenu);
     }
-
-    public void ChangeGameMenuActiveState()
+    public void ToggleModeMenu()
     {
-        ChangeGameMenuActiveState(gameMenu);
-    }
-
-    public void ChangeModeMenuActiveState()
-    {
-        ChangeModeMenuActiveState(modeMenu);
+        ToggleMenu(modeMenu);
     }
 }

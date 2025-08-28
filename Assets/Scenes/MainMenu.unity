@@ -751,8 +751,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bbad8c7eed186409e2770b63f7caba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMenu: {fileID: 614801423}
-  modeMenu: {fileID: 196313932}
+  gameMenu:
+    panel: {fileID: 614801423}
+    canvasGroup: {fileID: 0}
+  modeMenu:
+    panel: {fileID: 196313932}
+    canvasGroup: {fileID: 0}
 --- !u!114 &513016464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,7 +775,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 513016463}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: ChangeGameMenuActiveState
+        m_MethodName: ToggleGameMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -783,7 +787,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 513016463}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: ChangeModeMenuActiveState
+        m_MethodName: ToggleModeMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -811,7 +815,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 513016463}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: ChangeGameMenuActiveState
+        m_MethodName: ToggleGameMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -823,7 +827,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 513016463}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: ChangeModeMenuActiveState
+        m_MethodName: ToggleModeMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
