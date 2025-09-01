@@ -44,7 +44,7 @@ public class OrderUI : MonoBehaviour
     private void CreateRequirementSpriteHelper(List<IngredientSO> requirementList)
     {
         int z = 0;
-        foreach(IngredientSO ingredientSO in requirementList)
+        foreach (IngredientSO ingredientSO in requirementList)
         {
             //Generate and set ingredient
             Transform requirement = Instantiate(requirementPrefab, requirementPos);
@@ -70,10 +70,10 @@ public class OrderUI : MonoBehaviour
         //CreateResultSpriteHelper(order.GetDefaultIngredientTopList());
     }
 
-    private void CreateResultSpriteHelper(List<IngredientSO> ingreList)
+    private void CreateResultSpriteHelper(List<IngredientSO> resultList)
     {
         int z = 0;
-        foreach(IngredientSO ingredientSO in ingreList)
+        foreach (IngredientSO ingredientSO in resultList)
         {
             //Generate and set ingredient
             Transform result = Instantiate(requirementPrefab, resultPos);
