@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using LazySquirrelLabs.MinMaxRangeAttribute;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OrderManager : MonoBehaviour
 {
@@ -82,13 +84,45 @@ public class OrderManager : MonoBehaviour
             OrderRandomGenerator();
         }
     }
-    
+
     public void AddNewOrder()
     {
-        //Instantiate new prefab order
-        Transform orderTransform = Instantiate(orderPrefab, orderGroup.position, Quaternion.identity, orderGroup);
-        Order order = orderTransform.GetComponent<Order>();
-        
+        RectTransform orderGroupRt = orderGroup as RectTransform;
+        if (orderGroupRt == null)
+        {
+            Debug.LogError("orderGroup must be a UI RectTransform.");
+            return;
+        }
+        if (orderPrefab == null)
+        {
+            Debug.LogError("orderPrefab is null.");
+            return;
+        }
+
+        //Create wrapper that the layout will manage
+        GameObject wrapperGO = new GameObject("OrderWrapper", typeof(RectTransform), typeof(LayoutElement));
+        RectTransform wrapperRt = wrapperGO.GetComponent<RectTransform>();
+        wrapperRt.SetParent(orderGroupRt, false);
+
+        //Make sure the wrapper occupies the last slot in the layout
+        wrapperRt.SetAsLastSibling();
+
+        LayoutElement wrapperLE = wrapperGO.GetComponent<LayoutElement>();
+        wrapperLE.ignoreLayout = false;
+
+        //Instantiate the order prefab as a child of the wrapper
+        Transform orderTransform = Instantiate(orderPrefab, wrapperRt, false);
+        RectTransform orderRt = orderTransform.GetComponent<RectTransform>();
+        if (orderRt == null)
+        {
+            Debug.LogError("orderPrefab root needs a RectTransform.");
+            Destroy(wrapperGO);
+            return;
+        }
+
+        //Change the wrapper size to match the prefab order
+        wrapperRt.sizeDelta = new Vector2(orderRt.rect.width, orderRt.rect.height);
+
         //OrderSO orderSO = possibleOrderList[Random.Range(0, possibleOrderList.Count)];
         List<IngredientSO> mainOrderRandomList = new List<IngredientSO>();
 
@@ -97,8 +131,8 @@ public class OrderManager : MonoBehaviour
 
         //Filler: Random number of ingredients
         int ingredientNum = Random.Range(1, 4);
-        
-        for(int i = 0; i < ingredientNum; i++)
+
+        for (int i = 0; i < ingredientNum; i++)
         {
             //Get a random ingredient
             IngredientSO randomIngre = availableIngredientSOList[Random.Range(0, availableIngredientSOList.Count)];
@@ -109,6 +143,9 @@ public class OrderManager : MonoBehaviour
         //Finalize: Adding required fixed finalize ingredient
         mainOrderRandomList.Add(finalizeIngredient);
 
+        //Store the order in a list
+        Order order = orderTransform.GetComponent<Order>();
+
         //Store the new order in a list
         currentOrderList.Add(order);
 
@@ -117,6 +154,15 @@ public class OrderManager : MonoBehaviour
 
         // Play sound when adding orders
         AudioManager.instance.Play("OrderAdded");
+
+
+
+        // 6) Force layout to update so wrapper is sized/positioned correctly
+        Canvas.ForceUpdateCanvases();
+        LayoutRebuilder.ForceRebuildLayoutImmediate(orderGroupRt);
+
+        /// Tween the inner content. Link the tween to the wrapper so it's auto-killed if wrapper is destroyed
+        orderRt.DOAnchorPosX(1500, 0.5f).From().SetEase(Ease.OutQuad).SetLink(wrapperGO);
     }
 
     public void SubmitCurrentDish()
@@ -189,17 +235,36 @@ public class OrderManager : MonoBehaviour
 
     public void ResolveSubmittedOrder(Order order)
     {
+        if (order == null) return;
+
+        // Remove from tracking immediately
+        currentOrderList.Remove(order);
+
+        // Clear selection if it was selected
+        if (GetSelectedOrder() == order) SetSelectedOrder(null);
+
+        // Record
+        orderServed.Variable.ApplyChange(1);
         
         //Gain cash
 
-        //Discard current order
-        Order discardedOrder = order;
-        currentOrderList.Remove(order);
+        // Find wrapper (parent of the inner order visual)
+        Transform wrapper = order.transform.parent;
+        GameObject toDestroy = (wrapper != null) ? wrapper.gameObject : order.gameObject;
 
-        //Record
-        orderServed.Variable.ApplyChange(1);
+        // Disable interaction if present (use case: maybe disable interaction during exit animation?)
+        //CanvasGroup cg = order.GetComponent<CanvasGroup>() ?? order.gameObject.AddComponent<CanvasGroup>();
+        //cg.blocksRaycasts = false;
 
-        Destroy(discardedOrder.gameObject);
+        // Kill any tweens linked to this object (if any)
+        DOTween.Kill(toDestroy);
+
+        Destroy(toDestroy);
+
+        // Optional: force layout rebuild now if you need instant reflow
+        // RectTransform parentRt = orderGroup as RectTransform;
+        // if (parentRt != null)
+        //     LayoutRebuilder.ForceRebuildLayoutImmediate(parentRt);
     }
 
     public Order GetSelectedOrder()
