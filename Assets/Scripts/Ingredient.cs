@@ -22,25 +22,27 @@ public class Ingredient : MonoBehaviour
 
     public void TriggerIngredient()
     {
-        if(ingredientRecipeList.Count > 0)
+        //Consider where the ingredient should go next and check for conditions to do so
+        if (ingredientRecipeList.Count > 0)
         {
             FoodStationSO targetFoodStationSO = ingredientRecipeList[0].foodStationSO;
             IngredientSO targetIngredientSO = ingredientRecipeList[0].ingredientSO;
             //If there is no designated ingredient, it will stay the same
-            if(targetIngredientSO == null)
+            if (targetIngredientSO == null)
             {
                 targetIngredientSO = ingredientSO;
             }
-            List<FoodStation> foodStationList =  FindObjectsByType<FoodStation>(FindObjectsSortMode.None).ToList<FoodStation>();
-            
-            foreach(FoodStation foodSt in foodStationList)
+            List<FoodStation> foodStationList = FindObjectsByType<FoodStation>(FindObjectsSortMode.None).ToList<FoodStation>();
+
+            //Search through all food stations
+            foreach (FoodStation foodSt in foodStationList)
             {
-                if(foodSt.GetFoodStationSO() == targetFoodStationSO)
+                if (foodSt.GetFoodStationSO() == targetFoodStationSO)
                 {
-                    if(!foodSt.IsActionValid(this.GetIngredientSO()))
+                    if (!foodSt.IsActionValid(this.GetIngredientSO()))
                     {
                         //Action invalid
-                        break;
+                        return;
                     }
 
                     //Recieve and set ingredient

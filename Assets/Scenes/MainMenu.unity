@@ -2061,6 +2061,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Button
       objectReference: {fileID: 0}
+    - target: {fileID: 485434043262238757, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c6b57cd4c60e3154c9d9ac6607eb4f07, type: 2}
+    - target: {fileID: 485434043262238757, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2903735309445089745, guid: c6b57cd4c60e3154c9d9ac6607eb4f07, type: 2}
+    - target: {fileID: 485434043262238757, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485434043262238757, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
 --- !u!1001 &772814519710033615
