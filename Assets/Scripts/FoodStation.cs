@@ -99,6 +99,7 @@ public class FoodStation : MonoBehaviour
 
     public void ReceiveIngredient(Ingredient ingredient)
     {
+        //Get ingredient transform
         Transform ingredientTransform = ingredient.gameObject.transform;
 
         //Set parent
