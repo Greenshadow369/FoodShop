@@ -280,6 +280,11 @@ public class OrderManager : MonoBehaviour
         orderSelectionSystem.SetSelectedOrder(order);
     }
 
+    public List<Order> GetCurrentOrderList()
+    {
+        return currentOrderList;
+    }
+
     public Order GetFirstOrder()
     {
         return currentOrderList[0];
