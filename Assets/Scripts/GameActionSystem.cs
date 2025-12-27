@@ -8,12 +8,6 @@ public class GameActionSystem : MonoBehaviour
     [SerializeField] private LayerMask foodStationLayerMask;
     [SerializeField] private LayerMask ingredientLayerMask;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -41,34 +35,38 @@ public class GameActionSystem : MonoBehaviour
             // }
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D rayHit = Physics2D.GetRayIntersection(ray, ingredientLayerMask);
-            if(rayHit.collider != null)
+            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, ingredientLayerMask);
+
+            if (!hit.collider)
             {
-                if(rayHit.transform.TryGetComponent<Ingredient>(out Ingredient ingredient))
-                {
-                    // if(selectedUnit == unit)
-                    // {
-                    //     //Unit is already selected
-                    //     return false;
-                    // }
-
-                    // if(unit is Enemy)
-                    // {
-                    //     //Unit is an enemy
-                    //     return false;
-                    // }
-
-                    //SetSelectedUnit(unit);
-
-                    ingredient.IngredientClicked();
-
-                    return true;
-                }
+                return false;
             }
+                
+
+            if (!hit.transform.TryGetComponent(out Ingredient ingredient))
+            {
+                return false;
+            }
+
+            // if(selectedUnit == unit)
+            // {
+            //     //Unit is already selected
+            //     return false;
+            // }
+
+            // if(unit is Enemy)
+            // {
+            //     //Unit is an enemy
+            //     return false;
+            // }
+
+            //SetSelectedUnit(unit);
+
+            ingredient.IngredientClicked();
+            return true;
+
         }
         return false;
-
-        
     }
 
     private void HandleSelectedStation()

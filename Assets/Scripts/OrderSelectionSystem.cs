@@ -19,11 +19,6 @@ public class OrderSelectionSystem : MonoBehaviour
         }
     }
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            selectedOrder.GetComponent<RectTransform>().DOAnchorPosX(1500, 0.5f).From().SetEase(Ease.OutQuad);
-        }
-
         //Auto select first order if none selected
         if(selectedOrder == null && orderManager.GetCurrentOrderList().Count > 0)
         {
