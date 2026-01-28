@@ -21,11 +21,6 @@ public class OrderUI : MonoBehaviour
 
     private void Awake()
     {
-        if(GameObject.FindGameObjectWithTag("Order Manager").TryGetComponent<OrderManager>(out OrderManager orderManager_))
-        {
-            orderManager = orderManager_;
-        }
-
         order = GetComponent<Order>();
     }
 
@@ -34,6 +29,11 @@ public class OrderUI : MonoBehaviour
         orderButton.onClick.AddListener(() => {
             orderManager.SetSelectedOrder(order);
         });
+    }
+
+    public void AssignOrderManager(OrderManager orderManager_)
+    {
+        orderManager = orderManager_;
     }
 
     public void CreateRequirementSprite(List<IngredientSO> requirementList)

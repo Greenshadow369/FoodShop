@@ -134,6 +134,7 @@ MonoBehaviour:
   dishStateSO: {fileID: 11400000, guid: 1578baa11c7c4be4c8b0e579cf511ec9, type: 2}
   mixingStationSO: {fileID: 11400000, guid: 4fc16450300198a4ca8703d56b92d436, type: 2}
   isAvailableStartedOnly: 0
+  mixingStation: {fileID: 918538213, guid: 244d9868b5a19484387bbdae4956a199, type: 3}
 --- !u!114 &7178473672652823292
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: foodStationSO
       value: 
       objectReference: {fileID: 11400000, guid: 4fc16450300198a4ca8703d56b92d436, type: 2}
+    - target: {fileID: -1632527436788617991, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
+      propertyPath: mixingStation
+      value: 
+      objectReference: {fileID: 918538213}
     - target: {fileID: 2025726781839917776, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -70,10 +74,6 @@ PrefabInstance:
     - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_Name
       value: Mixing Station Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025726781839917779, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
-      propertyPath: m_TagString
-      value: Mixing Station
       objectReference: {fileID: 0}
     - target: {fileID: 2025726781839917788, guid: 68a6fa795a562fe498e2e4e83a28c333, type: 3}
       propertyPath: m_Size.x

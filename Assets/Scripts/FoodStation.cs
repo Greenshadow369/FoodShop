@@ -26,16 +26,20 @@ public class FoodStation : MonoBehaviour
     [Header("Available only when dish started?(Burger Bun Top)")]
     [SerializeField] private bool isAvailableStartedOnly;
 
-    private MixingStation mixingStation;
+    [Header("References")]
+    [SerializeField] private MixingStation mixingStation;
+
     private BoxCollider2D col2D;
     private SpriteRenderer spriteRenderer;
     private int maxIngredientHold;
 
     private void Awake()
     {
-        if(GameObject.FindGameObjectWithTag("Mixing Station").TryGetComponent<MixingStation>(out MixingStation mixingStation_))
+        if (mixingStation == null)
         {
-            mixingStation = mixingStation_;
+            Debug.LogError(
+                $"[{name} | {GetType().Name}] MixingStation reference is required but not assigned.", this
+            );
         }
 
         col2D = GetComponent<Collider2D>() as BoxCollider2D;
@@ -107,10 +111,10 @@ public class FoodStation : MonoBehaviour
         
         //Set default position
         ingredientTransform.position = ingredientSpawnPoint.position;
-        //Set alternative position if this is Mixing Station
-        if(TryGetComponent<MixingStation>(out MixingStation mixSta))
+        //Set into position if this is the Mixing Station
+        if(foodStationSO == mixingStationSO)
         {
-            mixSta.PlaceIngredient(ingredient);
+            mixingStation.PlaceIngredient(ingredient);
         }
         
         //Set current station reference

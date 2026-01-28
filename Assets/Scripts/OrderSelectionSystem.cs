@@ -8,14 +8,19 @@ using DG.Tweening;
 public class OrderSelectionSystem : MonoBehaviour
 {
     [SerializeField] private Order selectedOrder;
+    [Header("References")]
+    [SerializeField] private OrderManager orderManager;
+
     public UnityEvent OrderButtonEvent;
-    private OrderManager orderManager;
+    
 
     private void Awake()
     {
-        if(TryGetComponent<OrderManager>(out OrderManager orderManager_))
+        if (orderManager == null)
         {
-            orderManager = orderManager_;
+            Debug.LogError(
+                $"[{name} | {GetType().Name}] OrderManager reference is required but not assigned.", this
+            );
         }
     }
     private void Update() {

@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -971,6 +970,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1375,6 +1375,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -2097079659
   m_SortingOrder: 0
@@ -2116,6 +2117,8 @@ MonoBehaviour:
   numMaxOrder: 8
   Notes: Orders will spawn based on random [Order Spawn Chance] interval out of 10
     chance for every random time in [Time Per Opportunity] interval
+  orderSelectionSystem: {fileID: 1338455920}
+  mixingStation: {fileID: 1603063578}
 --- !u!224 &1338455919
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2151,6 +2154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedOrder: {fileID: 0}
+  orderManager: {fileID: 1338455918}
   OrderButtonEvent:
     m_PersistentCalls:
       m_Calls:
@@ -3118,6 +3122,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557999395}
   m_CullTransparentMesh: 1
+--- !u!114 &1603063578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 918538213, guid: 244d9868b5a19484387bbdae4956a199, type: 3}
+  m_PrefabInstance: {fileID: 4557961348519320728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed061c73ec50f504590fcecab46b9a89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1717779287
 GameObject:
   m_ObjectHideFlags: 0
@@ -3317,6 +3332,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -1418626531
   m_SortingOrder: 0

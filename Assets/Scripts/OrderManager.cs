@@ -33,25 +33,31 @@ public class OrderManager : MonoBehaviour
     [TextArea]
     public string Notes;
 
+    [Header("References")]
+    [SerializeField] private OrderSelectionSystem orderSelectionSystem;
+    [SerializeField] private MixingStation mixingStation;
 
-    private OrderSelectionSystem orderSelectionSystem;
     private List<Order> currentOrderList;
     private List<IngredientSO> availableIngredientSOList;
-    private MixingStation mixingStation;
+    
     private float timer;
     
     private float opportunityValue;
 
     private void Awake()
     {
-        if(TryGetComponent<OrderSelectionSystem>(out OrderSelectionSystem orderSe))
+        if (orderSelectionSystem == null)
         {
-            orderSelectionSystem = orderSe;
+            Debug.LogError(
+                $"[{name} | {GetType().Name}] OrderSelectionSystem reference is required but not assigned.", this
+            );
         }
 
-        if(GameObject.FindGameObjectWithTag("Mixing Station").TryGetComponent<MixingStation>(out MixingStation mixingStation_))
+        if (mixingStation == null)
         {
-            mixingStation = mixingStation_;
+            Debug.LogError(
+                $"[{name} | {GetType().Name}] MixingStation reference is required but not assigned.", this
+            );
         }
 
         //Currently all ingredient in the ListSO is available in game
@@ -143,8 +149,12 @@ public class OrderManager : MonoBehaviour
         //Finalize: Adding required fixed finalize ingredient
         mainOrderRandomList.Add(finalizeIngredient);
 
-        //Store the order in a list
+        //Get order components
         Order order = orderTransform.GetComponent<Order>();
+        OrderUI orderUI = orderTransform.GetComponent<OrderUI>();
+
+        //Assign OrderManager to OrderUI
+        orderUI.AssignOrderManager(this);
 
         //Store the new order in a list
         currentOrderList.Add(order);
