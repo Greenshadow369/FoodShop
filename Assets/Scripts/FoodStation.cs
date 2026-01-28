@@ -113,6 +113,8 @@ public class FoodStation : MonoBehaviour
             mixSta.PlaceIngredient(ingredient);
         }
         
+        //Set current station reference
+        ingredient.SetCurrentStation(this);
     }
 
     public bool IsActionValid(IngredientSO ingreSO)

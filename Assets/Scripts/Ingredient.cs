@@ -13,6 +13,7 @@ public class Ingredient : MonoBehaviour
     private string ingredientName;
     private float ingredientThickness;
     private List<IngredientSO.IngredientRecipe> ingredientRecipeList= new List<IngredientSO.IngredientRecipe>();
+    private FoodStation currentStation;
 
     public void IngredientClicked()
     {
@@ -25,7 +26,13 @@ public class Ingredient : MonoBehaviour
         //Consider where the ingredient should go next and check for conditions to do so
         if (ingredientRecipeList.Count > 0)
         {
+            //If the ingredient is already at the target station, no need to proceed
             FoodStationSO targetFoodStationSO = ingredientRecipeList[0].foodStationSO;
+            if (currentStation != null && currentStation.GetFoodStationSO() == ingredientRecipeList[0].foodStationSO)
+            {
+                return;
+            }
+
             IngredientSO targetIngredientSO = ingredientRecipeList[0].ingredientSO;
             //If there is no designated ingredient, it will stay the same
             if (targetIngredientSO == null)
@@ -86,6 +93,11 @@ public class Ingredient : MonoBehaviour
     public float GetIngredientThickness()
     {
         return ingredientThickness;
+    }
+
+    public void SetCurrentStation(FoodStation station)
+    {
+        currentStation = station;
     }
 
 
