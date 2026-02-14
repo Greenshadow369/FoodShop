@@ -26,22 +26,19 @@ public class Ingredient : MonoBehaviour
         //Consider where the ingredient should go next and check for conditions to do so
         if (ingredientRecipeList.Count > 0)
         {
+            var recipe = ingredientRecipeList[0];
+            FoodStationSO targetFoodStationSO = recipe.foodStationSO;
+            
             //If the ingredient is already at the target station, no need to proceed
-            FoodStationSO targetFoodStationSO = ingredientRecipeList[0].foodStationSO;
-            if (currentStation != null && currentStation.GetFoodStationSO() == ingredientRecipeList[0].foodStationSO)
+            if (currentStation != null && currentStation.GetFoodStationSO() == targetFoodStationSO)
             {
                 return;
             }
 
-            IngredientSO targetIngredientSO = ingredientRecipeList[0].ingredientSO;
-            //If there is no designated ingredient, it will stay the same
-            if (targetIngredientSO == null)
-            {
-                targetIngredientSO = ingredientSO;
-            }
-            List<FoodStation> foodStationList = FindObjectsByType<FoodStation>(FindObjectsSortMode.None).ToList<FoodStation>();
+            //Change to new ingredient, if there is no designated ingredient, it will stay the same
+            IngredientSO targetIngredientSO = recipe.ingredientSO ?? ingredientSO;
 
-            //Search through all food stations
+            var foodStationList = FindObjectsByType<FoodStation>(FindObjectsSortMode.None).ToList<FoodStation>();
             foreach (FoodStation foodSt in foodStationList)
             {
                 if (foodSt.GetFoodStationSO() == targetFoodStationSO)
@@ -52,9 +49,12 @@ public class Ingredient : MonoBehaviour
                         return;
                     }
 
-                    //Recieve and set ingredient
-                    foodSt.ReceiveIngredient(this);
-                    SetIngredientSO(targetIngredientSO);
+                    //Pass recipe info to station; let station handle cooking logic
+                    foodSt.ReceiveIngredient(this, recipe);
+                    //Only set ingredientSO immediately if not a cooking step, if requiresCooking, station will handle SetIngredientSO after timer
+                    if (!recipe.requiresCooking)
+                        SetIngredientSO(targetIngredientSO);
+                    //ingredientRecipeList.RemoveAt(0);
                 }
             }
         }

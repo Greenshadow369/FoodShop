@@ -13,8 +13,12 @@ public class IngredientSO : ScriptableObject
     [System.Serializable]
     public class IngredientRecipe
     {
-       public FoodStationSO foodStationSO;
-       public IngredientSO ingredientSO;
+        public FoodStationSO foodStationSO;
+        public IngredientSO ingredientSO;
+        [Tooltip("If true, this step is a cooking process (timer or instant)")]
+        public bool requiresCooking = false;
+        [Tooltip("How long this cooking step takes (seconds, 0 = instant)")]
+        public float cookTime = 0f;
     }
 
     [SerializeField] private List<IngredientRecipe> ingredientRecipeList;

@@ -101,7 +101,7 @@ public class FoodStation : MonoBehaviour
         return foodStationSO;
     }
 
-    public void ReceiveIngredient(Ingredient ingredient)
+    public void ReceiveIngredient(Ingredient ingredient, IngredientSO.IngredientRecipe recipe)
     {
         //Get ingredient transform
         Transform ingredientTransform = ingredient.gameObject.transform;
@@ -111,14 +111,42 @@ public class FoodStation : MonoBehaviour
         
         //Set default position
         ingredientTransform.position = ingredientSpawnPoint.position;
-        //Set into position if this is the Mixing Station
+
+        // Always set current station reference after moving
+        ingredient.SetCurrentStation(this);
+
+        // If this is the Mixing Station, place as before
         if(foodStationSO == mixingStationSO)
         {
             mixingStation.PlaceIngredient(ingredient);
         }
-        
-        //Set current station reference
-        ingredient.SetCurrentStation(this);
+
+        // Cooking logic
+        if (recipe.requiresCooking)
+        {
+            StartCoroutine(CookIngredientCoroutine(ingredient, recipe));
+        }
+        // else: Ingredient.cs will call SetIngredientSO immediately
+    }
+
+    // Coroutine for cooking
+    private IEnumerator CookIngredientCoroutine(Ingredient ingredient, IngredientSO.IngredientRecipe recipe)
+    {
+        float timer = 0f;
+        float cookTime = Mathf.Max(0f, recipe.cookTime);
+        // TODO: Add UI feedback for cooking progress here
+        while (timer < cookTime)
+        {
+            timer += Time.deltaTime;
+            // Optionally update progress UI here
+            yield return null;
+        }
+        // Cooking done, set cooked ingredientSO
+        if (recipe.ingredientSO != null)
+        {
+            ingredient.SetIngredientSO(recipe.ingredientSO);
+        }
+        // Optionally: play sound, auto-forward, etc.
     }
 
     public bool IsActionValid(IngredientSO ingreSO)

@@ -18,3 +18,5 @@ MonoBehaviour:
   ingredientRecipeList:
   - foodStationSO: {fileID: 11400000, guid: 4fc16450300198a4ca8703d56b92d436, type: 2}
     ingredientSO: {fileID: 0}
+    requiresCooking: 0
+    cookTime: 0
