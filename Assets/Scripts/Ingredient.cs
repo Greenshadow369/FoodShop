@@ -12,6 +12,10 @@ public class Ingredient : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     private string ingredientName;
     private float ingredientThickness;
+
+    // Prevent interaction while cooking
+    public bool isCooking = false;
+
     private List<IngredientSO.IngredientRecipe> ingredientRecipeList= new List<IngredientSO.IngredientRecipe>();
     private FoodStation currentStation;
 
@@ -23,12 +27,19 @@ public class Ingredient : MonoBehaviour
 
     public void TriggerIngredient()
     {
+        // Block interaction if ingredient is cooking
+        if (isCooking)
+        {
+            Debug.Log($"Ingredient '{ingredientName}' is currently cooking and cannot be moved.");
+            return;
+        }
+
         //Consider where the ingredient should go next and check for conditions to do so
         if (ingredientRecipeList.Count > 0)
         {
             var recipe = ingredientRecipeList[0];
             FoodStationSO targetFoodStationSO = recipe.foodStationSO;
-            
+
             //If the ingredient is already at the target station, no need to proceed
             if (currentStation != null && currentStation.GetFoodStationSO() == targetFoodStationSO)
             {
@@ -95,10 +106,13 @@ public class Ingredient : MonoBehaviour
         return ingredientThickness;
     }
 
+    public FoodStation GetCurrentStation()
+    {
+        return currentStation;
+    }
+
     public void SetCurrentStation(FoodStation station)
     {
         currentStation = station;
     }
-
-
 }

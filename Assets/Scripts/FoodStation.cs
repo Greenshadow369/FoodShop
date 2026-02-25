@@ -109,8 +109,10 @@ public class FoodStation : MonoBehaviour
         //Set parent
         ingredientTransform.SetParent(ingredientSpawnPoint);
         
-        //Set default position
-        ingredientTransform.position = ingredientSpawnPoint.position;
+        //Set default position and ensure ingredient is in front (lower Z) than current station for interaction
+        Vector3 pos = ingredientSpawnPoint.position;
+        pos.z = transform.position.z - 1f; // 1 unit closer to camera than the station
+        ingredientTransform.position = pos;
 
         // Always set current station reference after moving
         ingredient.SetCurrentStation(this);
@@ -132,6 +134,7 @@ public class FoodStation : MonoBehaviour
     // Coroutine for cooking
     private IEnumerator CookIngredientCoroutine(Ingredient ingredient, IngredientSO.IngredientRecipe recipe)
     {
+        ingredient.isCooking = true; // Start cooking
         float timer = 0f;
         float cookTime = Mathf.Max(0f, recipe.cookTime);
         // TODO: Add UI feedback for cooking progress here
@@ -141,6 +144,9 @@ public class FoodStation : MonoBehaviour
             // Optionally update progress UI here
             yield return null;
         }
+
+        ingredient.isCooking = false; // Done cooking
+
         // Cooking done, set cooked ingredientSO
         if (recipe.ingredientSO != null)
         {
