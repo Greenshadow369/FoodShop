@@ -13,6 +13,7 @@ public class FoodStation : MonoBehaviour
     [SerializeField] private FoodStationSO foodStationSO;
     [SerializeField] Transform ingredientSpawnPoint;
     [SerializeField] Transform ingredientPrefab;
+    [SerializeField] private CookingTimerUI cookingTimerUI;
 
     [Header("Can this station create ingredient?")]
     [SerializeField] bool isIngredientSpawner;
@@ -137,7 +138,7 @@ public class FoodStation : MonoBehaviour
         ingredient.isCooking = true; // Start cooking
         float timer = 0f;
         float cookTime = Mathf.Max(0f, recipe.cookTime);
-        // TODO: Add UI feedback for cooking progress here
+        CookingTimerUI timerUI = Instantiate(cookingTimerUI, ingredientSpawnPoint.position, Quaternion.identity, ingredientSpawnPoint);
         while (timer < cookTime)
         {
             timer += Time.deltaTime;
@@ -152,6 +153,10 @@ public class FoodStation : MonoBehaviour
         {
             ingredient.SetIngredientSO(recipe.ingredientSO);
         }
+
+        //Remove timer UI
+        Destroy(timerUI.gameObject); 
+
         // Optionally: play sound, auto-forward, etc.
     }
 

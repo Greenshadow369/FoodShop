@@ -50,6 +50,9 @@ TagManager:
   - name: Ingredient
     uniqueID: 3780424123
     locked: 0
+  - name: WorldUI
+    uniqueID: 1352600297
+    locked: 0
   - name: Window
     uniqueID: 2876340765
     locked: 0
