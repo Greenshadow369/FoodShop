@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 //FoodStation will provide basic functions such as storing and operating
 //FoodStationSO will provide detailed functions such grilling, pouring drink or slicing 
@@ -13,7 +15,7 @@ public class FoodStation : MonoBehaviour
     [SerializeField] private FoodStationSO foodStationSO;
     [SerializeField] Transform ingredientSpawnPoint;
     [SerializeField] Transform ingredientPrefab;
-    [SerializeField] private CookingTimerUI cookingTimerUI;
+    [SerializeField] private GameObject cookingBarPrefab;
 
     [Header("Can this station create ingredient?")]
     [SerializeField] bool isIngredientSpawner;
@@ -138,7 +140,21 @@ public class FoodStation : MonoBehaviour
         ingredient.isCooking = true; // Start cooking
         float timer = 0f;
         float cookTime = Mathf.Max(0f, recipe.cookTime);
-        CookingTimerUI timerUI = Instantiate(cookingTimerUI, ingredientSpawnPoint.position, Quaternion.identity, ingredientSpawnPoint);
+
+        // Instantiate cooking progress UI
+        GameObject cookingBar = Instantiate(cookingBarPrefab, ingredientSpawnPoint.position, Quaternion.identity, ingredientSpawnPoint);
+        //Manually move the cooking bar below the ingredient
+        Vector3 barPos = cookingBar.transform.localPosition;
+        barPos.y -= 0.1f; // Adjust this value as needed to position the bar below the ingredient
+        cookingBar.transform.localPosition = barPos;
+        //Animate cooking progress UI entry
+        Vector3 realScale = cookingBar.transform.localScale;
+        cookingBar.transform.localScale = Vector3.zero;
+        cookingBar.transform.DOScale(realScale, 0.15f).SetEase(Ease.InOutCirc);
+
+        // Start the cooking progress bar using the CookingProgressAuto script
+        CookingProgressAuto cookingProgress = cookingBar.GetComponentInChildren<CookingProgressAuto>();
+        cookingProgress.StartCooking(cookTime);
         while (timer < cookTime)
         {
             timer += Time.deltaTime;
@@ -155,7 +171,7 @@ public class FoodStation : MonoBehaviour
         }
 
         //Remove timer UI
-        Destroy(timerUI.gameObject); 
+        Destroy(cookingBar.gameObject);
 
         // Optionally: play sound, auto-forward, etc.
     }
