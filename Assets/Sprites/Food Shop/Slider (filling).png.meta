@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf4939c8cbeaab643841285adb69d20e
+guid: e94a9ecba9d8c6746b563c576637177a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,22 +105,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Progress bar (filling) (green)_0
+      name: Slider (filling)_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 45
-        width: 84
-        height: 6
+        x: 8
+        y: 84
+        width: 176
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 1, z: 1, w: 1}
+      border: {x: 9, y: 1, z: 9, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba8699544e048b846a43c991222e8a7f
-      internalID: 1206881271
+      spriteID: 919319ff91b22a542bb115d3caaf7c68
+      internalID: -1579454038
       vertices: []
       indices: 
       edges: []
@@ -136,7 +136,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Progress bar (filling) (green)_0: 1206881271
+      Slider (filling)_0: -1579454038
+      Slider (filling)_1: 518113546
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
