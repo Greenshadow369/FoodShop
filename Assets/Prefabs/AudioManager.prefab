@@ -50,34 +50,40 @@ MonoBehaviour:
     volume: 0.8
     pitch: 1
     loop: 1
+    soundType: {fileID: 11400000, guid: 2ad1ac0a54ef2f14a981b71897c4827a, type: 2}
     source: {fileID: 0}
   - soundName: ClickOnItem
     clip: {fileID: 8300000, guid: fa9a7644dad73044583099a1ffa9163d, type: 3}
     volume: 1
     pitch: 1
     loop: 0
+    soundType: {fileID: 11400000, guid: 4c837f2207797a747bed6e961dacda4d, type: 2}
     source: {fileID: 0}
   - soundName: ClickOnTicket
     clip: {fileID: 8300000, guid: 1693dbb1e680d3340b0101a894a58ef6, type: 3}
     volume: 1
     pitch: 1
     loop: 0
+    soundType: {fileID: 11400000, guid: 4c837f2207797a747bed6e961dacda4d, type: 2}
     source: {fileID: 0}
   - soundName: OrderAdded
     clip: {fileID: 8300000, guid: 1a5c2b19618153948a3a7f1475ec122d, type: 3}
     volume: 1
     pitch: 1
     loop: 0
+    soundType: {fileID: 11400000, guid: 4c837f2207797a747bed6e961dacda4d, type: 2}
     source: {fileID: 0}
   - soundName: DiscardDish
     clip: {fileID: 8300000, guid: 37043f8ffbcbb7e409a841ee2e625664, type: 3}
     volume: 1
     pitch: 1
     loop: 0
+    soundType: {fileID: 11400000, guid: 4c837f2207797a747bed6e961dacda4d, type: 2}
     source: {fileID: 0}
   - soundName: SubmitDish
     clip: {fileID: 8300000, guid: 609da64b549f7f64692e4b5c68740f1b, type: 3}
     volume: 1
     pitch: 1
     loop: 0
+    soundType: {fileID: 11400000, guid: 4c837f2207797a747bed6e961dacda4d, type: 2}
     source: {fileID: 0}

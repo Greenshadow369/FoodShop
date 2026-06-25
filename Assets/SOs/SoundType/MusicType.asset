@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a1d37f1d8cb7fb48b2b60e600eb3e95, type: 3}
+  m_Name: MusicType
+  m_EditorClassIdentifier: Assembly-CSharp::SoundType
+  mixerGroup: {fileID: 1062804723628364507, guid: 3043c082837f8f24f9bb5ae658d43f6d, type: 2}
