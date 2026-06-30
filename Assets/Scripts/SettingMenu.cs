@@ -12,11 +12,18 @@ public class SettingMenu : MonoBehaviour
     [SerializeField] private Toggle highToggle;
     [SerializeField] private Toggle ultraToggle;
     
-    public void SetVolume(float value)
+    public void SetMusicVolume(float value)
     {
         float dB = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20f;
-        Debug.Log("Setting volume to: " + dB);
+        Debug.Log("Setting music volume to: " + dB);
         audioMixer.SetFloat("MusicVolume", dB);
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        float dB = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20f;
+        Debug.Log("Setting SFX volume to: " + dB);
+        audioMixer.SetFloat("SFXVolume", dB);
     }
 
     public void ChangeGameQuality()
