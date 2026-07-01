@@ -24,13 +24,13 @@ public class ResultUI : MonoBehaviour
     [SerializeField] private FloatReference orderServed;
     [SerializeField] private FloatReference levelTime;
 
-    public UnityEvent ResultBackButtonEvent;
+    public UnityEvent ResultMainMenuButtonEvent;
     public UnityEvent ResultReplayButtonEvent;
 
     private void Awake()
     {
         backButton.onClick.AddListener(() => {
-            ResultBackButtonEvent.Invoke();
+            ResultMainMenuButtonEvent.Invoke();
         });
 
         replayButton.onClick.AddListener(() => {
