@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+// Currently unused, better use on click in inspector, or a dedicated script for specific button behavior
 public class ButtonClicked : MonoBehaviour
 {
     [SerializeField] private Button button;

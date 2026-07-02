@@ -439,6 +439,14 @@ PrefabInstance:
       propertyPath: ButtonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 11400000, guid: 2be740e0342a79d449771e448b97f696, type: 2}
+    - target: {fileID: 485434042718646567, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 2be740e0342a79d449771e448b97f696, type: 2}
+    - target: {fileID: 485434042718646567, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
     - target: {fileID: 485434043262238757, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
       propertyPath: m_text
       value: Quit
@@ -1107,6 +1115,14 @@ PrefabInstance:
       propertyPath: ButtonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 11400000, guid: 95889843f45d61f438e323684e904439, type: 2}
+    - target: {fileID: 485434042718646567, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 95889843f45d61f438e323684e904439, type: 2}
+    - target: {fileID: 485434042718646567, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
     - target: {fileID: 485434043262238757, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
       propertyPath: m_text
       value: 'Relaxed
@@ -1718,6 +1734,14 @@ PrefabInstance:
       propertyPath: ButtonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 11400000, guid: dda41e15b39db6e4f8397c0e721d8409, type: 2}
+    - target: {fileID: 485434042718646567, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: dda41e15b39db6e4f8397c0e721d8409, type: 2}
+    - target: {fileID: 485434042718646567, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
     - target: {fileID: 485434043262238757, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
       propertyPath: m_text
       value: Back
@@ -1945,6 +1969,14 @@ PrefabInstance:
       propertyPath: ButtonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 11400000, guid: 2f9f85834e23d054abcb82810c87d103, type: 2}
+    - target: {fileID: 485434042718646567, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f9f85834e23d054abcb82810c87d103, type: 2}
+    - target: {fileID: 485434042718646567, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
     - target: {fileID: 485434043262238757, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
       propertyPath: m_text
       value: Timed
@@ -2061,22 +2093,6 @@ PrefabInstance:
     - target: {fileID: 485434042718646561, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
       propertyPath: m_Name
       value: Start Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 485434043262238757, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: c6b57cd4c60e3154c9d9ac6607eb4f07, type: 2}
-    - target: {fileID: 485434043262238757, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -2903735309445089745, guid: c6b57cd4c60e3154c9d9ac6607eb4f07, type: 2}
-    - target: {fileID: 485434043262238757, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 485434043262238757, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c72d2dbfa34c1944b7b6304bf9657a6, type: 3}
