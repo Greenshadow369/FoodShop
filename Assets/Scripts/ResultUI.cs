@@ -40,18 +40,27 @@ public class ResultUI : MonoBehaviour
 
     public void EnableUI()
     {
+        //Enable canvas
         resultCanvas.enabled = true;
         //Animate UI
-        windowRect.DOAnchorPosY(1500, 3).From().SetEase(Ease.InOutSine);
+        windowRect.DOAnchorPosY(1500, 2).From().SetEase(Ease.InOutSine).SetUpdate(true);
+        //Stop time scale
+        Time.timeScale = 0;
         //Update text for UI
         UpdateText();
         //Reset order served value to 0
         orderServed.Variable.SetValue(0);
+        //Mute SFX volume
+        AudioManager.instance.MuteSFX();
     }
 
     public void DisableUI()
     {
         resultCanvas.enabled = false;
+        //Resume time scale
+        Time.timeScale = 1;
+        //Unmute SFX volume
+        AudioManager.instance.UnmuteSFX();
     }
 
     private void UpdateText()

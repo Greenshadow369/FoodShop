@@ -9,6 +9,12 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance { get; private set;}
     
     public Sound[] sounds;
+    [SerializeField] private AudioMixer audioMixer;
+    
+    private float cachedSfxVolume;
+    private const float MuteVolume = -80f;
+    private bool isSFXMuted;
+    
 
     void Awake()
     {
@@ -65,6 +71,30 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+    }
+
+    //Used to mute SFX volume when opening menus
+    public void MuteSFX()
+    {
+        if (isSFXMuted)
+            return;
+        //Save current SFX volume before muting it
+        audioMixer.GetFloat("SFXVolume", out cachedSfxVolume);
+        //Mute SFX volume
+        audioMixer.SetFloat("SFXVolume", -80f);
+
+        isSFXMuted = true;
+    }
+
+    //Used to unmute SFX volume when closing menus
+    public void UnmuteSFX()
+    {
+        if (!isSFXMuted)
+            return;
+
+        audioMixer.SetFloat("SFXVolume", cachedSfxVolume);
+
+        isSFXMuted = false;
     }
 
 }

@@ -7908,6 +7908,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155d655640bcb1646894148ccdf50030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingCanvas: {fileID: 2000905394}
+  windowRect: {fileID: 724820586}
   audioMixer: {fileID: 24100000, guid: 3043c082837f8f24f9bb5ae658d43f6d, type: 2}
   lowToggle: {fileID: 1645150702}
   mediumToggle: {fileID: 1605279012}

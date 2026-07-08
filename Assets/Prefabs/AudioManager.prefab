@@ -87,3 +87,4 @@ MonoBehaviour:
     loop: 0
     soundType: {fileID: 11400000, guid: 4c837f2207797a747bed6e961dacda4d, type: 2}
     source: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 3043c082837f8f24f9bb5ae658d43f6d, type: 2}

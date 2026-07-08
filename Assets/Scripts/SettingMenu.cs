@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SettingMenu : MonoBehaviour
 {
+    [Header("Canvas")]
+    [SerializeField] private Canvas settingCanvas;
+
+    [Header("Window")]
+    [SerializeField] private RectTransform windowRect;
+
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Toggle lowToggle;
     [SerializeField] private Toggle mediumToggle;
@@ -38,5 +45,37 @@ public class SettingMenu : MonoBehaviour
             QualitySettings.SetQualityLevel(5);
 
         Debug.Log(QualitySettings.names[QualitySettings.GetQualityLevel()]);
+    }
+
+    public void OpenSettings()
+    {
+        //Enable canvas
+        settingCanvas.enabled = true;
+        //Animate UI
+        windowRect.DOAnchorPosY(1500, 0.2f)
+            .From()
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true);
+        //Pause time scale
+        Time.timeScale = 0f;
+        
+        AudioManager.instance.MuteSFX();
+    }
+
+    public void CloseSettings()
+    {
+        //Disable canvas
+        settingCanvas.enabled = false;
+        //Animate UI
+        windowRect.DOAnchorPosY(0, 0.2f)
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true)
+            .OnComplete(() =>
+            {
+                Time.timeScale = 1f;
+                AudioManager.instance.UnmuteSFX();
+            });
+        //Resume time scale
+        Time.timeScale = 1;
     }
 }
