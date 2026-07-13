@@ -48,6 +48,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        Debug.Log("Loading Main Menu");
         StartCoroutine(WaitAndLoad("MainMenu", false, sceneLoadDelay));
     }
 
@@ -72,12 +73,12 @@ public class LevelManager : MonoBehaviour
     {
          if(isTransitionDelayed)
         {
-            yield return new WaitForSeconds(sceneTransitionDelay);
+            yield return new WaitForSecondsRealtime(sceneTransitionDelay);
         }
 
         sceneTransition.SetTrigger("StartTransition");
 
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
 
         /*This solution is found online, which add an event handler that 
         run after scene fully loaded (including objects)*/
@@ -101,12 +102,12 @@ public class LevelManager : MonoBehaviour
     {
          if(isTransitionDelayed)
         {
-            yield return new WaitForSeconds(sceneTransitionDelay);
+            yield return new WaitForSecondsRealtime(sceneTransitionDelay);
         }
 
         sceneTransition.SetTrigger("StartTransition");
 
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
 
         /*This solution is found online, which add an event handler that 
         run after scene fully loaded (including objects)*/

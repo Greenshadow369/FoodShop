@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SettingMenu : MonoBehaviour
@@ -18,6 +19,14 @@ public class SettingMenu : MonoBehaviour
     [SerializeField] private Toggle mediumToggle;
     [SerializeField] private Toggle highToggle;
     [SerializeField] private Toggle ultraToggle;
+    [SerializeField] private GameObject returnToMainMenuButton;
+
+    private void Start()
+    {
+        bool isMainMenu = SceneManager.GetActiveScene().name == "MainMenu";
+
+        returnToMainMenuButton.SetActive(!isMainMenu);
+    }
     
     public void SetMusicVolume(float value)
     {
