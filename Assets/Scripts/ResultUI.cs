@@ -33,9 +33,9 @@ public class ResultUI : MonoBehaviour
             ResultMainMenuButtonEvent.Invoke();
         });
 
-        replayButton.onClick.AddListener(() => {
-            ResultReplayButtonEvent.Invoke();
-        });
+        //replayButton.onClick.AddListener(() => {
+        //    ResultReplayButtonEvent.Invoke();
+        //});
     }
 
     public void EnableUI()

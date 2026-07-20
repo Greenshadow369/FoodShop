@@ -49,6 +49,7 @@ public class FoodStation : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         UpdateStation();
+        RefreshStationVisibility();
     }
 
     void Update()
@@ -58,18 +59,7 @@ public class FoodStation : MonoBehaviour
             
         }
 
-        //This station will be hidden outside "started" state if "isAvailableStartedOnly" is true
-        if(isAvailableStartedOnly)
-        {
-            if(dishStateSO.IsDishStarted())
-            {
-                UpdateUI(true);
-            }
-            else
-            {
-                UpdateUI(false);
-            }
-        }
+        RefreshStationVisibility();
     }
 
     public void FoodStationClicked()
@@ -212,6 +202,17 @@ public class FoodStation : MonoBehaviour
         }
         
         return isValid;
+    }
+
+    private void RefreshStationVisibility()
+    {
+        if (!isAvailableStartedOnly)
+        {
+            return;
+        }
+
+        bool shouldShow = dishStateSO != null && dishStateSO.IsDishStarted();
+        UpdateUI(shouldShow);
     }
 
     private void UpdateUI(bool isUIOn)

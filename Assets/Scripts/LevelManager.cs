@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] float sceneLoadDelay = 2f;
     [SerializeField] float sceneTransitionDelay = 2f;
     [SerializeField] Animator sceneTransition;
+    [SerializeField] private DishStateSO dishStateSO;
 
     public UnityEvent OnTimedGameLoaded;
     public UnityEvent OnRelaxedGameLoaded;
@@ -31,6 +32,16 @@ public class LevelManager : MonoBehaviour
 
     private void LoadGame()
     {
+        if (dishStateSO == null)
+        {
+            Debug.LogWarning("DishStateSO is not assigned in LevelManager. The dish state will not be reset.");
+        }
+        else
+        {
+            dishStateSO.ResetDishState();
+        }
+
+        Time.timeScale = 1f;
         StartCoroutine(WaitAndLoad("Game", false, sceneLoadDelay));
     }
 
@@ -48,7 +59,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        Debug.Log("Loading Main Menu");
+        Time.timeScale = 1f;
         StartCoroutine(WaitAndLoad("MainMenu", false, sceneLoadDelay));
     }
 

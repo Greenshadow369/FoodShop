@@ -267,6 +267,7 @@ MonoBehaviour:
   sceneLoadDelay: 2
   sceneTransitionDelay: 2
   sceneTransition: {fileID: 2034491119}
+  dishStateSO: {fileID: 11400000, guid: 1578baa11c7c4be4c8b0e579cf511ec9, type: 2}
   OnTimedGameLoaded:
     m_PersistentCalls:
       m_Calls:
