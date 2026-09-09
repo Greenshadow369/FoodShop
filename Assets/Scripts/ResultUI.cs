@@ -36,6 +36,8 @@ public class ResultUI : MonoBehaviour
         //replayButton.onClick.AddListener(() => {
         //    ResultReplayButtonEvent.Invoke();
         //});
+
+        DisableUI();
     }
 
     public void EnableUI()
