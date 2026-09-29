@@ -15,8 +15,7 @@ public class ResultUI : MonoBehaviour
     [SerializeField] private RectTransform windowRect;
 
     [Header("Button")]
-    [SerializeField] private Button backButton;
-    [SerializeField] private Button replayButton;
+    [SerializeField] private Button nextButton;
     
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI timeText;
@@ -24,13 +23,12 @@ public class ResultUI : MonoBehaviour
     [SerializeField] private FloatReference orderServed;
     [SerializeField] private FloatReference levelTime;
 
-    public UnityEvent ResultMainMenuButtonEvent;
-    public UnityEvent ResultReplayButtonEvent;
+    public UnityEvent DayEndedRequested;
 
     private void Awake()
     {
-        backButton.onClick.AddListener(() => {
-            ResultMainMenuButtonEvent.Invoke();
+        nextButton.onClick.AddListener(() => {
+            DayEndedRequested.Invoke();
         });
 
         //replayButton.onClick.AddListener(() => {

@@ -12,24 +12,24 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private Button newOrderButton;
     [SerializeField] private Button submitButton;
 
-    public UnityEvent NewOrderButtonEvent;
-    public UnityEvent DiscardButtonEvent;
-    public UnityEvent SubmitButtonEvent;
+    public UnityEvent NewOrderRequested;
+    public UnityEvent DiscardDishRequested;
+    public UnityEvent SubmitOrderRequested;
 
     private void Awake()
     {
         newOrderButton.onClick.AddListener(() => {
-            NewOrderButtonEvent.Invoke();
+            NewOrderRequested.Invoke();
             //orderManager.AddNewOrder();
         });
 
         discardButton.onClick.AddListener(() => {
-            DiscardButtonEvent.Invoke();
+            DiscardDishRequested.Invoke();
             //mixingStation.EmptyPlate();
         });
 
         submitButton.onClick.AddListener(() => {
-            SubmitButtonEvent.Invoke();
+            SubmitOrderRequested.Invoke();
             //SubmitCurrentDish();
         });
     }

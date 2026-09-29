@@ -14,8 +14,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Animator sceneTransition;
     [SerializeField] private DishStateSO dishStateSO;
 
-    public UnityEvent OnTimedGameLoaded;
-    public UnityEvent OnRelaxedGameLoaded;
+    public UnityEvent NewTimedGameRequested;
+    public UnityEvent NewRelaxedGameRequested;
     private AudioManager audioManager;
     private bool isRelaxedModeNext;
 
@@ -63,6 +63,12 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(WaitAndLoad("MainMenu", false, sceneLoadDelay));
     }
 
+    public void LoadPreparation()
+    {
+        Time.timeScale = 1f;
+        StartCoroutine(WaitAndLoad("Preparation", false, sceneLoadDelay));
+    }
+
     /* public void LoadGameOver()
     {
         StartCoroutine(WaitAndLoad("GameOver", true, sceneLoadDelay, 
@@ -99,11 +105,11 @@ public class LevelManager : MonoBehaviour
             {
                 if(isRelaxedModeNext)
                 {
-                    OnRelaxedGameLoaded.Invoke();
+                    NewRelaxedGameRequested.Invoke();
                 }
                 else
                 {
-                    OnTimedGameLoaded.Invoke();
+                    NewTimedGameRequested.Invoke();
                 }
             }
         };

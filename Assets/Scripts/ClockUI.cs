@@ -29,7 +29,7 @@ public class ClockUI : MonoBehaviour {
     [SerializeField] private GameObject clockUI;
     [SerializeField] private FloatReference levelTime;
 
-    public UnityEvent OnLevelTimeEnd;
+    public UnityEvent LevelTimeEnded;
 
     private float day;
     private float totalTime;
@@ -57,7 +57,7 @@ public class ClockUI : MonoBehaviour {
         if(totalTime > timeLimit)
         {
             //Level time end
-            OnLevelTimeEnd.Invoke();
+            LevelTimeEnded.Invoke();
 
             //End game
             gameEnded = true;

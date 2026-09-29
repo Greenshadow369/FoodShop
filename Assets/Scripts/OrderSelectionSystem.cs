@@ -11,8 +11,7 @@ public class OrderSelectionSystem : MonoBehaviour
     [Header("References")]
     [SerializeField] private OrderManager orderManager;
 
-    public UnityEvent OrderButtonEvent;
-    
+    public UnityEvent OrderSelectedStarted;
 
     private void Awake()
     {
@@ -35,7 +34,7 @@ public class OrderSelectionSystem : MonoBehaviour
     public void SetSelectedOrder(Order order)
     {
         selectedOrder = order;
-        OrderButtonEvent.Invoke();
+        OrderSelectedStarted.Invoke();
     }
 
     public Order GetSelectedOrder()

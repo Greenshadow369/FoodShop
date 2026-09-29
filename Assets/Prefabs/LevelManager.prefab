@@ -225,7 +225,6 @@ GameObject:
   - component: {fileID: 978725446227921747}
   - component: {fileID: 1971396985}
   - component: {fileID: 2635121530805969967}
-  - component: {fileID: 1525130794174838565}
   - component: {fileID: 1432035127857374831}
   - component: {fileID: 6655433877891306895}
   - component: {fileID: 780059083582794028}
@@ -268,36 +267,12 @@ MonoBehaviour:
   sceneTransitionDelay: 2
   sceneTransition: {fileID: 2034491119}
   dishStateSO: {fileID: 11400000, guid: 1578baa11c7c4be4c8b0e579cf511ec9, type: 2}
-  OnTimedGameLoaded:
+  NewTimedGameRequested:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: cff597f199676f145b87958b8df178f6, type: 2}
-        m_TargetAssemblyTypeName: GameEventSO, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnRelaxedGameLoaded:
+      m_Calls: []
+  NewRelaxedGameRequested:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 84c687de59831174d8fd312d57c4d764, type: 2}
-        m_TargetAssemblyTypeName: GameEventSO, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1971396985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,35 +319,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 978725446227921747}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadRelaxedGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1525130794174838565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2169410615316323540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4095dda3cf64c7647a16c1ac07c17988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 72120122288d5344f952cdb78a0fb68d, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 978725446227921747}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadMainMenu
+        m_MethodName: LoadPreparation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -400,7 +347,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 978725446227921747}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: LoadTimedGame
+        m_MethodName: LoadPreparation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
