@@ -14,8 +14,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Animator sceneTransition;
     [SerializeField] private DishStateSO dishStateSO;
 
-    public UnityEvent NewTimedGameRequested;
-    public UnityEvent NewRelaxedGameRequested;
+    public UnityEvent NewTimedGameStarted;
+    public UnityEvent NewRelaxedGameStarted;
     private AudioManager audioManager;
     private bool isRelaxedModeNext;
 
@@ -105,11 +105,11 @@ public class LevelManager : MonoBehaviour
             {
                 if(isRelaxedModeNext)
                 {
-                    NewRelaxedGameRequested.Invoke();
+                    NewRelaxedGameStarted.Invoke();
                 }
                 else
                 {
-                    NewTimedGameRequested.Invoke();
+                    NewTimedGameStarted.Invoke();
                 }
             }
         };

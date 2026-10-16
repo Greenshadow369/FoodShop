@@ -267,12 +267,36 @@ MonoBehaviour:
   sceneTransitionDelay: 2
   sceneTransition: {fileID: 2034491119}
   dishStateSO: {fileID: 11400000, guid: 1578baa11c7c4be4c8b0e579cf511ec9, type: 2}
-  NewTimedGameRequested:
+  NewTimedGameStarted:
     m_PersistentCalls:
-      m_Calls: []
-  NewRelaxedGameRequested:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: cff597f199676f145b87958b8df178f6, type: 2}
+        m_TargetAssemblyTypeName: GameEventSO, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NewRelaxedGameStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 84c687de59831174d8fd312d57c4d764, type: 2}
+        m_TargetAssemblyTypeName: GameEventSO, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1971396985
 MonoBehaviour:
   m_ObjectHideFlags: 0
