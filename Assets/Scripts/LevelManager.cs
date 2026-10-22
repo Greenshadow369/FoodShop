@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] float sceneTransitionDelay = 2f;
     [SerializeField] Animator sceneTransition;
     [SerializeField] private DishStateSO dishStateSO;
+    [SerializeField] private WipeToBlackTransition wipeToBlackTransition;
 
     public UnityEvent NewTimedGameStarted;
     public UnityEvent NewRelaxedGameStarted;
@@ -86,56 +87,48 @@ public class LevelManager : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator WaitAndLoad(string sceneName, bool isTransitionDelayed, float delay)
+    IEnumerator WaitAndLoad(string sceneName, bool isTransitionDelayed, float delay, Action changeMusicClip = null)
     {
-         if(isTransitionDelayed)
+        if(isTransitionDelayed)
         {
             yield return new WaitForSecondsRealtime(sceneTransitionDelay);
         }
 
+        // Reset the signal before starting the fade
+        wipeToBlackTransition.ResetFadeToBlackFinished();
+
+        // Start the fade-to-black animation
         sceneTransition.SetTrigger("StartTransition");
 
+        // Wait until the animation event signals completion
+        yield return new WaitUntil(() => wipeToBlackTransition.IsFadeToBlackFinished());
+
+        // Stay on the screen black for the requested duration
         yield return new WaitForSecondsRealtime(delay);
 
-        /*This solution is found online, which add an event handler that 
-        run after scene fully loaded (including objects)*/
+        //Now the screen is just a static black, we can load the next scene without worrying about the transition animation being interrupted
+        //The next scene will be loaded and the transition animation will play again in that scene
+        //Load the scene asynchronously
         var op = SceneManager.LoadSceneAsync(sceneName);
-        op.completed += (x) => {
-            if(sceneName == "Game")
-            {
-                if(isRelaxedModeNext)
-                {
-                    NewRelaxedGameStarted.Invoke();
-                }
-                else
-                {
-                    NewTimedGameStarted.Invoke();
-                }
-            }
-        };
-    }
+        // Wait until the scene is fully loaded
+        yield return op;
 
-    IEnumerator WaitAndLoad(string sceneName, bool isTransitionDelayed, float delay, Action changeMusicClip)
-    {
-         if(isTransitionDelayed)
+        //Game scene is loaded, now we can invoke the event to notify that a new game has started
+        if(sceneName == "Game")
         {
-            yield return new WaitForSecondsRealtime(sceneTransitionDelay);
+            if(isRelaxedModeNext)
+            {
+                NewRelaxedGameStarted.Invoke();
+            }
+            else
+            {
+                NewTimedGameStarted.Invoke();
+            }
         }
 
-        sceneTransition.SetTrigger("StartTransition");
-
-        yield return new WaitForSecondsRealtime(delay);
-
-        /*This solution is found online, which add an event handler that 
-        run after scene fully loaded (including objects)*/
-        var op = SceneManager.LoadSceneAsync(sceneName);
-        op.completed += (x) => {
-            if(sceneName == "Game")
-            {
-                //cardManager.UseCards();
-            }
-        };
-        
-        changeMusicClip();
+        if(changeMusicClip != null)
+        {
+            changeMusicClip();
+        }
     }
 }

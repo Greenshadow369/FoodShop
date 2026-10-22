@@ -6,6 +6,9 @@ public class DayCell : MonoBehaviour
 {
     [SerializeField] private TMP_Text dayNumber;
     [SerializeField] private Button button;
+    [SerializeField] private Animator circleAnimator;
+    [SerializeField] private GameObject staticCircle;
+    [SerializeField] private GameObject animatedCircle;
 
     void Start()
     {
@@ -22,5 +25,19 @@ public class DayCell : MonoBehaviour
     {
         dayNumber.text = day.ToString();
         button.interactable = true;
+    }
+
+    public void PlayCircle()
+    {
+        staticCircle.SetActive(false);
+        animatedCircle.SetActive(true);
+
+        circleAnimator.Play("Circle_Draw", 0, 0f);
+    }
+
+    public void ShowStaticCircle()
+    {
+        animatedCircle.SetActive(false);
+        staticCircle.SetActive(true);
     }
 }
